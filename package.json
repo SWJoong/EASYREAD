@@ -1,0 +1,56 @@
+{
+  "name": "easyread-mcp",
+  "version": "0.1.0",
+  "description": "복잡한 한국어 텍스트를 쉬운 정보(Easy-Read)로 바꾸는 작업을 돕는 MCP 서버. 검증·분석·사전·지침을 오프라인 결정적 도구로 제공한다.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "easy-read",
+    "accessibility",
+    "korean",
+    "plain-language"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "easyread-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "inspector": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.1",
+    "eslint": "^10.8.1",
+    "tsx": "^4.23.11",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.66.0",
+    "vitest": "^4.1.10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
