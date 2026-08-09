@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.log
+.DS_Store
+
+# Claude Code 로컬 설정 (기기별 권한 등, 공유하지 않음)
+.claude/settings.local.json
