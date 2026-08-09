@@ -25,16 +25,16 @@ description: 쉬운 정보(Easy-Read) 도메인 지식 제공 — 발달장애�
   문장·어휘·숫자·구성·표기 영역별 상세 지침과 변환 예시. PM 요구사항, 변환 프롬프트 설계, 사전 데이터 설계 시 읽는다.
 - **검증 체크리스트(규칙 ID 체계)** → [references/validation-checklist.md](references/validation-checklist.md)
   기계 검사 가능성 표시가 붙은 규칙 목록. **MCP 서버 `validate_easy_read` 도구의 규칙 엔진 스펙이자 QA 테스트 케이스의 원본**이다. PL 인터페이스 명세, Backend 구현 계획, QA 계획 작성 시 반드시 읽는다.
+- **표준 근거·출처(Provenance)** → [references/sources.md](references/sources.md)
+  각 규칙이 어떤 국제·국내 표준에 근거하는지(규칙 ID ↔ 표준 조항 매핑), 사전·지침 데이터의 출처. 사전 데이터 설계, `source` 필드 작성, 저작권 검토 시 읽는다.
 
-## 원천 자료 (준비 단계에서 수집·확인할 것)
+## 표준 근거 (요약)
 
-프로젝트 데이터(지침 리소스, 단어 사전)는 아래 자료를 저작권 확인 후 **자체 요약·재구성**해 만든다. 원문 전재는 하지 않는다.
+이 스킬의 원칙·규칙은 아래 **표준 제정 기관·전문 기관 자료**에 근거한다. 전체 서지정보·URL·규칙 매핑은 [references/sources.md](references/sources.md)에 있다. 데이터는 저작권 확인 후 **자체 요약·재구성**만 하며 원문을 전재하지 않는다(NFR-04).
 
-| 자료 | 용도 |
-|---|---|
-| 보건복지부·한국지적발달장애인복지협회 「발달장애인을 위한 쉬운 정보 만들기」 지침 | 작성 규칙의 1차 기준 |
-| 소소한소통 쉬운 정보 가이드/사례 | 실무 변환 예시, 감수 프로세스 |
-| 국립국어원 쉬운 언어(공공언어 개선) 자료 | 어려운 한자어→쉬운 말 대체어 후보 |
-| Inclusion Europe "Information for All" | 국제 표준 대조(참고용) |
+- **국제 표준**: Inclusion Europe 「Information for all」(유럽 쉬운 정보 표준, **기초 표준**) · ISO 24495-1:2023 Plain language(국제 표준) · IFLA 「Guidelines for Easy-to-Read Materials」 · UN CRPD 제9·21조(정보 접근권) · W3C WAI(COGA/WCAG).
+- **국내 기관**: 국립장애인도서관 「쉽게 접근할 수 있는 정보 만들기」(정부, **국내 1차 기준** — 유럽표준 한국판) · 한국지적발달장애인복지협회(KAIDD) · 한국장애인개발원(KODDI) · 한국장애인고용공단 고용개발원(Easy Korean) · 국립국어원 다듬은 말(어휘 대체어 권위 출처) · 소소한소통 · 서울시 '알다' · 발달장애인 권리보장법.
 
-주의: 위 자료의 세부 항목은 개정될 수 있다. 데이터화 시점에 최신판을 확인하고, 이 스킬의 references와 어긋나면 references를 갱신한다.
+우리 규칙 체계는 위 표준(특히 Inclusion Europe의 낱말·문장·정보순서 규칙)과 규칙 단위로 대조·정합을 유지한다. 표준에 있으나 아직 자동 규칙이 아닌 항목은 sources.md §4와 validation-checklist "규칙 후보"에 backlog로 관리한다.
+
+주의: 세부 항목·URL은 개정될 수 있다. 데이터화(T-06) 시 최신판을 확인하고, references와 어긋나면 references를 갱신한다.

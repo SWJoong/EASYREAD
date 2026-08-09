@@ -1,6 +1,6 @@
 # 02. 아키텍처 설계 (PL)
 
-> 작성 기준: `.claude/skills/pl` 워크플로 · 입력: [01-requirements.md](01-requirements.md), [validation-checklist.md](../../.claude/skills/easyread-domain/references/validation-checklist.md)
+> 작성 기준: `.claude/skills/pl` 워크플로 · 입력: [01-requirements.md](01-requirements.md), [validation-checklist.md](../../.claude/skills/easyread-domain/references/validation-checklist.md), [표준 근거 sources.md](../../.claude/skills/easyread-domain/references/sources.md)
 
 ## 1. 아키텍처 개요
 
@@ -31,7 +31,7 @@ flowchart LR
 |---|---|---|---|---|
 | ADR-01 | 문장 변환 주체는 **클라이언트 LLM** (서버는 프롬프트·도구 제공) | API 키 불필요, 오프라인 동작(NFR-01), 프라이버시(NFR-03), 모든 MCP 클라이언트 호환 | (a) 서버의 LLM API 직접 호출 — 키·비용·개인정보 부담으로 기각. (b) MCP sampling — 클라이언트 지원이 불균일해 기각, 지원 확산 시 재검토 | 변환 품질 책임이 프롬프트 설계(FR-05)에 집중됨 |
 | ADR-02 | **TypeScript + 공식 `@modelcontextprotocol/sdk`** | SDK 성숙도·레퍼런스 최다, npx 배포 용이(05 문서) | Python(FastMCP) — 형태소 분석 라이브러리 이점이 있으나 v0.1은 미사용(ADR-04)이라 이점 소멸 | Node 22+ 요구(NFR-05) |
-| ADR-03 | 검증 규칙의 **단일 소스는 validation-checklist.md** | 문서·코드·테스트가 규칙 ID로 연결되어 불일치 방지 | 코드 주석을 소스로 — 비개발자(도메인 감수자)가 검토 불가하여 기각 | 규칙 변경 절차: 문서 수정 → 코드 → 골든 테스트 |
+| ADR-03 | 검증 규칙의 **단일 소스는 validation-checklist.md** | 문서·코드·테스트가 규칙 ID로 연결되어 불일치 방지. 규칙의 국제·국내 표준 근거(Inclusion Europe·ISO 24495·IFLA·국립장애인도서관 등)는 sources.md에 규칙 ID↔조항으로 매핑 | 코드 주석을 소스로 — 비개발자(도메인 감수자)가 검토 불가하여 기각 | 규칙 변경 절차: 문서 수정 → 코드 → 골든 테스트 |
 | ADR-04 | 형태소 분석기 **v0.1 제외**, 휴리스틱+사전 매칭 | 의존성·용량 최소화, `자동` 등급 규칙은 휴리스틱으로 충분 | kiwi 계열 WASM 즉시 도입 — 초기 복잡도 대비 이득 불확실 | `보조` 규칙은 warning/info로만 보고. 도입 조건: 파일럿에서 보조 규칙 오탐이 사용성 문제로 확인될 때 |
 | ADR-05 | transport는 **stdio 우선** | 로컬 사용이 1차 시나리오, 설정 단순 | Streamable HTTP 동시 지원 — 인증·배포 복잡도 증가로 M3 이후 백로그 | 원격 공유는 v0.1 범위 밖(FR-11) |
 | ADR-06 | 데이터는 **패키지 번들 정적 파일** (JSON/Markdown) | 시드 규모(수백 건)에 DB 불필요, 오프라인 보장 | SQLite/외부 API — 과잉 설계로 기각 | 데이터 갱신 = 패키지 릴리스(05 문서 버전 전략과 연동) |
@@ -182,3 +182,4 @@ assets/           # dictionary.json, guidelines/, rules-config.json
 | 날짜 | 변경 | 작성 |
 |---|---|---|
 | 2026-08-09 | 최초 작성 | PL (pl 스킬) |
+| 2026-08-09 | 규칙 표준 근거 반영 — ADR-03에 sources.md(규칙 ID↔표준 조항) 연결, 입력에 표준 출처 추가 | Backend (표준 감사) |

@@ -98,7 +98,7 @@ interface RuleContext {
 
 - **규칙 1개 = 파일 1개 = 골든 테스트 파일 1개** (예: `rules/sen/sen-01.ts` ↔ `tests/rules/sen-01.test.ts`). QA의 TC ID와 파일명이 대응된다.
 - `registry.ts`는 규칙 배열을 정적 import로 조립한다(동적 로딩 금지 — 번들·기동 단순성).
-- 규칙 추가 절차(ADR-03): validation-checklist.md에 행 추가 → rules-config.json에 심각도 → 규칙 파일 + 골든 테스트 → registry 등록. 이 절차를 CONTRIBUTING에 기재한다.
+- 규칙 추가 절차(ADR-03): validation-checklist.md에 행 추가 → rules-config.json에 심각도 → 규칙 파일 + 골든 테스트 → registry 등록. 이 절차를 CONTRIBUTING에 기재한다. 각 규칙의 표준 근거는 easyread-domain/references/sources.md(규칙 ID↔표준 조항)를 참조하고, 규칙 파일 상단 주석에 근거 표준을 1줄로 남긴다.
 - ACC 규칙은 `original`이 있을 때만 registry가 활성화한다. 날짜/금액/연락처 추출기는 `text/extractors.ts`로 분리해 ACC 규칙들이 공유한다.
 
 ## 5. 데이터 적재
@@ -139,3 +139,4 @@ T-01 → T-02 → T-03 → T-04 → T-05 (M1 뼈대: Inspector로 SEN 검증 확
 |---|---|---|
 | 2026-08-09 | 최초 작성 | Backend (backend 스킬) |
 | 2026-08-09 | T-01 스캐폴딩 구현 완료 — 확정 버전 표 추가, `typescript@~6.0.3` 채택 근거 기록(typescript-eslint 호환) | Backend (backend 스킬) |
+| 2026-08-09 | 규칙 엔진 §4에 표준 근거(sources.md) 연결, 규칙 파일 주석에 근거 표준 명시 규약 추가 | Backend (표준 감사) |
