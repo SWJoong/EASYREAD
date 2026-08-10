@@ -1,10 +1,23 @@
 #!/usr/bin/env node
 /**
- * EASYREAD MCP 서버 엔트리.
- *
- * T-01(스캐폴딩) 단계의 플레이스홀더다. 실제 서버 기동
- * (데이터 로드 → McpServer 연결, 실패 시 stderr 후 exit 1)은 T-05에서 구현한다.
+ * EASYREAD MCP 서버 엔트리. stdio 트랜스포트로 기동한다.
  * 계약: docs/plan/02-architecture.md §3 · 구현 방침: docs/plan/03-backend-plan.md
+ *
+ * 로깅 규약: stdout은 JSON-RPC 채널이므로 절대 쓰지 않는다. 로그는 stderr(console.error)만,
+ * 그리고 사용자 텍스트 본문·스택은 싣지 않는다(NFR-03).
  */
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { createServer } from "./server.js";
 
-export {};
+async function main(): Promise<void> {
+  // 데이터 로드(사전·지침)는 T-06에서 이 지점에 추가한다. 실패 시 stderr 후 exit 1.
+  const server = createServer();
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+}
+
+main().catch((error: unknown) => {
+  const detail = error instanceof Error ? error.message : "";
+  console.error(`[easyread] 서버를 시작하지 못했습니다. ${detail}`);
+  process.exit(1);
+});

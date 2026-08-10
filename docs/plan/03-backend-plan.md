@@ -110,7 +110,7 @@ interface RuleContext {
 
 ## 6. 오류 처리 규약
 
-- 입력 검증 실패: SDK의 오류 응답(InvalidParams)으로 반환하되 메시지는 한국어로, 무엇을 고치면 되는지 포함.
+- 입력 검증 실패: zod 스키마의 한국어 메시지로 안내(무엇을 고치면 되는지 포함). **SDK 1.30은 이 InvalidParams(McpError)를 `isError: true` CallToolResult로 변환해 반환**하므로(T-05 확인), 클라이언트 LLM이 메시지를 읽고 고칠 수 있다. zod `min/max/refine`로 빈 문자열·5만자 초과·공백만 입력을 막는다.
 - 내부 예외: 도구 핸들러 최상위에서 잡아 "서버 내부 오류" + 오류 코드로 응답. **스택·입력 본문을 응답이나 로그에 싣지 않는다**(NFR-03).
 - 로깅: stdio 서버이므로 **stdout 사용 절대 금지**(JSON-RPC 채널 오염). `console.error`만 허용하고, eslint `no-console: ["error", { allow: ["error"] }]`로 강제. 로그에도 사용자 텍스트 본문 미포함(길이·규칙 ID 같은 메타데이터만).
 - 응답 크기: violations는 200건에서 절단하고 summary에 `truncated: true` 표시(초장문 입력 보호).
@@ -130,7 +130,7 @@ T-01 → T-02 → T-03 → T-04 → T-05 (M1 뼈대: Inspector로 SEN 검증 확
 
 각 작업 완료 시 이 문서 아래 체크박스에 표시하고, 계약(02 §3)과 달라진 점이 있으면 **먼저 02를 고친 뒤** 코드를 맞춘다.
 
-- [x] T-01 스캐폴딩 (2026-08-09 — build·typecheck·lint·test 4종 그린)  - [x] T-02 text/ (2026-08-09 — 문장 분리기 격리, 25 테스트 통과)  - [x] T-03 규칙 코어 (2026-08-10 — registry·엔진·리포트 조립기, 리포트 zod 스키마 검증, 37 테스트)  - [x] T-04 SEN (2026-08-10 — SEN-01~05 + 골든·오탐 방지, 64 테스트)  - [ ] T-05 서버 뼈대(M1)
+- [x] T-01 스캐폴딩 (2026-08-09 — build·typecheck·lint·test 4종 그린)  - [x] T-02 text/ (2026-08-09 — 문장 분리기 격리, 25 테스트 통과)  - [x] T-03 규칙 코어 (2026-08-10 — registry·엔진·리포트 조립기, 리포트 zod 스키마 검증, 37 테스트)  - [x] T-04 SEN (2026-08-10 — SEN-01~05 + 골든·오탐 방지, 64 테스트)  - [x] T-05 서버 뼈대 (2026-08-10 — validate_easy_read stdio 등록, InMemory 계약 + 실 stdio 스모크, **M1 완료**)
 - [ ] T-06 사전 시드  - [ ] T-07 규칙군 완성  - [ ] T-08 도구 3종  - [ ] T-09 프롬프트·리소스  - [ ] T-10 ACC  - [ ] T-11 통합·성능(M2)
 
 ## 9. 변경 이력
@@ -143,3 +143,4 @@ T-01 → T-02 → T-03 → T-04 → T-05 (M1 뼈대: Inspector로 SEN 검증 확
 | 2026-08-09 | T-02 구현 완료 — src/text(문장 분리기·어절·span), 경계 케이스(따옴표·숫자 마침표·날짜·괄호·개행·이모지) 25 테스트 통과 | Backend (backend 스킬) |
 | 2026-08-10 | T-03 규칙 엔진 코어 — types/config/registry/report/engine + messages(PROC 안내), 리포트 zod 스키마·더미 규칙 검증, 37 테스트 | Backend (backend 스킬) |
 | 2026-08-10 | T-04 SEN 규칙군 — SEN-01~05(rules/sen/) registry 등록, 참·오탐 방지 골든 테스트, 64 테스트 | Backend (backend 스킬) |
+| 2026-08-10 | T-05 서버 뼈대 — index/server/tools/validate, validate_easy_read(stdio) 등록, InMemory 계약 테스트 + 실 stdio 스모크, 70 테스트. **M1 완료** | Backend (backend 스킬) |
