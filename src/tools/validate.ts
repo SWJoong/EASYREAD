@@ -1,7 +1,7 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { validate, validationReportSchema } from "../rules/index.js";
-import type { ValidationReport } from "../rules/index.js";
+import type { Dictionary, ValidationReport } from "../rules/index.js";
 
 const MAX_CHARS = 50_000;
 
@@ -35,7 +35,7 @@ function formatReport(report: ValidationReport): string {
  * validate_easy_read 도구를 서버에 등록한다(FR-01·07·10, 계약: 02 §3.1).
  * 입력 파싱은 zod가, 규칙 실행·리포트는 rules/가 담당한다(도구는 조립만).
  */
-export function registerValidateTool(server: McpServer): void {
+export function registerValidateTool(server: McpServer, dictionary?: Dictionary): void {
   server.registerTool(
     "validate_easy_read",
     {
@@ -69,7 +69,7 @@ export function registerValidateTool(server: McpServer): void {
     },
     ({ text, original, config }) => {
       try {
-        const report = validate({ raw: text, original, config });
+        const report = validate({ raw: text, original, config, dictionary });
         return {
           content: [{ type: "text", text: formatReport(report) }],
           structuredContent: report,

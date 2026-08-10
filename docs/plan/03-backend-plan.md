@@ -131,7 +131,7 @@ T-01 → T-02 → T-03 → T-04 → T-05 (M1 뼈대: Inspector로 SEN 검증 확
 각 작업 완료 시 이 문서 아래 체크박스에 표시하고, 계약(02 §3)과 달라진 점이 있으면 **먼저 02를 고친 뒤** 코드를 맞춘다.
 
 - [x] T-01 스캐폴딩 (2026-08-09 — build·typecheck·lint·test 4종 그린)  - [x] T-02 text/ (2026-08-09 — 문장 분리기 격리, 25 테스트 통과)  - [x] T-03 규칙 코어 (2026-08-10 — registry·엔진·리포트 조립기, 리포트 zod 스키마 검증, 37 테스트)  - [x] T-04 SEN (2026-08-10 — SEN-01~05 + 골든·오탐 방지, 64 테스트)  - [x] T-05 서버 뼈대 (2026-08-10 — validate_easy_read stdio 등록, InMemory 계약 + 실 stdio 스모크, **M1 완료**)
-- [ ] T-06 사전 시드  - [ ] T-07 규칙군 완성  - [ ] T-08 도구 3종  - [ ] T-09 프롬프트·리소스  - [ ] T-10 ACC  - [ ] T-11 통합·성능(M2)
+- [x] T-06 사전 시드 (2026-08-11 — dictionary.json 112건·출처 100%, zod 로더·기동 로드, 76 테스트)  - [ ] T-07 규칙군 완성  - [ ] T-08 도구 3종  - [ ] T-09 프롬프트·리소스  - [ ] T-10 ACC  - [ ] T-11 통합·성능(M2)
 
 ## 9. 변경 이력
 
@@ -144,3 +144,4 @@ T-01 → T-02 → T-03 → T-04 → T-05 (M1 뼈대: Inspector로 SEN 검증 확
 | 2026-08-10 | T-03 규칙 엔진 코어 — types/config/registry/report/engine + messages(PROC 안내), 리포트 zod 스키마·더미 규칙 검증, 37 테스트 | Backend (backend 스킬) |
 | 2026-08-10 | T-04 SEN 규칙군 — SEN-01~05(rules/sen/) registry 등록, 참·오탐 방지 골든 테스트, 64 테스트 | Backend (backend 스킬) |
 | 2026-08-10 | T-05 서버 뼈대 — index/server/tools/validate, validate_easy_read(stdio) 등록, InMemory 계약 테스트 + 실 stdio 스모크, 70 테스트. **M1 완료** | Backend (backend 스킬) |
+| 2026-08-11 | T-06 사전 시드 — assets/dictionary.json 112건(어려운말·외래어·전문용어·관용구·약어), src/data zod 로더(기동 로드·중복/스키마 거부), Dictionary.lookup 추가·서버 배선, 76 테스트 | Backend (backend 스킬) |

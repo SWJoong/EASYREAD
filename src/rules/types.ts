@@ -22,6 +22,8 @@ export interface DictionaryEntry {
 
 export interface Dictionary {
   readonly entries: readonly DictionaryEntry[];
+  /** 정확 일치 조회(O(1)). 없으면 undefined. 부분 일치 등은 data 계층 helper로 확장(T-08). */
+  lookup(word: string): DictionaryEntry | undefined;
 }
 
 /** rules-config + 사용자 config를 병합해 확정한 설정(03 §5). */

@@ -7,11 +7,13 @@
  * 그리고 사용자 텍스트 본문·스택은 싣지 않는다(NFR-03).
  */
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { loadDictionary } from "./data/dictionary.js";
 import { createServer } from "./server.js";
 
 async function main(): Promise<void> {
-  // 데이터 로드(사전·지침)는 T-06에서 이 지점에 추가한다. 실패 시 stderr 후 exit 1.
-  const server = createServer();
+  // 사전 데이터 로드(실패 시 throw → 아래 catch에서 stderr 후 exit 1).
+  const dictionary = loadDictionary();
+  const server = createServer(dictionary);
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }

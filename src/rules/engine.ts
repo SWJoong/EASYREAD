@@ -6,7 +6,7 @@ import { assembleReport, makeExcerpt } from "./report.js";
 import type { ValidationReport } from "./report.js";
 import type { Dictionary, Rule, RuleContext, Violation } from "./types.js";
 
-const EMPTY_DICTIONARY: Dictionary = { entries: [] };
+const EMPTY_DICTIONARY: Dictionary = { entries: [], lookup: () => undefined };
 
 export interface EvaluateInput {
   readonly raw: string;
