@@ -1,10 +1,11 @@
+import { senRules } from "./sen/index.js";
 import type { Rule } from "./types.js";
 
 /**
- * 전체 규칙 목록. T-04부터 각 규칙군을 **정적 import**로 채운다(동적 로딩 금지 — 번들·기동 단순성).
- * 예) import { sen01 } from "./sen/sen-01.js"; export const rules = [sen01, ...];
+ * 전체 규칙 목록. 각 규칙군을 **정적 import**로 조립한다(동적 로딩 금지 — 번들·기동 단순성).
+ * 규칙군이 늘면 이 배열에 추가한다(T-07: VOC·NUM·STR·TYP, T-10: ACC).
  */
-export const rules: readonly Rule[] = [];
+export const rules: readonly Rule[] = [...senRules];
 
 export interface ActiveRuleOptions {
   readonly excludeRules?: readonly string[];
