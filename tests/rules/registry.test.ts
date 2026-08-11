@@ -2,7 +2,12 @@ import { rules, validate } from "../../src/rules/index.js";
 
 describe("registry 통합", () => {
   it("TC-CORE-13: registry에 SEN 규칙군이 정적으로 등록되어 있다", () => {
-    expect(rules.map((r) => r.id)).toEqual(["SEN-01", "SEN-02", "SEN-03", "SEN-04", "SEN-05"]);
+    expect(rules.map((r) => r.id)).toEqual([
+      "SEN-01", "SEN-02", "SEN-03", "SEN-04", "SEN-05",
+      "NUM-01", "NUM-02", "NUM-03", "NUM-04",
+      "STR-01", "STR-02", "STR-03", "STR-04",
+      "TYP-01", "TYP-02", "TYP-03",
+    ]);
   });
 
   it("TC-CORE-14: validate()가 등록된 규칙으로 리포트를 만든다", () => {
