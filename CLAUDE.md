@@ -41,5 +41,10 @@ npm run inspector    # MCP Inspector 실행
 ### 완료
 - M1 마일스톤 (T-01~T-06), 76개 테스트 통과
 
+### 진행 중 (Instance-U 구현 완료, Instance-W 골든 테스트 대기)
+- T-07: VOC 규칙군 (VOC-01~06) — `feat/t07-voc-rules`
+- T-08: NUM·STR·TYP 규칙군 (11개) — `feat/t08-num-str-typ`
+
 ### 다음
-- T-07: VOC 규칙군 구현
+- T-09: ACC 규칙군 (원문 비교)
+- T-10: 도구 3종 (analyze, lookup, guidelines)
