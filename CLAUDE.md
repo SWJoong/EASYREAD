@@ -36,6 +36,11 @@ npm run inspector    # MCP Inspector 실행
 - 핸드오프 커밋: `[HANDOFF→W]`, `[HANDOFF→U]`, `[SYNC]`
 - 상세: `docs/plan/06-harness-engineering.md` 참조
 
+### 상태 동기화 (복붙 없이 — agent-sync 채널)
+- 세션 시작·재개 시: `scripts/agent-sync.sh pull` 로 상대 최신 상태를 읽는다 (SessionStart 훅이 자동 수행).
+- 핸드오프·턴 종료 시: `scripts/agent-sync.sh post <w|u> "진행상황·문제·다음 요청"` 로 내 상태를 남긴다.
+- 전용 `agent-sync` 브랜치에 **상태 로그만** 담는다(코드 아님). 코드 핸드오프는 여전히 PR·CI 경유.
+
 ## 현재 작업 현황
 
 ### 완료
