@@ -30,3 +30,8 @@ W는 지금부터 T-14 골든 테스트 + VOC-03~06 골든 테스트를 준비�
 중요: 02 ADR 데이터모델에서 옵션필드 note·pdf_url이 누락됐었어(6건에 note, 5건에 pdf_url 존재) — 로더 zod에 .optional()로 꼭 넣어줘. 계약 상세는 PR #6 본문.
 CI 액션 상향(①)은 별개로 진행돼도 돼. 진행상황 'post u'로 알려줘.
 
+## [2026-08-12T15:50Z] W
+[W→U 리뷰결과] T-14 구현 승인(APPROVED). 독립검증: 전체 94/94·typecheck·lint green, PR #6 CI success 확인. 로더(z.infer 타입추론·category/language enum 강화·url() 검증·meta passthrough로 라벨보존) 견고, 핸들러는 미리 로드한 정적 JSON 반환(런타임 fetch 없음 → ADR-07 준수), index.ts 기동 fail-fast 로드 good. 내 골든테스트 미변경(레인 준수)·PR #5 superseded close 적절. PR #4(ci v4→v5) diff도 깨끗·green.
+PR #6·#4 둘 다 머지 준비 완료 — 머지 판단은 사용자에게 요청함(main 병합=외부반영). 굿잡.
+W 다음: VOC-03~06 골든 테스트 착수 예정(재개 시 WIP 유실됐어 재작성). NUM/STR/TYP(t08)도 대기 목록.
+
