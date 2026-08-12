@@ -1,0 +1,1014 @@
+{
+  "meta": {
+    "title": "발달장애인 쉬운자료(Easy-Read) 공식 자료 모음",
+    "description": "발달장애인을 위한 '읽기 쉬운 자료(Easy-Read)'와 관련하여 국내외 정부·공공기관·국제기구·표준화기구·공공성 단체가 공식적으로 공유한 자료를 수집·정리한 카탈로그. 각 항목은 발행기관, 자료 유형, 발행연도, 출처 URL, 설명을 포함한다.",
+    "created": "2026-08-11",
+    "language_note": "language 필드: ko=한국어, en=영어, multi=다국어",
+    "url_status_note": "url_status: verified=자동 접근 확인, unverified=자동 수집 차단(robots/403 등)으로 직접 렌더링 미확인이나 출처는 검색·공식경로로 확인",
+    "category_labels": {
+      "guideline_standard": "제작 가이드라인·표준",
+      "example": "실제 쉬운자료·사례",
+      "law_policy": "근거 법령·정책",
+      "portal_center": "포털·전문센터"
+    },
+    "region_labels": {
+      "KR": "대한민국 (국내)",
+      "International": "국제 표준·기구",
+      "EU": "유럽연합(EU)",
+      "UN": "국제연합(UN)",
+      "UK": "영국",
+      "Australia": "호주",
+      "Ireland": "아일랜드",
+      "New Zealand": "뉴질랜드"
+    },
+    "counts": {
+      "total": 62,
+      "by_region": {
+        "KR": 17,
+        "International": 5,
+        "EU": 5,
+        "UN": 7,
+        "UK": 15,
+        "Australia": 5,
+        "Ireland": 5,
+        "New Zealand": 3
+      },
+      "by_category": {
+        "guideline_standard": 29,
+        "example": 24,
+        "law_policy": 10,
+        "portal_center": 25
+      }
+    },
+    "disclaimer": "자료 목록은 조사 시점(2026-08-11) 기준이며, 기관 사이트 개편에 따라 URL이 변경될 수 있음. 실제 활용 시 기관명·자료명으로 재검색 권장."
+  },
+  "resources": [
+    {
+      "id": "kr-01",
+      "region": "KR",
+      "org_type": "지자체·비영리(위탁)",
+      "organization": "서울시 읽기쉬운자료개발센터 '알다' (서울시 지원, 전국장애인부모연대 운영)",
+      "title": "읽기 쉬운 자료 개발·배포 포털 '알다' — 제작 안내서·전문가 양성 교재·읽기 쉬운 뉴스·무료 이미지",
+      "category": [
+        "portal_center",
+        "guideline_standard",
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "http://www.easy-read.or.kr/",
+      "url_status": "verified",
+      "description": "서울시 지원으로 운영되는 발달장애인 '읽기 쉬운 자료' 전문 개발·배포 센터의 공식 포털. 읽기 쉬운 자료 제작 안내서, 전문가 양성 심화교육 교재, 읽기 쉬운 온라인 뉴스·정책자료, 무료 이미지, 읽기 쉬운 자료 무료 배포 등을 제공한다."
+    },
+    {
+      "id": "kr-02",
+      "region": "KR",
+      "org_type": "공공기관(보건복지부 산하)",
+      "organization": "한국장애인개발원(KODDI)",
+      "title": "교육자료실 (이해하기 쉬운 자료 포함)",
+      "category": [
+        "portal_center",
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.koddi.or.kr/data/edu_bbs01.jsp",
+      "url_status": "verified",
+      "description": "한국장애인개발원의 교육자료 게시판. 정책연구·직업재활·편의증진·인식개선 등 발간물을 제공하며, '이해하기 쉬운 유엔장애인권리위원회 일반논평', 발달장애인 대상 직무매뉴얼 등 이해하기 쉬운 형태의 자료를 PDF로 내려받을 수 있다."
+    },
+    {
+      "id": "kr-03",
+      "region": "KR",
+      "org_type": "공공기관(보건복지부 산하)",
+      "organization": "한국장애인개발원(KODDI)",
+      "title": "[2025] 이해하기 쉬운 유엔장애인권리위원회 일반논평(1호~5호)",
+      "category": [
+        "example"
+      ],
+      "language": "ko",
+      "year": "2025",
+      "url": "https://www.koddi.or.kr/data/edu_bbs01_view.jsp?brdNum=7427421",
+      "pdf_url": "https://www.koddi.or.kr/bbs/press_view.jsp?brdNum=7425827&brdType=PRESS",
+      "url_status": "verified",
+      "description": "유엔장애인권리위원회 일반논평 5개(법 앞의 평등, 접근성, 장애여성, 교육, 자립생활)를 발달장애인이 이해하기 쉽도록 쉬운 글과 그림으로 재구성한 자료. 2025년 발간되어 전국 장애 관련 기관에 전자파일·책자로 배포되었다. (두 번째 링크는 발간 보도자료)"
+    },
+    {
+      "id": "kr-04",
+      "region": "KR",
+      "org_type": "공공기관(보건복지부 산하)",
+      "organization": "한국장애인개발원(KODDI)",
+      "title": "웹진 디딤돌 — '발달장애인이 읽기 쉬운 책' 소개",
+      "category": [
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.koddi.or.kr/webzine/didimdol/vol296/subpage_105.html",
+      "url_status": "verified",
+      "description": "발달장애인·저문해력자를 위한 '읽기 쉬운 책(easy-to-read book)'의 개념과 국내 발간 사례 소개. 국립장애인도서관·국립생태원·국립재활원 등이 만든 읽기 쉬운 개작 도서와 발달장애인 작가 도서를 안내한다."
+    },
+    {
+      "id": "kr-05",
+      "region": "KR",
+      "org_type": "공공기관(고용노동부 산하)",
+      "organization": "한국장애인고용공단(KEAD)",
+      "title": "알기 쉬운 자료 개발사업 — '알기 쉬운 자료' 배포 게시판",
+      "category": [
+        "portal_center",
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.kead.or.kr/bbs/developdata/bbsPage.do?menuId=MENU0637",
+      "url_status": "verified",
+      "description": "한국장애인고용공단이 발달장애인 등을 위해 제작한 '알기 쉬운 자료'를 배포하는 공식 게시판. '발달장애인을 위한 알기 쉬운 스마트폰 활용법' 등 일상·취업 정보 자료를 제공하고 자료 신청도 받는다. (고용·직업 영역에서 특히 유용)"
+    },
+    {
+      "id": "kr-06",
+      "region": "KR",
+      "org_type": "공공기관(고용노동부 산하)",
+      "organization": "한국장애인고용공단 고용개발원(EDI)",
+      "title": "알기 쉬운 자료 제작 가이드 개발 연구 — 쉬운 글(Easy Korean) 개발 가이드 (고용개발2021-04)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "ko",
+      "year": "2021",
+      "url": "https://www.kead.or.kr/bbs/developdata/bbsPage.do?menuId=MENU0637",
+      "pdf_url": "https://urp.or.kr/upload/board/알기 쉬운 자료 제작 가이드 개발 연구_내지(보이스아이).pdf",
+      "url_status": "verified",
+      "note": "상단 kead.or.kr 배포 포털은 접근 검증됨. urp.or.kr PDF 직링크는 자동 수집이 403으로 차단되나 다수 검색결과에서 실재가 반복 확인되는 원문 파일.",
+      "description": "발달장애인 등을 위한 '쉬운 글(Easy Korean)' 작성 원칙과 알기 쉬운 자료 제작 가이드를 담은 2021년 연구보고서. 국내 easy-read 제작 표준의 핵심 참고 문헌 중 하나."
+    },
+    {
+      "id": "kr-07",
+      "region": "KR",
+      "org_type": "법원(사법부)",
+      "organization": "대법원 사법정책연구원(JPRI)",
+      "title": "장애인 등을 위한 이해하기 쉬운(Easy-Read) 판결서 작성방안 (연구보고서 2024-19)",
+      "category": [
+        "guideline_standard",
+        "law_policy"
+      ],
+      "language": "ko",
+      "year": "2024",
+      "url": "https://jpri.scourt.go.kr/post/postView.do?boardSeq=7&menuSeq=11&seq=1728&lang=ko",
+      "pdf_url": "https://jpri.scourt.go.kr/fileDownLoad.do?seq=2605",
+      "url_status": "verified",
+      "description": "발달장애인·농인·아동 등 문해력이 낮은 사람을 위해 간명한 글과 삽화로 구성한 Easy-Read 판결서 작성 방법을 제시한 사법정책연구원 보고서. 개념·법적근거, 영국·독일 등 해외사례, 형사·민사·가사·행정 14건 작성례와 예규 제정안을 담았다."
+    },
+    {
+      "id": "kr-08",
+      "region": "KR",
+      "org_type": "공공기관(보건복지부 산하)",
+      "organization": "중앙장애아동·발달장애인지원센터",
+      "title": "중앙장애아동·발달장애인지원센터 포털 (비로소)",
+      "category": [
+        "portal_center"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.broso.or.kr/mainPage.do",
+      "url_status": "verified",
+      "description": "보건복지부 산하 발달장애인 지원 전달체계의 중앙센터 공식 포털로 전국 지역센터를 총괄. 개인별지원계획, 권리구제, 공공후견 등 발달장애인 권리 안내 서비스를 제공한다."
+    },
+    {
+      "id": "kr-09",
+      "region": "KR",
+      "org_type": "공공기관(보건복지부 산하)",
+      "organization": "중앙장애아동·발달장애인지원센터",
+      "title": "알기 쉬운 자료 (개인별지원계획·공공후견·권리구제 안내)",
+      "category": [
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.broso.or.kr/hp/bbs/ViewCmpPosNttCnDtl.do?cnterCd=01000001&bbsId=3&nttId=1453&bbsTyCd=02&othbcAt=Y",
+      "url_status": "verified",
+      "description": "발달장애인이 이해하기 쉬운 형태로 제작한 개인별지원계획·공공후견지원사업·권리구제지원사업 안내 자료. 지적·자폐성장애인의 의사소통 어려움 해소를 위해 고안되었다."
+    },
+    {
+      "id": "kr-10",
+      "region": "KR",
+      "org_type": "정부기관(문화체육관광부 소속)",
+      "organization": "국립장애인도서관",
+      "title": "국립장애인도서관 포털 — 읽기쉬운책·쉬운자료 컬렉션",
+      "category": [
+        "portal_center",
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.nld.go.kr/home/main.do",
+      "url_status": "verified",
+      "description": "문화체육관광부 소속 국립장애인도서관 공식 포털. '읽기쉬운책'·'쉬운자료' 컬렉션을 운영하며, 발달장애인을 위해 쉬운 글·그림으로 개작한 도서를 매년 제작·보급하고 소장 희망기관에 무료 배포한다."
+    },
+    {
+      "id": "kr-11",
+      "region": "KR",
+      "org_type": "정부기관(문화체육관광부 소속)",
+      "organization": "국립장애인도서관",
+      "title": "발달장애인용 읽기 쉬운 책 개발 지침",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.nld.go.kr/upload/contents02/easy_read_book_geabal_jichim.pdf",
+      "url_status": "verified",
+      "description": "발달장애인용 읽기 쉬운 책의 도서 선정 기준, 7단계 제작 절차, 어휘·문장·글자크기(11~13pt)·삽화 등 형태 설계 지침을 담은 개발 지침. 수정 전후 비교 사례로 적용 방법을 안내한다."
+    },
+    {
+      "id": "kr-12",
+      "region": "KR",
+      "org_type": "정부부처·비영리 협업",
+      "organization": "보건복지부 / 한국지적발달장애인복지협회",
+      "title": "발달장애인을 위한 쉽게 접근할 수 있는 정보 만들기 — 읽기 쉬운 문서 만들기 안내서 (2017 개정판)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "ko",
+      "year": "2017",
+      "url": "https://www.nld.go.kr/upload/contents02/baldal_jumgbo.pdf",
+      "url_status": "verified",
+      "description": "보건복지부와 한국지적발달장애인복지협회가 발간한 읽기 쉬운 문서 제작 표준 안내서(초판 2015, 2017 개정). 쉬운 단어·그림 활용, 14pt 이상 글씨, 180% 이상 줄간격, 왼쪽 정렬 등 정부·공공·민간기관용 제작 원칙을 제시한다."
+    },
+    {
+      "id": "kr-13",
+      "region": "KR",
+      "org_type": "독립기관(헌법기관)",
+      "organization": "중앙선거관리위원회",
+      "title": "어르신·장애인 등 선거정보 — '쉽게 설명한' 선거 책자·투표안내 자료",
+      "category": [
+        "example",
+        "portal_center"
+      ],
+      "language": "ko",
+      "year": "2026",
+      "url": "https://www.nec.go.kr/site/lvt/03/10303000000002022042709.jsp",
+      "url_status": "verified",
+      "description": "중앙선거관리위원회가 제공하는 장애인 접근성 선거정보 페이지. '쉽게 설명한 선거' 책자, 투표안내 애니메이션·리플릿·투표안내카드, 수어·ARS 음성 안내 등 쉬운 설명 형식 자료를 포함한다."
+    },
+    {
+      "id": "kr-14",
+      "region": "KR",
+      "org_type": "비영리(국립도서관 위탁사업)",
+      "organization": "전국장애인부모연대 (발달장애 정보플랫폼 '보다센터')",
+      "title": "발달장애인을 위한 읽기 쉬운 책 배포 사업 안내",
+      "category": [
+        "portal_center",
+        "example"
+      ],
+      "language": "ko",
+      "year": "2023",
+      "url": "https://boda.or.kr/Subject/recent_post.php?tsort=36&msort=78&board_code=29&no=96652&mode=detail&page=1",
+      "url_status": "verified",
+      "description": "전국장애인부모연대가 운영하는 발달장애 정보플랫폼 '보다센터'의 읽기 쉬운 책 배포 안내. 국립장애인도서관 주관·소소한소통 수행으로 인권·역사·성교육·환경 등 다수 종을 제작해 도서관·복지관·학교에 무료 배포한다."
+    },
+    {
+      "id": "kr-15",
+      "region": "KR",
+      "org_type": "독립기관(국가인권기구)",
+      "organization": "국가인권위원회",
+      "title": "쉬운 글·만화로 보는 장애차별 결정례 / 유엔장애인권리위원회 권고 쉬운 설명자료",
+      "category": [
+        "example"
+      ],
+      "language": "ko",
+      "year": "",
+      "url": "https://www.humanrights.go.kr/site/program/board/basicboard/view?boardtypeid=24&boardid=7608770",
+      "url_status": "unverified",
+      "note": "자동 수집이 robots.txt 시간초과로 본문 렌더링 미확인. 인권위 공식 보도자료 경로로 존재 확인됨.",
+      "description": "국가인권위원회가 발달장애인 등이 이해하기 쉽도록 쉬운 글과 만화로 제작한 장애차별 진정 결정례 및 유엔장애인권리위원회 권고 쉬운 설명자료."
+    },
+    {
+      "id": "kr-16",
+      "region": "KR",
+      "org_type": "근거 법령(법제처)",
+      "organization": "국가법령정보센터 (법제처)",
+      "title": "발달장애인 권리보장 및 지원에 관한 법률 — 제10조(의사소통 지원)",
+      "category": [
+        "law_policy"
+      ],
+      "language": "ko",
+      "year": "2014(제정)",
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=195992",
+      "url_status": "verified",
+      "note": "law.go.kr은 자동 수집이 차단되나, 검색·언론 인용으로 제10조 easy-read 조항 확인. 법령명 검색: '발달장애인 권리보장 및 지원에 관한 법률'.",
+      "description": "제10조(의사소통 지원)는 '국가와 지방자치단체가 발달장애인의 권리·의무에 중대한 영향을 미치는 법령과 복지지원 등 중요한 정책정보를 발달장애인이 이해하기 쉬운 형태로 작성해 배포'하도록 규정한다. 국내 읽기 쉬운 자료의 핵심 근거 법령."
+    },
+    {
+      "id": "kr-17",
+      "region": "KR",
+      "org_type": "근거 법령(법제처)",
+      "organization": "국가법령정보센터 (법제처)",
+      "title": "장애인차별금지 및 권리구제 등에 관한 법률 — 정보접근·의사소통 정당한 편의 제공",
+      "category": [
+        "law_policy"
+      ],
+      "language": "ko",
+      "year": "2007(제정)",
+      "url": "https://www.law.go.kr/법령/장애인차별금지및권리구제등에관한법률",
+      "url_status": "unverified",
+      "note": "국가법령정보센터 공식 경로. 자동 수집은 차단되나 법령명으로 정상 검색됨.",
+      "description": "장애인이 접근 가능한 형태로 정보를 제공받고 정당한 편의를 제공받을 권리(정보접근·의사소통에서의 차별금지)를 규정하여, 공공영역의 발달장애인 읽기 쉬운 자료 제공의 법적 근거가 된다."
+    },
+    {
+      "id": "int-04",
+      "region": "International",
+      "org_type": "국제 웹표준화 기구(W3C)",
+      "organization": "W3C Web Accessibility Initiative (WAI)",
+      "title": "Making Content Usable for People with Cognitive and Learning Disabilities",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2021",
+      "url": "https://www.w3.org/TR/coga-usable/",
+      "url_status": "verified",
+      "description": "W3C 인지·학습장애 접근성 태스크포스(COGA)가 발간한 Working Group Note(2021.4.29). 인지·학습장애인이 웹·디지털 콘텐츠를 사용할 수 있도록 하는 설계 목표·사용자 페르소나·콘텐츠 패턴을 제시하여 WCAG를 보완한다."
+    },
+    {
+      "id": "int-05",
+      "region": "International",
+      "org_type": "국제 도서관 연맹(IFLA)",
+      "organization": "International Federation of Library Associations and Institutions (IFLA)",
+      "title": "Guidelines for Easy-to-Read Materials (개정판, IFLA Professional Report No. 120)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2010",
+      "url": "https://repository.ifla.org/items/1039f627-6ed6-4180-9f73-ce48d9753b76/full",
+      "pdf_url": "https://www.ifla.org/files/assets/hq/publications/professional-report/120.pdf",
+      "url_status": "verified",
+      "description": "IFLA 특수요구도서관서비스분과가 발간한 국제 도서관계 easy-to-read 가이드라인 개정판. easy-to-read 자료가 필요한 대상, 출판·개작 과정, easy-to-read 도서·정보 제작 원칙을 설명한다."
+    },
+    {
+      "id": "int-06",
+      "region": "International",
+      "org_type": "국제 표준화기구(ISO)",
+      "organization": "International Organization for Standardization (ISO)",
+      "title": "ISO 24495-1:2023 Plain language — Part 1: Governing principles and guidelines",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2023",
+      "url": "https://www.iso.org/standard/78907.html",
+      "url_status": "verified",
+      "description": "쉬운 언어(plain language) 문서 작성의 지배 원칙과 지침을 규정한 국제표준. easy-read와 밀접하나 더 포괄적인 '쉬운 언어' 표준으로, 공공 대상 텍스트 전반에 적용된다."
+    },
+    {
+      "id": "int-08",
+      "region": "International",
+      "org_type": "세계 자기옹호 연맹(국제 NGO)",
+      "organization": "Inclusion International",
+      "title": "Self-Advocacy for Inclusion: A Global Report (Easy to Understand 버전 포함)",
+      "category": [
+        "example"
+      ],
+      "language": "multi",
+      "year": "2024",
+      "url": "https://inclusion-international.org/resource/global-report-self-advocacy-for-inclusion/",
+      "url_status": "verified",
+      "description": "지적장애인·가족 단체의 세계 연맹 Inclusion International의 글로벌 자기옹호 보고서. 정식 보고서와 함께 'Easy to Understand'(easy read) 버전을 영어·스페인어로 제공한다."
+    },
+    {
+      "id": "int-09",
+      "region": "International",
+      "org_type": "영국 EHRC / Inspired Services 제작",
+      "organization": "Equality and Human Rights Commission (Inspired Services EasyRead 제작)",
+      "title": "The United Nations Convention on the Rights of People with Disabilities: What does it mean for you? (Easy Read)",
+      "category": [
+        "example"
+      ],
+      "language": "en",
+      "year": "2010",
+      "url": "https://www.equalityhumanrights.com/sites/default/files/uncrpd_guide_easyread.pdf",
+      "url_status": "verified",
+      "description": "UN CRPD를 쉽게 설명한 널리 쓰이는 Easy Read 자료. 짧은 문장과 이미지, x/+ 기호 등 easy-read 관례를 따른 실물 예시."
+    },
+    {
+      "id": "int-01",
+      "region": "EU",
+      "org_type": "유럽 자기옹호 연맹(범유럽 NGO)",
+      "organization": "Inclusion Europe",
+      "title": "Information for all: European standards for making information easy to read and understand (모든 사람을 위한 정보: 유럽 easy-to-read 표준)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "multi",
+      "year": "2009",
+      "url": "https://www.inclusion-europe.eu/easy-to-read-standards-guidelines/",
+      "pdf_url": "https://www.inclusion-europe.eu/wp-content/uploads/2017/06/EN_Information_for_all.pdf",
+      "url_status": "verified",
+      "description": "지적장애인을 위한 easy-to-read 정보의 작성·디자인·제작 방법을 정의한 대표적 범유럽 표준. 글·이미지·전자·오디오·영상 콘텐츠를 다루며 16개 이상 유럽 언어로 제공된다. 국제적으로 가장 널리 인용되는 easy-read 기준."
+    },
+    {
+      "id": "int-02",
+      "region": "EU",
+      "org_type": "유럽 자기옹호 연맹(범유럽 NGO)",
+      "organization": "Inclusion Europe",
+      "title": "Easy-to-Read in Europe (유럽 easy-to-read 가이드라인·네트워크 포털)",
+      "category": [
+        "portal_center",
+        "guideline_standard"
+      ],
+      "language": "multi",
+      "year": "",
+      "url": "https://easy-to-read.inclusion-europe.eu/",
+      "url_status": "verified",
+      "description": "유럽 easy-to-read 가이드라인, 유럽 Easy-to-Read 로고, easy-to-read 정보 제작 기관 네트워크를 소개하는 공식 포털. 16개 유럽 언어로 제공."
+    },
+    {
+      "id": "int-03",
+      "region": "EU",
+      "org_type": "유럽 자기옹호 연맹(범유럽 NGO)",
+      "organization": "Inclusion Europe",
+      "title": "European Easy-to-Read Logo (유럽 Easy-to-Read 품질 인증 로고)",
+      "category": [
+        "portal_center",
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://easy-to-read.inclusion-europe.eu/european-logo/",
+      "url_status": "verified",
+      "description": "유럽 Easy-to-Read 품질 표시 로고와 사용 규칙 안내. 유럽 easy-to-read 표준을 따르고 지적장애인 1인 이상의 검수를 거친 문서에 한해 무료로 사용할 수 있다(Pantone 072 블루, 최소 15mm 등 규격 명시)."
+    },
+    {
+      "id": "int-07",
+      "region": "EU",
+      "org_type": "유럽 표준화기구(CEN/CENELEC)",
+      "organization": "CEN/CENELEC (European Committee for Standardization)",
+      "title": "EN 17161:2019 Design for All — 제품·재화·서비스의 Design for All 접근 기반 접근성",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2019",
+      "url": "https://accessible-eu-centre.ec.europa.eu/content-corner/digital-library/en-171612019-design-all-accessibility-following-design-all-approach-products-goods-and-services_en",
+      "url_status": "verified",
+      "note": "검증된 링크는 EU 집행위 AccessibleEU 소개 페이지. 표준 원문은 각국 표준기관을 통해 판매됨.",
+      "description": "제품·재화·서비스를 장애인을 포함한 최대한 넓은 사용자층이 접근·이해·사용할 수 있도록 하는 'Design for All' 접근을 규정한 유럽표준. easy-read 특화 표준은 아니나 이해가능성(understandability)을 포괄한다."
+    },
+    {
+      "id": "int-10",
+      "region": "EU",
+      "org_type": "유럽 자기옹호 연맹(ILSMH, Inclusion Europe 전신)",
+      "organization": "ILSMH European Association (현 Inclusion Europe)",
+      "title": "Make it Simple: European Guidelines for the Production of Easy-to-Read Information for People with Learning Disability",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "1998",
+      "url": "https://asksource.info/resources/make-it-simple-european-guidelines-production-easy-read-information-people-learning",
+      "url_status": "unverified",
+      "note": "서지정보는 다수 출처로 확인되나 무료 전문 PDF는 검증되지 않음. 카탈로그 페이지가 자동 수집을 차단.",
+      "description": "1998년 발간된 최초의 유럽 easy-to-read 가이드라인. Inclusion Europe의 'Information for all' 표준의 역사적 전신이자 유럽 easy-read 실무의 토대 문헌."
+    },
+    {
+      "id": "un-01",
+      "region": "UN",
+      "org_type": "국제연합(OHCHR)",
+      "organization": "United Nations / OHCHR",
+      "title": "Convention on the Rights of Persons with Disabilities (CRPD) — 장애인권리협약 전문",
+      "category": [
+        "law_policy"
+      ],
+      "language": "multi",
+      "year": "2006",
+      "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-persons-disabilities",
+      "url_status": "verified",
+      "description": "장애인권리협약(2006 채택)의 OHCHR 공식 전문. 제2조는 '의사소통'에 쉬운 언어(plain language)·접근가능한 멀티미디어 등을 포함하고, 제9조는 정보·통신 접근성, 제21조는 접근 가능한 형식의 공공정보 제공을 규정한다."
+    },
+    {
+      "id": "un-02",
+      "region": "UN",
+      "org_type": "국제연합(UN DESA)",
+      "organization": "United Nations DESA",
+      "title": "CRPD 허브 (전문·수어·easy-read 형식 제공)",
+      "category": [
+        "law_policy",
+        "portal_center"
+      ],
+      "language": "multi",
+      "year": "2006",
+      "url": "https://social.desa.un.org/issues/disability/crpd/convention-on-the-rights-of-persons-with-disabilities-crpd",
+      "url_status": "verified",
+      "description": "UN DESA 장애 허브의 CRPD 페이지. 6개 UN 공용어 전문과 수어·easy-read 형식, 조문별 탐색, CRPD 위원회 링크를 제공한다."
+    },
+    {
+      "id": "un-03",
+      "region": "UN",
+      "org_type": "국제연합(UN DESA)",
+      "organization": "United Nations DESA",
+      "title": "CRPD 제21조 — 표현·의견의 자유와 정보 접근",
+      "category": [
+        "law_policy"
+      ],
+      "language": "en",
+      "year": "2006",
+      "url": "https://un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-21-freedom-of-expression-and-opinion-and-access-to-information.html",
+      "url_status": "verified",
+      "description": "정보 접근에 관한 CRPD 제21조 공식 페이지. 당사국이 일반 공중 대상 정보를 장애 유형에 맞는 접근 가능한 형식·기술로, 적시에, 추가 비용 없이 제공하도록 의무화한다(easy-read의 국제 규범적 근거)."
+    },
+    {
+      "id": "un-04",
+      "region": "UN",
+      "org_type": "국제연합(OHCHR)",
+      "organization": "United Nations / OHCHR",
+      "title": "CRPD documents in plain language and Easy Read versions",
+      "category": [
+        "example",
+        "law_policy",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.ohchr.org/en/treaty-bodies/crpd/documents-plain-language-and-easy-read-versions",
+      "url_status": "verified",
+      "description": "CRPD 위원회 문서의 쉬운 언어·Easy Read 버전을 제공하는 OHCHR 공식 페이지. 일반논평 제4호(통합교육)·제7호(참여) 등의 Easy Read 버전을 담은 UN 공인 easy-read 인권자료의 대표 출처."
+    },
+    {
+      "id": "un-05",
+      "region": "UN",
+      "org_type": "국제연합(총회 의장실)",
+      "organization": "United Nations General Assembly",
+      "title": "Easy-to-Read / Easy-to-Understand Communication — Concept Note",
+      "category": [
+        "law_policy"
+      ],
+      "language": "en",
+      "year": "2023",
+      "url": "https://www.un.org/pga/77/wp-content/uploads/sites/105/2023/05/Easy-to-Read_Concept-Note.pdf",
+      "url_status": "verified",
+      "description": "UN 총회 개념노트(2023.6). easy-to-understand 의사소통을 '쉬운 단어와 이미지를 결합한' 접근성 수단으로 규정하고, UN·회원국 실무에 easy-read를 도입하기 위한 고위급 회의와 총회 결의(2023.12)를 뒷받침했다."
+    },
+    {
+      "id": "un-06",
+      "region": "UN",
+      "org_type": "국제연합(글로벌커뮤니케이션국)",
+      "organization": "United Nations Department of Global Communications",
+      "title": "Disability-Inclusive Communications Guidelines",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2021",
+      "url": "https://unprpd.org/new/wp-content/uploads/2023/12/UN_Disability-Inclusive_Comms_Guidelines_FINAL-d8a.pdf",
+      "url_status": "verified",
+      "description": "UN 시스템 전반의 장애포용 커뮤니케이션 제작 지침(2021.6). Easy-to-Read 문서·쉬운 언어·도해 등 접근 가능한 형식을 다루며, UN 장애포용전략의 easy-to-read 버전을 예시로 든다."
+    },
+    {
+      "id": "un-07",
+      "region": "UN",
+      "org_type": "국제기구(WHO)",
+      "organization": "World Health Organization (WHO)",
+      "title": "What countries can do to make health systems better for people with disabilities — A guide for action (EasyRead version)",
+      "category": [
+        "example"
+      ],
+      "language": "en",
+      "year": "2023",
+      "url": "https://cdn.who.int/media/docs/default-source/disability/disability-inclusion-guide-for-action_easyread-version.pdf",
+      "url_status": "verified",
+      "description": "장애인 건강형평성에 관한 WHO 행동지침의 공식 EasyRead 버전. 유럽 EasyRead 표준을 충족한다고 명시되어 있어 국제기구 easy-read 실물 사례로 유용하다."
+    },
+    {
+      "id": "uk-01",
+      "region": "UK",
+      "org_type": "비영리(전국 학습장애 단체)",
+      "organization": "Mencap",
+      "title": "Easy Read library",
+      "category": [
+        "example",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.mencap.org.uk/easy-read-library",
+      "url_status": "verified",
+      "description": "영국 Mencap의 무료 Easy Read 문서 라이브러리(건강·선거·캠페인·정책). 짧은 문장, 쉬운 단어, 사진 이미지를 사용하며 모든 자료를 무료로 내려받아 인쇄·보관할 수 있다."
+    },
+    {
+      "id": "uk-02",
+      "region": "UK",
+      "org_type": "비영리(전국 학습장애 단체)",
+      "organization": "Mencap",
+      "title": "Easy Read — What is Easy Read (개념·기본 제작 안내)",
+      "category": [
+        "portal_center",
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.mencap.org.uk/easy-read",
+      "url_status": "verified",
+      "description": "Easy Read가 무엇인지 설명하는 Mencap의 허브. 페이지당 한 문장, 문장을 대표하는 이미지, 쉬운 언어 원칙과 함께 당사자 참여·사진 선호·사전 검수 등 기본 제작 지침을 제공한다."
+    },
+    {
+      "id": "uk-03",
+      "region": "UK",
+      "org_type": "비영리(학습장애 당사자 주도)",
+      "organization": "CHANGE",
+      "title": "Free Easy Read Resources ('How to Make Information Accessible' 가이드 포함)",
+      "category": [
+        "guideline_standard",
+        "example",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.changepeople.org/resources",
+      "url_status": "verified",
+      "description": "학습장애 당사자 주도 단체 CHANGE의 무료 Easy Read 자료. 'How to Make Information Accessible' 상세 가이드와 접근 가능한 정보 표준 안내, 건강·권리·웰빙 예시 책자를 제공하며 손그림 일러스트와 별도 이미지 뱅크를 운영한다."
+    },
+    {
+      "id": "uk-04",
+      "region": "UK",
+      "org_type": "상용 이미지 뱅크(사실상 표준)",
+      "organization": "Photosymbols",
+      "title": "Learning Disability Image Bank & Easy Read Images",
+      "category": [
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.photosymbols.com/",
+      "url_status": "verified",
+      "description": "2003년부터 NHS·자선단체·정부가 널리 쓰는 영국 Easy Read 사진 라이브러리. 학습장애 커뮤니티가 함께 만든 실제 인물 사진·픽토그램과 EasyMaker 저작도구, 교육을 제공한다(구독제, 사실상의 표준)."
+    },
+    {
+      "id": "uk-05",
+      "region": "UK",
+      "org_type": "정부기관(NHS England)",
+      "organization": "NHS England",
+      "title": "Accessible Information Standard (DAPB1605)",
+      "category": [
+        "law_policy",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "2025",
+      "url": "https://www.england.nhs.uk/publication/accessible-information-standard/",
+      "url_status": "verified",
+      "description": "장애인의 정보·의사소통 요구를 식별·기록·충족하도록 의무화한 NHS/성인 사회복지 표준. Easy Read 등 접근 가능한 형식 제공을 요구하며, 최신판(2025.6.30 재발간)에 이행지침·자기점검 도구와 Easy Read·BSL 버전을 포함한다."
+    },
+    {
+      "id": "uk-06",
+      "region": "UK",
+      "org_type": "정부기관(NHS England)",
+      "organization": "NHS England",
+      "title": "Accessible Information Standard — Requirements (Easy Read version)",
+      "category": [
+        "law_policy",
+        "example"
+      ],
+      "language": "en",
+      "year": "2025",
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2025/06/ais-requirements-specification-easy-read-v2.pdf",
+      "url_status": "verified",
+      "description": "Accessible Information Standard 요구사항의 공식 Easy Read PDF. 서비스·발주자·IT 시스템이 지켜야 할 규칙을 쉬운 문장과 그림으로 설명하며, Easy Read의 실제 작성례 역할도 한다."
+    },
+    {
+      "id": "uk-07",
+      "region": "UK",
+      "org_type": "정부기관(NHS England)",
+      "organization": "NHS England",
+      "title": "Making health information accessible for people with a learning disability (guidance)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2018",
+      "url": "https://www.england.nhs.uk/wp-content/uploads/2018/06/LearningDisabilityAccessCommsGuidance.pdf",
+      "url_status": "verified",
+      "description": "접근 가능한 정보 제작에 관한 NHS England 지침(2018.6). 약 15단어 이내 짧은 문장, 능동·인칭 표현, 14pt 이상 산세리프, 텍스트와 일치하는 이미지, 약 22쪽 이내, 당사자 대상 검증 등 상세한 Easy Read 기준을 제시한다."
+    },
+    {
+      "id": "uk-08",
+      "region": "UK",
+      "org_type": "정부기관(내각부 GCS)",
+      "organization": "Government Communication Service (Cabinet Office)",
+      "title": "Inclusive and accessible communications",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.communications.gov.uk/guidance/accessible-communications/",
+      "url_status": "verified",
+      "description": "영국 정부 커뮤니케이션청(GCS)의 공공부문 접근 가능한 커뮤니케이션 제작 지침(WCAG 2.2, 쉬운 언어, 대체텍스트, PDF보다 HTML, 당사자 사용자 검증). Easy Read 전문 자료로도 연결한다."
+    },
+    {
+      "id": "uk-09",
+      "region": "UK",
+      "org_type": "정부기관(내각부 장애정책국)",
+      "organization": "Cabinet Office Disability Unit (GOV.UK)",
+      "title": "Accessible communication formats",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2026",
+      "url": "https://www.gov.uk/government/publications/inclusive-communication/accessible-communication-formats",
+      "url_status": "verified",
+      "description": "정부가 제공해야 할 접근 가능한 형식(Easy Read, 오디오, BSL, 점자, 큰 글씨)을 설명하는 GOV.UK 공식 지침. Easy Read를 '쉬운 텍스트의 의미를 돕는 명확한 이미지'로 정의하고 당사자 참여·제작 시간 확보·HTML 게시를 권고한다."
+    },
+    {
+      "id": "uk-10",
+      "region": "UK",
+      "org_type": "정부부처(DWP)",
+      "organization": "Department for Work and Pensions (GOV.UK)",
+      "title": "Easy Read: Access to Work (일하는 장애인 지원제도 쉬운 안내)",
+      "category": [
+        "example"
+      ],
+      "language": "en",
+      "year": "2023",
+      "url": "https://www.gov.uk/government/publications/easy-read-get-help-at-work-if-youre-disabled-or-have-a-health-condition-access-to-work",
+      "url_status": "verified",
+      "description": "영국 노동연금부(DWP)의 Access to Work 제도(개요·자격·신청·면접 의사소통 지원)를 설명하는 GOV.UK 공식 Easy Read 발간물 예시. 웨일스어판도 제공(고용 영역 참고에 유용)."
+    },
+    {
+      "id": "uk-11",
+      "region": "UK",
+      "org_type": "정부부처(보건부) / Inspired Services 호스팅",
+      "organization": "Department of Health (UK)",
+      "title": "Making written information easier to understand for people with learning disabilities (2010 개정판)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2010",
+      "url": "https://inspiredservices.org.uk/wp-content/uploads/Government-EasyRead-Guidance.pdf",
+      "url_status": "verified",
+      "description": "영국 보건부의 대표적 Easy Read 지침(2010 개정판). 당사자 참여, 16pt 이상 산세리프, 텍스트 왼쪽의 그림, 15단어 이내 문장, 전문용어 지양, 당사자 검증 등 공공기관 Easy Read 발주·제작 기준을 제시한다."
+    },
+    {
+      "id": "uk-12",
+      "region": "UK",
+      "org_type": "지방정부(스코틀랜드)",
+      "organization": "Scottish Government (Digital Scotland Service Manual)",
+      "title": "Easy Read guidance",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://servicemanual.gov.scot/easy-read",
+      "url_status": "verified",
+      "description": "스코틀랜드 정부 서비스 매뉴얼의 Easy Read 지침. 사용자 조사로 필요가 확인될 때만 제작, 인증 교육 이수, Arial 14~16pt·1.5 줄간격, 텍스트 왼쪽 이미지, 12단어 이하 문장, 쉬운 영어판 병행 등을 권고한다."
+    },
+    {
+      "id": "uk-13",
+      "region": "UK",
+      "org_type": "지방정부(스코틀랜드)",
+      "organization": "Scottish Government (gov.scot)",
+      "title": "A National Care Service for Scotland consultation: easy read",
+      "category": [
+        "example"
+      ],
+      "language": "en",
+      "year": "2021",
+      "url": "https://www.gov.scot/publications/national-care-service-scotland-consultation-easy-read/",
+      "url_status": "verified",
+      "description": "2021년 국가돌봄서비스 공청회 자료의 easy read 버전. 7개 장을 쉬운 언어와 이미지로 구성해 학습장애인이 공청회에 참여할 수 있게 한 스코틀랜드 정부 Easy Read 예시."
+    },
+    {
+      "id": "uk-14",
+      "region": "UK",
+      "org_type": "비영리(웨일스, 정부 지원 서비스)",
+      "organization": "Learning Disability Wales (Easy Read Wales)",
+      "title": "Easy Read Wales",
+      "category": [
+        "portal_center",
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.ldw.org.uk/easy-read-wales/",
+      "url_status": "verified",
+      "description": "Learning Disability Wales가 운영하는 접근 가능한 정보 서비스. 인정 표준에 따른 Easy Read 번역·디자인, 스크린리더 호환 PDF, Easy Read 영상, 영어/웨일스어 산출을 제공하고 용어사전·핸드북·품질점검 도구 등 무료 자료를 배포한다."
+    },
+    {
+      "id": "uk-15",
+      "region": "UK",
+      "org_type": "지방정부(웨일스)",
+      "organization": "Welsh Government (gov.wales)",
+      "title": "Get ready for 20 miles per hour (Easy Read leaflet)",
+      "category": [
+        "example"
+      ],
+      "language": "en",
+      "year": "2023",
+      "url": "https://www.gov.wales/sites/default/files/publications/2023-08/20mph-campaign-english-leaflet-easy-read.pdf",
+      "url_status": "verified",
+      "description": "2023년 주택가 기본 제한속도 30→20mph 변경을 쉬운 그림과 문장으로 설명한 웨일스 정부 Easy Read 리플릿 예시."
+    },
+    {
+      "id": "au-01",
+      "region": "Australia",
+      "org_type": "정부기관(디지털전환청 DTA)",
+      "organization": "Australian Government — Style Manual (Digital Transformation Agency)",
+      "title": "Easy Read (정부 스타일 매뉴얼 콘텐츠 유형)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.stylemanual.gov.au/content-types/easy-read",
+      "url_status": "verified",
+      "description": "호주 정부 스타일 매뉴얼의 Easy Read 제작 지침. 핵심 요약, 4~6학년 수준, 3음절 이상 단어 굵게·정의, 왼쪽 이미지·오른쪽 텍스트, 14pt 이상·1.5 줄간격, 당사자 참여, 접근 가능한 PDF+HTML 게시를 규정한다(Easy Read와 Easy English 구분)."
+    },
+    {
+      "id": "au-02",
+      "region": "Australia",
+      "org_type": "비영리(전국 지적장애 옹호단체)",
+      "organization": "Council for Intellectual Disability (CID)",
+      "title": "Easy Read training",
+      "category": [
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://cid.org.au/easyread/",
+      "url_status": "verified",
+      "description": "CID가 조직을 대상으로 더 접근 가능하고 포용적으로 글 쓰는 법을 가르치는 Easy Read 교육(종일 대면 또는 3시간 온라인 'Easy Read Express'). 단일 다운로드 가이드보다 강사 주도 교육으로 노하우를 전달한다."
+    },
+    {
+      "id": "au-03",
+      "region": "Australia",
+      "org_type": "비영리(전국 지적장애 옹호단체)",
+      "organization": "Council for Intellectual Disability (CID)",
+      "title": "Resources (Easy Read 정보시트·가이드)",
+      "category": [
+        "example",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://cid.org.au/resources/",
+      "url_status": "verified",
+      "description": "지적장애인을 위한 CID의 Easy Read 정보시트·가이드 라이브러리(건강, 지원의사결정, 일자리·교육, NDIS, 권리, 기술). 'I can decide', 'My hormones' 시리즈 등 예시 자료를 Easy Read·영상·번역 형식으로 제공한다."
+    },
+    {
+      "id": "au-04",
+      "region": "Australia",
+      "org_type": "비영리(전국 지적장애 대표기구)",
+      "organization": "Inclusion Australia",
+      "title": "A Guide to Commissioning Easy Read Resources",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2023",
+      "url": "https://www.inclusionaustralia.org.au/wp-content/uploads/2023/04/A-Guide-to-Commissioning-Easy-Read-Resources.pdf",
+      "url_status": "verified",
+      "description": "지적장애 당사자 자문위원과 공동 제작한 Easy Read 발주 가이드. 약 5쪽 이내, 16단어 이하 한 문장 한 아이디어, 왼쪽 1/3 이미지·오른쪽 2/3 텍스트, 산세리프 14pt 이상, 고대비, 당사자 검증, 약 6주 제작기간 등 기준을 제시하고 Easy Read와 Plain English를 구분한다."
+    },
+    {
+      "id": "au-05",
+      "region": "Australia",
+      "org_type": "독립기관(선거관리)",
+      "organization": "Australian Electoral Commission (AEC)",
+      "title": "Easy Read guides (선거·투표 쉬운 안내)",
+      "category": [
+        "example",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.aec.gov.au/about_aec/Publications/easy-read/",
+      "url_status": "verified",
+      "description": "연방 선거관리위원회(AEC)의 선거인 등록·투표 방법(현장 투표, 우편 투표, 2023 국민투표 안내 등) Easy Read 가이드 모음. 쉬운 언어와 그림으로 제작되며 12개 커뮤니티 언어로도 제공된다."
+    },
+    {
+      "id": "ie-01",
+      "region": "Ireland",
+      "org_type": "비영리(전국 지적장애 단체)",
+      "organization": "Inclusion Ireland",
+      "title": "Accessible Information Resources",
+      "category": [
+        "guideline_standard",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.inclusionireland.ie/resources/accessible-information/",
+      "url_status": "verified",
+      "description": "접근 가능한 정보(easy-to-read 레이아웃, 보조 이미지, 자막 영상) 제작법을 안내하는 Inclusion Ireland 허브. 도구 추천, Photosymbols 이미지 연계, 국가장애청(NDA)·AHEAD 등 추가 지침과 easy-to-read 예시로 연결하고 당사자 검증을 강조한다."
+    },
+    {
+      "id": "ie-02",
+      "region": "Ireland",
+      "org_type": "비영리(전국 지적장애 단체)",
+      "organization": "Inclusion Ireland",
+      "title": "Easy to Read publications",
+      "category": [
+        "example"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.inclusionireland.ie/publication-categories/easy-to-read/",
+      "url_status": "verified",
+      "description": "Inclusion Ireland의 easy-to-read 발간물 아카이브(예산 제안서, 연차보고서, 정책·조사 성명의 접근 가능 버전 등). 아일랜드의 실제 easy-to-read 문서 예시를 제공한다."
+    },
+    {
+      "id": "ie-03",
+      "region": "Ireland",
+      "org_type": "정부지원 기관(성인문해)",
+      "organization": "National Adult Literacy Agency (NALA)",
+      "title": "Plain English guidelines at a glance",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "2008",
+      "url": "https://www.nala.ie/publications/plain-english-guidelines-at-a-glance/",
+      "url_status": "verified",
+      "description": "문서·웹페이지를 읽기 쉽게 만드는 NALA의 14가지 쉬운 영어(plain English) 팁(PDF). 접근 가능한 공공정보의 토대가 되는 아일랜드의 대표 쉬운 언어 지침(그림 기반 Easy Read와는 구분되는 기초)."
+    },
+    {
+      "id": "ie-04",
+      "region": "Ireland",
+      "org_type": "정부지원 기관(성인문해)",
+      "organization": "National Adult Literacy Agency (NALA)",
+      "title": "Plain English resources",
+      "category": [
+        "portal_center",
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.nala.ie/plain-english-resources/",
+      "url_status": "verified",
+      "description": "NALA의 쉬운 영어 자료 허브. 자체 작성·디자인 팁과 체크리스트, 유럽집행위·HSE·NDA 커뮤니케이션 툴킷 등 외부 지침, 대비 검사 도구를 모은 명료한 소통 베스트프랙티스 포털."
+    },
+    {
+      "id": "ie-05",
+      "region": "Ireland",
+      "org_type": "정부기관(법정기구)",
+      "organization": "Citizens Information Board",
+      "title": "Accessible Information for All",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.citizensinformationboard.ie/downloads/accessibility/Accessible_Information_For_All.pdf",
+      "url_status": "verified",
+      "description": "아일랜드 법정기구 Citizens Information Board의 접근 가능한 정보 제작 지침(12개 팩트시트). 짧고 명확하며 삽화가 있고 핵심 메시지 중심으로 구성한 easy-to-read 문서, 14pt 이상·강한 대비·한 문장 한 아이디어, 당사자 자문 등을 다룬다."
+    },
+    {
+      "id": "nz-01",
+      "region": "New Zealand",
+      "org_type": "비영리(전국 자기옹호 단체)",
+      "organization": "People First New Zealand Ngā Tāngata Tuatahi — Make It Easy",
+      "title": "Make It Easy Kia Māmā Mai (Easy Read 번역·자문·교육 서비스)",
+      "category": [
+        "portal_center",
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.makeiteasy.org.nz/",
+      "url_status": "verified",
+      "description": "뉴질랜드 학습장애인 자기옹호 단체 People First가 운영하는 Easy Read(Pānui Māmā) 번역·자문·교육 서비스. 정부·기관 정보를 단어·페이지 레이아웃·글꼴·이미지 기준에 맞춘 Easy Read로 변환한다(선거관리위원회·자연보전부 등과 협업)."
+    },
+    {
+      "id": "nz-02",
+      "region": "New Zealand",
+      "org_type": "비영리(전국 자기옹호 단체)",
+      "organization": "People First New Zealand Ngā Tāngata Tuatahi",
+      "title": "Easy Read (Pānui Māmā) 안내",
+      "category": [
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.peoplefirst.org.nz/what-we-do/easy-read",
+      "url_status": "verified",
+      "description": "Easy Read(쉬운 언어·명확한 문장 구조·보조 그림)와 'Make it Easy' 번역 서비스를 설명하는 People First NZ 페이지. 수혜 대상(지적장애인, 영어 학습자, 저문해, 일부 고령·농인)과 접근 가능한 정보 출처를 안내한다."
+    },
+    {
+      "id": "nz-03",
+      "region": "New Zealand",
+      "org_type": "비영리(전국 자기옹호 단체)",
+      "organization": "People First New Zealand Ngā Tāngata Tuatahi",
+      "title": "Easy Read Library",
+      "category": [
+        "example",
+        "portal_center"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.peoplefirst.org.nz/easy-read-library",
+      "url_status": "verified",
+      "description": "Make it Easy 팀이 파트너 기관을 위해 번역한 Easy Read 문서 공개 라이브러리(정부·법률, 건강, 주거, 돈, 일, 권리 등 13개 주제). 뉴질랜드 장애전략·지원의사결정 안내 등 실제 예시를 제공한다."
+    }
+  ]
+}

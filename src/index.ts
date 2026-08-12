@@ -8,12 +8,14 @@
  */
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { loadDictionary } from "./data/dictionary.js";
+import { loadResources } from "./data/resources.js";
 import { createServer } from "./server.js";
 
 async function main(): Promise<void> {
-  // 사전 데이터 로드(실패 시 throw → 아래 catch에서 stderr 후 exit 1).
+  // 데이터 로드(실패 시 throw → 아래 catch에서 stderr 후 exit 1).
   const dictionary = loadDictionary();
-  const server = createServer(dictionary);
+  const resources = loadResources();
+  const server = createServer(dictionary, resources);
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
