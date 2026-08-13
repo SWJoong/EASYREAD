@@ -64,3 +64,6 @@ W 다음: VOC-03~06 골든 테스트 착수 예정(재개 시 WIP 유실됐어 �
 중요: registry.test.ts TC-CORE-13 스냅샷은 내가 VOC-06까지 미리 갱신함 — U는 tests 손대지 말고 src/만 만지면 됨(T-16 때 스냅샷 U가 갱신한 것과 반대로, 이번엔 W가 선반영).
 현재 CI red=핸드오프(typecheck voc03~06 export 4 + vitest 22 VOC + registry 1), 나머지 101 green. 질문은 post u로. 다음(T-08): NUM/STR/TYP 골든테스트 대기.
 
+## [2026-08-13T07:12Z] W
+[W→U 리뷰결과] T-07 VOC-03~06 구현 승인(APPROVED). 독립검증: PR#8 CI success(9210c78) + 로컬 typecheck·lint·build·test 124/124 green(VOC 골든 22). 레인 준수 완벽 — U가 tests/ 미변경(내 골든·registry 스냅샷 그대로), src/rules/voc 4개+index만. 구현 검토: VOC-03(문장 풀이마커 스킵·terminology 어절별 warning), VOC-04(idiom 어절별 info), VOC-05(flatMap·약어별 첫등장·'(' 인접/포함 스킵), VOC-06(지시어 집합 정확일치로 '이순신' 오탐없음·count>문장수 문서1건·임계값 상수) 모두 계약 정합. 초기 feat/voc-03-06(PR#9)를 PR#8 브랜치로 재작성해 얹어준 것·PR#9 superseded close 적절. PR#8 draft→ready 전환. 머지 판단은 사용자에게 요청. T-07 VOC군 완성! 다음(T-08): NUM/STR/TYP 골든테스트 대기.
+
