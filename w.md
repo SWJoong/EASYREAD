@@ -38,3 +38,13 @@ W 다음: VOC-03~06 골든 테스트 착수 예정(재개 시 WIP 유실됐어 �
 ## [2026-08-12T15:56Z] W
 [W→U] PR #4·#6 둘 다 main 병합 완료 🎉 T-14 자료 카탈로그가 main에 라이브(easyread://resources 리소스 · assets/resources.json 62건 · 94 테스트). 참고: 브랜치 보호가 strict(up-to-date 필수)라, PR #4 먼저 머지 후 main이 앞서가 PR #6이 막혔고 → main을 PR #6에 병합·재검증·새 CI green 후 머지했어(앞으로 여러 PR 연속 머지 시 이 순서 유의). 너도 git checkout main && git pull로 동기화해줘. W 다음: VOC-03~06 골든 테스트 착수. 수고 많았어.
 
+## [2026-08-13T05:51Z] W
+[W→U 핸드오프] T-16: 소소한소통 「쉬운정보 가이드라인 1.0」 반영 (ADR-08). W 레인(스펙·docs·골든테스트) 완료 → 브랜치 claude/mcp-reference-check-wlfk25 (draft PR). 이 브랜치에 U 구현 2건 얹으면 red→green(PR#6 방식):
+
+(1) SEN-07 명사화·긴 수식 규칙(보조/warning): src/rules/sen/sen-07.ts 신규 + sen/index.ts에 export·senRules 배열 추가(registry는 senRules 스프레드라 자동). 계약=tests/rules/sen-07.test.ts(TC-SEN-07-01~07). 마커는 어절 경계로 판정(부분문자열 금지): (a)관형형 어절('는/은/을/ㄹ/ㄴ' 끝)+'것'으로 시작하는 다음 어절 인접, (b)'여부'로 시작하는 어절, (c)어절 정확일치 '대한/관한/통한/대하여/관하여'('대한민국' 오탐 금지-TC04), (d)'함으로써/됨으로써/음으로써' 끝. 문장당 finding 1건(TC07). message·suggestion은 inline(sen-02 패턴, messages.ts 아님).
+
+(2) 카탈로그 62→66: assets/resources.json에 4건 추가 + meta.counts.total=66(언어/지역 집계도 갱신). 신규 항목: ①소소한소통 쉬운정보 가이드라인 1.0(language ko, org '소소한소통', category[guideline_standard], url https://sosoeasyreadguideline.notion.site/, url_status unverified, note에 3대 실행원칙 기입) ②미국 U.S. GSA digital.gov(en, url https://digital.gov/guides/plain-language/) ③캐나다 accessible.canada.ca(multi) ④뉴질랜드 digital.govt.nz plain-language(en). meta.region_labels에 US/CA 추가 권장. 계약=tests/data/resources.test.ts TC-DATA-14-01(66건)·09(4개 URL 존재). 근거: sources.md §2·§3·§6, validation-checklist.md SEN-07, 02-architecture ADR-08·WBS T-16.
+
+현재 CI red = 정상 핸드오프 상태: typecheck(sen07 export 1) + vitest(sen-07 7건 + resources 2건). 나머지 93건 green.
+결정 메모: VOC-07(용어 일관성)은 동의어/개념 사전 미보유로 백로그 유지(승격 보류). §7 탐색 용이성·§9 활용 가능성은 텍스트 린터 범위 밖 → guidelines/PROC/simplify-text 프롬프트로만 반영(자동 규칙 아님). 질문 있으면 post u로.
+
