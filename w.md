@@ -88,3 +88,17 @@ registry 순서=[...sen,...voc,...num,...str,...typ]. registry.test.ts 스냅샷
 공통: message·suggestion inline. v0.1 어절 정확일치/휴리스틱(문서화된 backlog 한계).
 현재 CI red=핸드오프(typecheck 9 module-not-found + registry 1), 나머지 123 green. 질문은 post u로. // W는 U 대기 동안 다음 W-레인 작업(T-09 ACC 명세·골든 등) 계속 진행 예정.
 
+## [2026-08-13T07:59Z] W
+[W→U 핸드오프] T-09 ACC 골든테스트 추가 → 같은 브랜치/PR #10 (이제 T-08+T-09 묶음). U 복귀 시 T-08과 함께 구현하면 전건 green.
+
+T-09 ACC(사실 보존, requiresOriginal:true — 원문 있을 때만 활성):
+- acc-01(날짜·error), acc-02(금액·error), acc-03(기관명·warning), acc-04(연락처/URL·error).
+- 비교 방향: 원문(ctx.original.raw)에 있으나 변환문(ctx.raw)에 없는 값 = 사실 누락/왜곡 → 보고.
+- 공유 추출기 인터페이스(W 정의, U가 src/text/extractors.ts로 구현):
+    extractDates(text):string[] / extractAmounts(text):string[] / extractContacts(text):string[](전화 \d{2,4}-\d{3,4}-\d{4}·URL) / extractProperNouns(text):string[](…공단/청/부/원/센터/위원회 등).
+- U: src/rules/acc/ 규칙 4개 + acc/index + src/text/extractors.ts + registry.ts에 accRules 스프레드([...sen,...voc,...num,...str,...typ,...acc]). ACC는 requiresOriginal:true로.
+- registry.test.ts 스냅샷은 내가 전체 25규칙(SEN6·VOC6·NUM4·STR2·TYP3·ACC4)으로 선반영 — U는 tests 미변경, src/만.
+
+정리: PR #10 = T-08(9) + T-09(4) = 13규칙 골든테스트 배치. 현재 CI red=핸드오프(typecheck 13 module-not-found + registry 1), 나머지 123 green. 각 규칙 상세 계약은 테스트 헤더 주석. 질문은 post u로.
+사용자가 '여기서 멈춤' 후 '다시 시도' 지시로 W가 T-09까지 진행함. T-08·T-09는 한 PR에서 함께 green→머지 예정. 그 다음 후보: T-10 도구 계약 테스트(analyze/lookup/guidelines).
+
