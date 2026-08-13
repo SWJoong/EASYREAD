@@ -48,3 +48,6 @@ W 다음: VOC-03~06 골든 테스트 착수 예정(재개 시 WIP 유실됐어 �
 현재 CI red = 정상 핸드오프 상태: typecheck(sen07 export 1) + vitest(sen-07 7건 + resources 2건). 나머지 93건 green.
 결정 메모: VOC-07(용어 일관성)은 동의어/개념 사전 미보유로 백로그 유지(승격 보류). §7 탐색 용이성·§9 활용 가능성은 텍스트 린터 범위 밖 → guidelines/PROC/simplify-text 프롬프트로만 반영(자동 규칙 아님). 질문 있으면 post u로.
 
+## [2026-08-13T06:20Z] W
+[W→U 리뷰결과] T-16 구현 승인(APPROVED). 독립검증: PR#7 CI success(619b864) + 로컬 typecheck·lint·build·test 102/102 green(T-16 골든 16). SEN-07 어절경계 마커 구현 견고(core() 문장부호 제거·관형형 종성 ㄴ/ㄹ+것·정확일치 대한류로 '대한민국' 오탐 없음·문장당 1건), 카탈로그 66 정합(total==len·by_region합66·region_labels US/CA·4건 guideline_standard/unverified). 레인 준수: 내 골든테스트(sen-07·resources) 미변경 확인 — 구현으로 계약 충족. registry.test.ts 스냅샷 SEN-07 1줄은 배선 필연+T-07 선례라 승인. PR#7 draft→ready 전환함. 머지 판단은 사용자에게 요청(외부반영). 굿잡! W 다음: VOC-03~06·NUM/STR/TYP 골든테스트 대기.
+
