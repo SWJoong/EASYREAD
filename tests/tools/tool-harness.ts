@@ -3,6 +3,7 @@ import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { createServer } from "../../src/server.js";
 import { parseDictionary } from "../../src/data/dictionary.js";
 import type { Dictionary } from "../../src/rules/index.js";
+import type { Catalog } from "../../src/data/resources.js";
 
 /**
  * 도구 계약 테스트 공용 하네스(T-08 analyze/lookup/guidelines). validate.test.ts의 InMemory
@@ -13,9 +14,9 @@ export interface ConnectedClient {
   close: () => Promise<void>;
 }
 
-/** 서버·클라이언트를 인메모리로 연결한다. dictionary를 주면 analyze/lookup이 사전을 쓴다. */
-export async function connectClient(dictionary?: Dictionary): Promise<ConnectedClient> {
-  const server = createServer(dictionary);
+/** 서버·클라이언트를 인메모리로 연결한다. dictionary·catalog를 주면 해당 리소스도 등록된다. */
+export async function connectClient(dictionary?: Dictionary, catalog?: Catalog): Promise<ConnectedClient> {
+  const server = createServer(dictionary, catalog);
   const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
   const client = new Client({ name: "test-client", version: "0.0.0" });
   await Promise.all([server.connect(serverTransport), client.connect(clientTransport)]);

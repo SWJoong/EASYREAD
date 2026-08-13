@@ -17,8 +17,25 @@
 |---|---|---|---|
 | 단위 | `text/` 유틸, 규칙 함수(rules/**), 프롬프트 조립 함수 | vitest | 매 커밋(CI) |
 | 통합 | 도구 4종 계약(입력→structuredContent), 리소스·프롬프트 등록 | vitest + SDK InMemory transport | 매 커밋(CI) |
-| 성능 | NFR-02 (10,000자 validate 1초) | vitest bench 또는 시간 단정 테스트 | 매 커밋(CI, 여유 임계 2초로 완충) |
+| 성능 | NFR-02 (10,000자 validate 1초) | 시간 단정 테스트 | 매 커밋(CI, 1초 AC 단정 — CI 실측 ~65ms로 여유 큼) |
 | 수동 | Inspector 점검, Claude Desktop 시나리오 S1~S3 | MCP Inspector, Claude Desktop | 마일스톤 종료 시·릴리스 전 |
+
+### 2.1 구현 현황 (M2 완성 · 2026-08-13, 214 TC 전건 green)
+
+계획 단계의 "대표 케이스"(§3·§4·§5)가 전 규칙·전 도구·프롬프트·리소스로 확장 구현되었다. 실제 테스트 현황:
+
+| 영역 | 파일 | TC 접두 | 비고 |
+|---|---|---|---|
+| 규칙 골든 (25종) | `tests/rules/<규칙>.test.ts` | `TC-<규칙ID>-*` | SEN·VOC·NUM·STR·TYP·ACC. 위반/정상/경계 + 보조 규칙 오탐 방지 |
+| registry 통합 | `tests/rules/registry.test.ts` | `TC-CORE-13~15` | 등록 규칙 ID 스냅샷·validate·excludeRules |
+| 도구 계약 (4종) | `tests/tools/{validate,analyze,lookup,guidelines}.test.ts` | `TC-TOOL-{VALIDATE,ANALYZE,LOOKUP,GUIDELINES}-*` | SDK InMemory transport |
+| 프롬프트 (2종) | `tests/prompts/{simplify,review}.test.ts` | `TC-PROMPT-{SIMPLIFY,REVIEW}-*` | FR-05 3요소 · FR-08 규칙 ID 인용 |
+| 리소스 (FR-09) | `tests/resources/contract.test.ts` | `TC-RES-*` | guidelines·checklist·dictionary·resources MIME·내용 |
+| 통합 E2E | `tests/integration/e2e.test.ts` | `TC-INT-*` | 조립 서버로 전 FR 교차 검증 |
+| 성능 (NFR-02) | `tests/integration/nfr-perf.test.ts` | `TC-PERF-*` | 10,000자 검증 < 1초 |
+| 자료 카탈로그 | `tests/data/resources.test.ts` | `TC-DATA-14-*` | 66건 필수필드·URL·유일성 |
+
+품질 게이트(§7) 충족: 전건 통과 · `자동` 규칙 3종 케이스 보유 · NFR-02 통과. 진행 중 후속: `TC-RES-05`(기존 `easyread://resources` read 응답 `contents.mimeType` 누락) — 계약 테스트로 고정, U 구현 정리 대기.
 
 ## 3. 규칙별 골든 테스트
 
@@ -58,9 +75,9 @@
 | TC-TOOL-ANALYZE-01 | 3문장 표본 | 02 §3.1 통계 필드 전부 존재·값 검증 |
 | TC-TOOL-LOOKUP-01 | 등재어 "구비서류" | found=true, alternatives 포함 |
 | TC-TOOL-LOOKUP-02 | 미등재어 | found=false (오류 아님), related 배열 존재 |
-| TC-TOOL-GUIDE-01 | section="문장" | SEN 지침만, ruleIds가 SEN-*만 포함 |
-| TC-TOOL-PROMPT-01 | simplify-text 조립 | FR-05 AC 3요소(절차/정확성/감수 고지) 문자열 포함 |
-| TC-TOOL-RES-01 | 리소스 목록·조회 | easyread:// 3종 노출, MIME 일치 |
+| TC-TOOL-GUIDELINES-02 | section="문장" | SEN 지침만, ruleIds가 SEN-*만 포함 |
+| TC-PROMPT-SIMPLIFY-02 | simplify-text 조립 | FR-05 AC 3요소(절차/정확성/감수 고지) 문자열 포함 |
+| TC-RES-01 | 리소스 목록·조회 | easyread:// 지침·체크리스트·사전 노출, MIME 일치 |
 
 ## 5. 정확성(ACC) 테스트
 
@@ -108,3 +125,4 @@
 | 날짜 | 변경 | 작성 |
 |---|---|---|
 | 2026-08-09 | 최초 작성 | QA (qa 스킬) |
+| 2026-08-13 | M2 완성 반영 — §2.1 구현 현황(214 TC) 추가, 성능 임계 정정(1초 AC·실측 ~65ms), §4 TC ID 실구현 정합, `TC-RES-05`(easyread://resources mimeType) 후속 등록 | QA (W / qa 스킬) |
