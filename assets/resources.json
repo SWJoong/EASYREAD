@@ -19,28 +19,32 @@
       "UK": "영국",
       "Australia": "호주",
       "Ireland": "아일랜드",
-      "New Zealand": "뉴질랜드"
+      "New Zealand": "뉴질랜드",
+      "US": "미국",
+      "CA": "캐나다"
     },
     "counts": {
-      "total": 62,
+      "total": 66,
       "by_region": {
-        "KR": 17,
+        "KR": 18,
         "International": 5,
         "EU": 5,
         "UN": 7,
         "UK": 15,
         "Australia": 5,
         "Ireland": 5,
-        "New Zealand": 3
+        "New Zealand": 4,
+        "US": 1,
+        "CA": 1
       },
       "by_category": {
-        "guideline_standard": 29,
+        "guideline_standard": 33,
         "example": 24,
         "law_policy": 10,
         "portal_center": 25
       }
     },
-    "disclaimer": "자료 목록은 조사 시점(2026-08-11) 기준이며, 기관 사이트 개편에 따라 URL이 변경될 수 있음. 실제 활용 시 기관명·자료명으로 재검색 권장."
+    "disclaimer": "자료 목록은 조사 시점(2026-08-11, 2026-08-13 보강) 기준이며, 기관 사이트 개편에 따라 URL이 변경될 수 있음. 실제 활용 시 기관명·자료명으로 재검색 권장."
   },
   "resources": [
     {
@@ -1009,6 +1013,70 @@
       "url": "https://www.peoplefirst.org.nz/easy-read-library",
       "url_status": "verified",
       "description": "Make it Easy 팀이 파트너 기관을 위해 번역한 Easy Read 문서 공개 라이브러리(정부·법률, 건강, 주거, 돈, 일, 권리 등 13개 주제). 뉴질랜드 장애전략·지원의사결정 안내 등 실제 예시를 제공한다."
+    },
+    {
+      "id": "kr-18",
+      "region": "KR",
+      "org_type": "사회적기업(발달장애인 정보접근 전문)",
+      "organization": "소소한소통",
+      "title": "쉬운정보 가이드라인 1.0",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "ko",
+      "year": "2026",
+      "url": "https://sosoeasyreadguideline.notion.site/",
+      "url_status": "unverified",
+      "description": "발달장애인을 위한 쉬운정보(Easy-Read) 제작 국내 실무 1차 기준. 어휘(§8.2)·문장(§8.3)·숫자(§8.5) 세부기준과 색인 체계를 담으며, 명사화·긴 수식 풀어쓰기(§8.3.6)는 검증 규칙 SEN-07의 국내 근거다.",
+      "note": "3대 실행원칙: 탐색 용이성(정보를 쉽게 찾기)·이해 용이성(쉽게 이해하기)·활용 가능성(선택지·결과를 알고 활용하기). ISO 24495-1의 찾기·이해·사용 원칙과 정합한다."
+    },
+    {
+      "id": "us-01",
+      "region": "US",
+      "org_type": "정부(연방 총무청 디지털 서비스)",
+      "organization": "U.S. General Services Administration (GSA) · digital.gov",
+      "title": "Plain Language (digital.gov guides)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://digital.gov/guides/plain-language/",
+      "url_status": "unverified",
+      "description": "미국 연방정부 디지털 서비스 포털(digital.gov)의 쉬운 언어(Plain Language) 지침. 2010년 쉬운 글쓰기법(Plain Writing Act)에 근거해 독자 중심의 짧은 문장·능동태·쉬운 낱말을 안내한다. 소소한소통 가이드라인의 해외 정부 벤치마크.",
+      "note": "소소한소통 가이드라인 1.0이 참조한 해외 정부 Plain Language 벤치마크(ADR-08)."
+    },
+    {
+      "id": "ca-01",
+      "region": "CA",
+      "org_type": "정부·표준(캐나다 접근성 표준청)",
+      "organization": "Accessibility Standards Canada · Government of Canada",
+      "title": "Accessible and plain language resources (accessible.canada.ca)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "multi",
+      "year": "",
+      "url": "https://accessible.canada.ca/",
+      "url_status": "unverified",
+      "description": "캐나다 접근성 표준청의 접근 가능한 정보·쉬운 언어 자료 포털(영어·프랑스어 이중 언어). 접근성 표준과 이해하기 쉬운 공공 정보 제작 지침을 제공한다. 소소한소통 가이드라인의 해외 정부 벤치마크.",
+      "note": "소소한소통 가이드라인 1.0이 참조한 해외 정부 Plain Language 벤치마크(ADR-08)."
+    },
+    {
+      "id": "nz-04",
+      "region": "New Zealand",
+      "org_type": "정부(내무부 디지털 공공서비스)",
+      "organization": "New Zealand Government · digital.govt.nz",
+      "title": "Plain language (digital.govt.nz)",
+      "category": [
+        "guideline_standard"
+      ],
+      "language": "en",
+      "year": "",
+      "url": "https://www.digital.govt.nz/standards-and-guidance/design-and-ux/content-design-guidance/writing-style/plain-language/",
+      "url_status": "unverified",
+      "description": "뉴질랜드 정부 디지털 서비스 가이드의 쉬운 언어(Plain language) 지침. 2022년 쉬운 언어법(Plain Language Act)을 배경으로 공공 커뮤니케이션의 명료성·독자 중심 작성을 안내한다. 소소한소통 가이드라인의 해외 정부 벤치마크.",
+      "note": "소소한소통 가이드라인 1.0이 참조한 해외 정부 Plain Language 벤치마크(ADR-08)."
     }
   ]
 }
