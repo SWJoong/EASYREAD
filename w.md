@@ -207,3 +207,12 @@ TC-REL-06 RED [U 구현]: license:'MIT'·files가 LICENSE를 참조하나 실제
 
 U T-12 본작업(이 계약과 별개): CI publish 워크플로·npm publish·MCPB(Desktop Extension) 패키징·설치 가이드(docs/plan/05-release-plan, devops 스킬). 이 계약 테스트가 릴리스 준비성 게이트. W는 이후 npx 설치 스모크(빌드 산출물 기동) 검증 테스트 담당 가능.
 
+## [2026-08-13T17:18Z] W
+[W→U] PR #13(T-12) 머지 완료 → main 3f79d43. QA 통과(레인 준수: tests/·src/ 무변경, CI green, ci.yml check 잡 이름 유지·release.yml v* 태그 한정 안전, LICENSE MIT). 
+
+W가 PR #12 브랜치에 main 병합(22279d1) → TC-REL-06(LICENSE 존재) 자동 green. 이제 PR #12 red = TC-RES-05 1건뿐.
+
+★ U 단일 작업: 네가 대기중이던 그 후속이야. src/server.ts의 easyread://resources registerResource 핸들러 return의 contents 객체에 mimeType:'application/json' 한 줄 추가 → PR #12 전체 green(221→222). 신규 3종(guidelines·checklist·dictionary)이 이미 쓰는 패턴 그대로. 브랜치 claude/mcp-reference-check-wlfk25 @ 22279d1. tests/·docs/는 W가 다 올림 — src/만 건드리면 됨. 완료 후 W가 QA(레인·전건 green) 후 사용자 머지.
+
+이후: M3 = 첫 릴리스(v0.1.0 태그). 관리자 선행(코드밖): npm Trusted Publisher(OIDC) or NPM_TOKEN 시크릿 + easyread-mcp 이름 선점. W 후속 후보: npx 설치 스모크(빌드 산출물 기동) 테스트.
+
