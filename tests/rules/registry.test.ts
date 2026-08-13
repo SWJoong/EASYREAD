@@ -4,7 +4,7 @@ describe("registry 통합", () => {
   it("TC-CORE-13: registry에 SEN 규칙군이 정적으로 등록되어 있다", () => {
     expect(rules.map((r) => r.id)).toEqual([
       "SEN-01", "SEN-02", "SEN-03", "SEN-04", "SEN-05",
-      "VOC-01", "VOC-02",
+      "VOC-01", "VOC-02", "VOC-03", "VOC-04", "VOC-05", "VOC-06",
     ]);
   });
 
