@@ -1,12 +1,23 @@
+import { accRules } from "./acc/index.js";
+import { numRules } from "./num/index.js";
 import { senRules } from "./sen/index.js";
+import { strRules } from "./str/index.js";
+import { typRules } from "./typ/index.js";
 import { vocRules } from "./voc/index.js";
 import type { Rule } from "./types.js";
 
 /**
  * 전체 규칙 목록. 각 규칙군을 **정적 import**로 조립한다(동적 로딩 금지 — 번들·기동 단순성).
- * 규칙군이 늘면 이 배열에 추가한다(T-08: NUM·STR·TYP, T-10: ACC).
+ * ACC군은 requiresOriginal:true라 원문이 있을 때만 getActiveRules가 활성화한다.
  */
-export const rules: readonly Rule[] = [...senRules, ...vocRules];
+export const rules: readonly Rule[] = [
+  ...senRules,
+  ...vocRules,
+  ...numRules,
+  ...strRules,
+  ...typRules,
+  ...accRules,
+];
 
 export interface ActiveRuleOptions {
   readonly excludeRules?: readonly string[];
