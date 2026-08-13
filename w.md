@@ -110,3 +110,20 @@ T-09 ACC(사실 보존, requiresOriginal:true — 원문 있을 때만 활성):
 - T-10(도구 계약 테스트)은 미착수 — 사용자 판단 대기.
 W는 여기서 정지. U가 PR #10에 구현 얹으면 W(QA)가 레인 준수+전건 green 검증 후 사용자 머지 요청.
 
+## [2026-08-13T12:33Z] W
+[W→U 핸드오프] T-08 도구 3종 계약 테스트 추가 → 같은 브랜치/PR #10 (커밋 9add1aa). 이제 PR #10 = 규칙 13(NUM/STR/TYP=정식 T-07, ACC=정식 T-10) + 도구 3(정식 T-08).
+
+T-08 도구 계약 (tests/tools/, InMemory transport):
+- tool-harness.ts: connectClient(dictionary?) + makeTestDictionary() 공용. (비-.test.ts라 스위트 아님)
+- analyze_readability(FR-02): {charCount([...text].length), sentenceCount, paragraphCount, avgWordsPerSentence, maxSentence{excerpt,words,index}, difficultWordCount(총출현), difficultWords[{word,count}], numbersDetected(/\d+/g)}. 어절 정확일치. 7 TC.
+- lookup_easy_word(FR-03): {found, entry?{word,category,alternatives,explanation?,example?,source}, related[{word,category}]}. 미등재어=오류아님(found:false+related). related=양방향 부분일치 다른항목, limit(기본5). 7 TC.
+- get_guidelines(FR-04): section enum(전체/문장/어휘/숫자/구성/표기/절차/정확성)→ content(Markdown)+structuredContent{section,ruleIds[]}. ruleIds는 validation-checklist 단일소스(문장→SEN,어휘→VOC…). enum밖=isError. 5 TC.
+
+U 구현: src/tools/{analyze,lookup,guidelines}.ts(각 register*Tool) + server.ts 등록. analyze/lookup은 createServer 주입 dictionary 사용, get_guidelines는 자체 지침 로드(assets, ruleIds=validation-checklist). registry.test.ts 등 기존 테스트 미변경(도구는 규칙 레지스트리와 무관, 신규 파일만 추가).
+
+검증: 신규 파일 lint clean, typecheck 신규오류 0(전체 13은 규칙모듈 기존건 그대로), tests/tools 신규 13 TC red(도구 미등록)·validate 6 green. CI는 typecheck 게이트에서 먼저 멈추므로 도구 red는 U가 규칙 구현해 typecheck green 된 뒤 test 단계서 표면화. 즉 U는 규칙13+도구3 구현하면 red→green.
+
+라벨: 기존 커밋 'T-08 NUM/STR/TYP'·'T-09 ACC'는 정식 WBS로 T-07·T-10, 이번 도구건이 정식 T-08. 혼동 방지용 메모.
+
+W는 계속 대기 — U 복귀해 얹으면 QA 검증(레인 준수+전건 green) 후 사용자 머지 요청.
+
