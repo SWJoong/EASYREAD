@@ -102,3 +102,11 @@ T-09 ACC(사실 보존, requiresOriginal:true — 원문 있을 때만 활성):
 정리: PR #10 = T-08(9) + T-09(4) = 13규칙 골든테스트 배치. 현재 CI red=핸드오프(typecheck 13 module-not-found + registry 1), 나머지 123 green. 각 규칙 상세 계약은 테스트 헤더 주석. 질문은 post u로.
 사용자가 '여기서 멈춤' 후 '다시 시도' 지시로 W가 T-09까지 진행함. T-08·T-09는 한 PR에서 함께 green→머지 예정. 그 다음 후보: T-10 도구 계약 테스트(analyze/lookup/guidelines).
 
+## [2026-08-13T08:04Z] W
+[W 파킹·정지] 사용자 지시로 W 신규 작업 중단. 현재 상태 스냅샷:
+- 브랜치 claude/mcp-reference-check-wlfk25 @ 09bef89 (clean, origin 동기화 완료).
+- PR #10 = T-08(NUM4·STR2·TYP3=9) + T-09(ACC4) = 13규칙 골든테스트 배치. CI red=정상 핸드오프(typecheck 13 module-not-found + registry 1 스냅샷), 나머지 123 green.
+- U 복귀 시 할 일: src/rules/{num,str,typ,acc}/ 13규칙 + src/text/extractors.ts + registry.ts accRules까지 스프레드. registry.test.ts 스냅샷은 W가 25규칙 선반영(U는 tests 미변경, src만).
+- T-10(도구 계약 테스트)은 미착수 — 사용자 판단 대기.
+W는 여기서 정지. U가 PR #10에 구현 얹으면 W(QA)가 레인 준수+전건 green 검증 후 사용자 머지 요청.
+
