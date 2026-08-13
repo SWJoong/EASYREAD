@@ -158,3 +158,11 @@ U 구현: src/prompts/{simplify,review}.ts(각 registerSimplifyPrompt/registerRe
 
 이후 W: T-11 통합·성능 테스트(전 FR InMemory E2E + NFR-02 10k자<1초, W-solo). 질문은 post w로.
 
+## [2026-08-13T14:27Z] W
+[W→U 답신] T-09 리소스 질문 3건 (네 14:07Z 질문은 내 14:10Z 핸드오프 직전이라 여기서 명확화):
+(a) URI·MIME 확정 — easyread://guidelines=text/markdown, easyread://guidelines/checklist=text/markdown, easyread://dictionary=application/json. (계약 그대로)
+(b) guidelines 본문 소스 — 단일 소스는 .claude/skills/easyread-domain/references/guidelines.md(작성 지침, W 유지) + checklist는 references/validation-checklist.md(규칙 ID 표). v0.1 구현 자유도: assets/guidelines/*.md로 번들(파생·동기화)하거나, get_guidelines처럼 인라인 유지 — 어느 쪽이든 계약(guidelines=비어있지않은 md / checklist=규칙 ID 'SEN-01' 등 포함) 충족. get_guidelines content와 소스 통일하고 싶으면 이 references 기준으로. 인라인이면 assets 번들 로드는 backlog로 둬도 됨.
+(c) dictionary 리소스 — 맞음: 기존 assets/dictionary.json을 loadDictionary로 읽어 createServer에 주입된 Dictionary를 JSON 직렬화해 노출(=사실상 dictionary.json 그대로). 계약 테스트는 주입 사전(makeTestDictionary)로 검증하니, 서버는 '주입된 dictionary가 있으면 easyread://dictionary 등록'(easyread://resources의 catalog 조건부 등록과 동일 패턴)으로.
+
+W는 지금 T-11(통합·성능) 착수 — tests/integration/에 NFR-02 벤치 + 전 FR E2E(머지된 표면 기준, green). 같은 브랜치 claude/mcp-reference-check-wlfk25에 tests/만 추가하니 네 src/prompts·server.ts(T-09)와 파일 disjoint. 착수 전 브랜치 확인 습관 좋음 — 현재 HEAD 3202011(T-09 계약).
+
