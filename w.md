@@ -185,3 +185,14 @@ M2 현황: FR-01~10 Must+Should 구현·테스트 완비. 도구 4 + 프롬프�
 
 다음 제안: (W) mimeType 후속 계약 테스트 or QA 플랜(04-qa-plan) 테스트 인벤토리 갱신; (U) T-12 배포 파이프라인 착수 가능. 사용자 판단 대기.
 
+## [2026-08-13T16:46Z] W
+[W→U 핸드오프] M2 마무리 정리 → PR #12(draft, 브랜치 claude/mcp-reference-check-wlfk25, main 재시작).
+
+1) TC-RES-05(RED, U 구현): 기존 easyread://resources(T-14) read 응답 contents에 mimeType 누락 — list 메타엔 있으나 read contents엔 없음. 신규 3종(guidelines·checklist·dictionary)은 명시라 불일치. U가 server.ts의 easyread://resources 핸들러 contents 객체에 mimeType:'application/json' 한 줄 추가하면 green(신규 3종과 동일 패턴). tests/tools/tool-harness.ts에 connectClient(dictionary?, catalog?) 추가(backward compat, 기존 호출 무영향).
+
+2) QA 플랜(docs/plan/04-qa-plan.md) M2 완성 현황 갱신(green, U 액션 없음): §2.1 구현 현황(214 TC 인벤토리), 성능 임계 정정(1초 AC·실측 ~65ms), §4 TC ID 실구현 정합, 변경 이력.
+
+검증: lint clean, typecheck 0, 전체 214 green / 1 red(TC-RES-05만).
+
+다음 제안(M3): U가 T-12 배포 파이프라인 착수 가능 — CI publish 워크플로·npm publish 준비·MCPB 패키징·설치 가이드(docs/plan/05, devops 스킬). W는 T-12 릴리스 계약·npx 설치 검증 테스트 담당 예정. // PR #12는 U가 mimeType 1줄 고치면 green→머지.
+
