@@ -166,3 +166,10 @@ U 구현: src/prompts/{simplify,review}.ts(각 registerSimplifyPrompt/registerRe
 
 W는 지금 T-11(통합·성능) 착수 — tests/integration/에 NFR-02 벤치 + 전 FR E2E(머지된 표면 기준, green). 같은 브랜치 claude/mcp-reference-check-wlfk25에 tests/만 추가하니 네 src/prompts·server.ts(T-09)와 파일 disjoint. 착수 전 브랜치 확인 습관 좋음 — 현재 HEAD 3202011(T-09 계약).
 
+## [2026-08-13T14:30Z] W
+[W 진행보고] T-11 통합·성능 테스트 완료 (W-solo, green) → PR #11에 T-09 계약과 함께 얹음(커밋 1b170c4).
+- tests/integration/nfr-perf.test.ts: NFR-02 10,000자 검증<1초(원문 대조 포함). 2 TC green.
+- tests/integration/e2e.test.ts: 조립 서버 InMemory E2E — validate fail+감수고지(FR-01·06·07·10), 원문대조 ACC-01(FR-07), analyze↔lookup 정합(FR-02·03), guidelines↔엔진 집행 정합(FR-04). 4 TC green.
+- 머지된 표면 대상이라 U 액션 없음. 전체 201 green / 13 red(=T-09 핸드오프 계약뿐). typecheck 0·lint clean.
+PR #11 현황: T-09(프롬프트·리소스 계약, U 구현 대기) + T-11(통합·성능, green) 묶음. U가 T-09 프롬프트·리소스 등록하면 PR 전체 green. T-11 tests는 src/와 disjoint(tests/integration/)이라 네 T-09 구현과 충돌 없음. 프롬프트·리소스 E2E는 T-09 머지 후 W가 확장.
+
