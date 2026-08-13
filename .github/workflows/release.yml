@@ -1,0 +1,68 @@
+name: Release
+
+# vX.Y.Z 태그 push 시 실행 — 게이트 재실행 → 태그·버전 일치 검사 → npm publish → 설치 스모크 → GitHub Release.
+# 05-release-plan.md §4 릴리스 잡. 첫 실행 전 준비: npm 신뢰 게시(Trusted Publisher) 또는 NPM_TOKEN 시크릿 등록.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write # GitHub Release 생성
+  id-token: write # npm provenance(OIDC)
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm ci
+
+      # 품질 게이트 재실행(ci.yml과 동일 — 릴리스 시 재확인)
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm test
+      - name: 데이터 검증
+        run: node scripts/validate-assets.mjs
+
+      # 태그(vX.Y.Z)와 package.json version 일치 — 불일치는 릴리스 중단
+      - name: 태그-버전 일치 검사
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG="$(node -p "require('./package.json').version")"
+          echo "tag=$TAG package.json=$PKG"
+          if [ "$TAG" != "$PKG" ]; then
+            echo "::error::태그($TAG)와 package.json version($PKG)이 다릅니다."
+            exit 1
+          fi
+
+      - name: npm publish (provenance)
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 배포된 패키지를 npx로 받아 initialize 응답 확인(stdio 스모크)
+      - name: 설치 스모크
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          REQ='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"smoke","version":"0"}}}'
+          OUT="$(printf '%s\n' "$REQ" | timeout 60 npx -y easyread-mcp@"$VERSION" 2>/dev/null | head -n 1 || true)"
+          echo "response: $OUT"
+          echo "$OUT" | grep -q '"result"' || { echo "::error::initialize 응답을 확인하지 못했습니다."; exit 1; }
+
+      - name: GitHub Release 생성
+        run: gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

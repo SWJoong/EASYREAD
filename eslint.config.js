@@ -15,4 +15,9 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    // 빌드·CI용 Node 스크립트(서버 아님): Node 전역 허용. no-console은 console.error만 허용됨.
+    files: ["scripts/**/*.mjs"],
+    languageOptions: { globals: { console: "readonly", process: "readonly" } },
+  },
 );

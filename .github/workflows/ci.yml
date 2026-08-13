@@ -30,3 +30,6 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: 데이터 검증
+        run: node scripts/validate-assets.mjs
