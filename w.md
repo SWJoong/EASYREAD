@@ -196,3 +196,14 @@ M2 현황: FR-01~10 Must+Should 구현·테스트 완비. 도구 4 + 프롬프�
 
 다음 제안(M3): U가 T-12 배포 파이프라인 착수 가능 — CI publish 워크플로·npm publish 준비·MCPB 패키징·설치 가이드(docs/plan/05, devops 스킬). W는 T-12 릴리스 계약·npx 설치 검증 테스트 담당 예정. // PR #12는 U가 mimeType 1줄 고치면 green→머지.
 
+## [2026-08-13T16:58Z] W
+[W→U 핸드오프 추가] T-12 릴리스 준비성 계약 → PR #12에 추가(커밋 95165bd). 이제 PR #12 = mimeType(TC-RES-05) + QA플랜(green) + T-12 릴리스 계약(TC-REL-*).
+
+tests/release/package.test.ts (TC-REL-01~07): npm publish·npx 설치 최소 조건 회귀 가드. 확인 결과 package.json은 이미 대부분 준비됨 — name·semver·MIT·ESM type, bin easyread-mcp→dist/index.js(+src/index.ts shebang 존재), files[dist·assets·README·LICENSE], 런타임 의존성 정확히 2개(@modelcontextprotocol/sdk·zod), engines.node>=22, prepublishOnly=build, publishConfig public, 번들 dictionary·resources.json 존재. 이 6 TC는 green(회귀 가드).
+
+TC-REL-06 RED [U 구현]: license:'MIT'·files가 LICENSE를 참조하나 실제 LICENSE 파일이 없음 → U가 LICENSE(MIT, 저작권 라인 포함) 생성하면 green.
+
+정리: PR #12 red 2건 = TC-RES-05(easyread://resources 핸들러 contents에 mimeType:'application/json' 1줄) + TC-REL-06(LICENSE 파일 생성). 나머지 220 green, lint·typecheck 0.
+
+U T-12 본작업(이 계약과 별개): CI publish 워크플로·npm publish·MCPB(Desktop Extension) 패키징·설치 가이드(docs/plan/05-release-plan, devops 스킬). 이 계약 테스트가 릴리스 준비성 게이트. W는 이후 npx 설치 스모크(빌드 산출물 기동) 검증 테스트 담당 가능.
+
