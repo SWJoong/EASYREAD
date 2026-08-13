@@ -67,3 +67,24 @@ W 다음: VOC-03~06 골든 테스트 착수 예정(재개 시 WIP 유실됐어 �
 ## [2026-08-13T07:12Z] W
 [W→U 리뷰결과] T-07 VOC-03~06 구현 승인(APPROVED). 독립검증: PR#8 CI success(9210c78) + 로컬 typecheck·lint·build·test 124/124 green(VOC 골든 22). 레인 준수 완벽 — U가 tests/ 미변경(내 골든·registry 스냅샷 그대로), src/rules/voc 4개+index만. 구현 검토: VOC-03(문장 풀이마커 스킵·terminology 어절별 warning), VOC-04(idiom 어절별 info), VOC-05(flatMap·약어별 첫등장·'(' 인접/포함 스킵), VOC-06(지시어 집합 정확일치로 '이순신' 오탐없음·count>문장수 문서1건·임계값 상수) 모두 계약 정합. 초기 feat/voc-03-06(PR#9)를 PR#8 브랜치로 재작성해 얹어준 것·PR#9 superseded close 적절. PR#8 draft→ready 전환. 머지 판단은 사용자에게 요청. T-07 VOC군 완성! 다음(T-08): NUM/STR/TYP 골든테스트 대기.
 
+## [2026-08-13T07:28Z] W
+[W→U 핸드오프] T-08: NUM·STR·TYP 골든테스트 올림 → 브랜치 claude/mcp-reference-check-wlfk25 (새 draft PR). U 복귀 시 착수. 이 브랜치에 U 구현 얹으면 red→green.
+
+U 구현: src/rules/{num,str,typ}/ 디렉터리 신설 + 각 규칙 + 그룹 index + registry.ts에 numRules·strRules·typRules 스프레드 추가.
+registry 순서=[...sen,...voc,...num,...str,...typ]. registry.test.ts 스냅샷은 내가 전체 21규칙으로 선반영함 — U는 tests 미변경, src/만.
+
+규칙 계약(각 테스트 헤더 주석에 상세):
+- NUM-01(한글수사·자동/warning): 어절이 (a)/^[영일이삼사오육칠팔구십백천만]{2,}$/ 또는 (b)고유어수사{열,스물,서른,마흔,쉰,예순,일흔,여든,아흔}이면 1건. 단일자 제외(오탐). 어절당.
+- NUM-02(소수점비율·자동/info): /\d+\.\d+\s*%/ 매치마다. 정수 '50%' 제외.
+- NUM-03(상대날짜·자동/warning): 어절이 {익일,명일,작일,금일,금주,차주,전주,익월,차월,전월,금년,익년} 중 하나로 시작하면(조사대응) 1건.
+- NUM-04(큰수콤마·자동/info): /\d{1,3}(,\d{3})+/ 매치마다.
+- STR-02(단락길이·자동/info): 문단 sentences.length>5면 문단당 1건(임계값 조정가능).
+- STR-03(문장내나열·보조/info): 문장의 ','·'·'·'、' 개수>=2면 문장당 1건.
+- TYP-01(기호·자동/warning): {※,~,&,/} 출현마다 1건.
+- TYP-02(괄호남용·자동/info): 문장당 '(' 개수>=2면 1건.
+- TYP-03(쌍점쌍반점·자동/info): ':'·';' 출현마다 1건. 단 숫자 사이 ':'(시각 3:00) 제외.
+
+중요 설계: STR-01(결론먼저)·STR-04(절차번호)는 '수동' 항목 — 자동 규칙 아님(리포트 점검안내/PROC류). registry·골든테스트에서 제외함.
+공통: message·suggestion inline. v0.1 어절 정확일치/휴리스틱(문서화된 backlog 한계).
+현재 CI red=핸드오프(typecheck 9 module-not-found + registry 1), 나머지 123 green. 질문은 post u로. // W는 U 대기 동안 다음 W-레인 작업(T-09 ACC 명세·골든 등) 계속 진행 예정.
+
