@@ -36,6 +36,7 @@ flowchart LR
 | ADR-05 | transport는 **stdio 우선** | 로컬 사용이 1차 시나리오, 설정 단순 | Streamable HTTP 동시 지원 — 인증·배포 복잡도 증가로 M3 이후 백로그 | 원격 공유는 v0.1 범위 밖(FR-11) |
 | ADR-06 | 데이터는 **패키지 번들 정적 파일** (JSON/Markdown) | 시드 규모(수백 건)에 DB 불필요, 오프라인 보장 | SQLite/외부 API — 과잉 설계로 기각 | 데이터 갱신 = 패키지 릴리스(05 문서 버전 전략과 연동) |
 | ADR-07 | **Easy-Read 근거·표준·사례 카탈로그(62건)를 정적 데이터 자산 + MCP 리소스로 노출** (`easyread://resources`) | 발달장애인법 제10조·CRPD 등 권위 근거와 국내외 표준·실물 사례를 클라이언트가 조회·인용 가능. 규칙 근거의 투명성(ADR-03) 강화, 다국적 표준이 임계값을 뒷받침함을 노출 | (a) 규칙으로 흡수 — 대부분 글꼴·삽화·당사자검증 항목이라 텍스트 규칙 범위 밖이므로 기각. (b) **런타임 URL fetch** — 오프라인·결정성(NFR-01) 위반이라 기각 | **오프라인 정적 메타데이터로만 노출**(URL은 참조값, 런타임 fetch 금지). `url_status`·조사시점 보존. 범위 밖 항목은 guidelines/PROC 안내로만 |
+| ADR-08 | **소소한소통 「쉬운정보 가이드라인 1.0」을 국내 실무 1차 기준으로 채택**하고 반영 범위를 규정 | 사용자 제공 원천 가이드라인(3대 실행원칙·세부기준 색인). 텍스트 층위(§8.2 어휘·§8.3 문장·§8.5 숫자)는 기존 VOC/SEN/NUM과 정합 → 명사화·긴 수식(§8.3.6)만 신규 **SEN-07**(보조)로 승격. 3대 실행원칙은 ISO 24495-1(찾기·이해·사용)과 정합 | (a) 3대 실행원칙 체계로 규칙군 재편 — 기존 IE 기반 규칙군·골든 테스트 전면 개편 비용 과다로 기각. (b) VOC-07(용어 일관성) 동시 승격 — 동의어/개념 사전 미보유로 오탐 커 백로그 유지 | **SEN-07 추가**(단일 소스 validation-checklist + 골든 테스트 sen-07). §7 탐색·§9 활용은 텍스트 린터 범위 밖 → guidelines/PROC로만. 카탈로그에 가이드라인 1.0 + 해외 Plain Language 벤치마크 3건(미국·캐나다·NZ) 추가(62→66) |
 
 ## 3. MCP 인터페이스 명세
 
@@ -100,7 +101,7 @@ flowchart LR
 | `easyread://guidelines` | 작성 지침 전문 (번들 Markdown) | `text/markdown` |
 | `easyread://guidelines/checklist` | 검증 규칙 체크리스트(규칙 ID 표) | `text/markdown` |
 | `easyread://dictionary` | 단어 사전 전체 | `application/json` |
-| `easyread://resources` | Easy-Read 근거·표준·사례 카탈로그(62건: 지침·법령·사례·포털, ADR-07) | `application/json` |
+| `easyread://resources` | Easy-Read 근거·표준·사례 카탈로그(66건: 지침·법령·사례·포털, ADR-07·08) | `application/json` |
 
 ## 4. 데이터 모델
 
@@ -127,7 +128,7 @@ flowchart LR
 - `assets/guidelines/*.md` — 영역별 지침(easyread-domain references에서 파생·동기화)
 - `assets/rules-config.json` — 규칙별 기본 심각도·임계값 (validation-checklist 표와 1:1)
 - 상대 날짜 어휘(NUM-03)·기호 목록(TYP-01) 등 규칙 전용 소량 데이터는 rules-config에 포함
-- `assets/resources.json` (ADR-07) — Easy-Read 근거·표준·사례·법령 카탈로그(62건). 필드: `id·region·org_type·organization·title·category[]·language·year·url·url_status·description` + `meta`. 로더는 dictionary와 동일 패턴(zod 검증, 기동 시 1회), `url_status`·조사시점 보존, **런타임 URL fetch 금지**
+- `assets/resources.json` (ADR-07·08) — Easy-Read 근거·표준·사례·법령 카탈로그(66건). 필드: `id·region·org_type·organization·title·category[]·language·year·url·url_status·description` + `meta`. 로더는 dictionary와 동일 패턴(zod 검증, 기동 시 1회), `url_status`·조사시점 보존, **런타임 URL fetch 금지**
 
 ## 5. 모듈 구조
 
@@ -163,6 +164,7 @@ assets/           # dictionary.json, guidelines/, rules-config.json
 | T-12 | 배포 파이프라인 | CI, npm publish, 설치 가이드 | T-11 | 05 문서 릴리스 절차 통과, npx 설치 검증 | M3 |
 | T-13 | 파일럿 | 실문서 10건 변환·감수 기록 | T-12 | 성공 지표 4종 측정 완료 | M3 후 |
 | T-14 | Easy-Read 자료 카탈로그 리소스 (ADR-07) | assets/resources.json + zod 로더 + `easyread://resources` + 골든·계약 테스트 | T-06, T-09 | 62건 zod 검증·리소스 계약 테스트 통과 (W: 테스트, U: 로더·자산·핸들러) | M2 |
+| T-16 | 소소한소통 가이드라인 1.0 반영 (ADR-08) | SEN-07 규칙 + 골든 테스트 · 카탈로그 4건 추가(62→66) · sources/guidelines/checklist 갱신 | T-07, T-14 | TC-SEN-07-* 통과 · 카탈로그 66건 zod·계약 테스트 통과 (W: 스펙·테스트, U: 규칙 구현·자산) | M2 |
 
 ## 7. 마일스톤
 
@@ -188,3 +190,4 @@ assets/           # dictionary.json, guidelines/, rules-config.json
 | 2026-08-09 | 최초 작성 | PL (pl 스킬) |
 | 2026-08-09 | 규칙 표준 근거 반영 — ADR-03에 sources.md(규칙 ID↔표준 조항) 연결, 입력에 표준 출처 추가 | Backend (표준 감사) |
 | 2026-08-11 | ADR-07(자료 카탈로그 리소스) 추가 — `easyread://resources`·데이터모델·WBS T-14 반영, 62건 근거 카탈로그 연결 | PL (W / pl 스킬) |
+| 2026-08-13 | ADR-08(소소한소통 가이드라인 1.0 반영) 추가 — SEN-07 규칙 승격, 카탈로그 62→66(벤치마크 미국·캐나다·NZ), §7·§9 범위 밖 명시, WBS T-16 | PL (W / pl 스킬) |
