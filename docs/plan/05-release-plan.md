@@ -67,6 +67,13 @@
 | 설치 스모크 | 깨끗한 러너에서 `npx -y easyread-mcp@X.Y.Z` 기동 → initialize 응답 확인 스크립트 | 중단(배포됨 상태이므로 결함 등록 + 즉시 patch) |
 | 릴리스 노트 | GitHub Release 생성(변경 요약, 임계값 변경 강조) | 수동 보완 |
 
+**구현 현황 (2026-08-14, T-12)**
+
+- ✅ `ci.yml`: 기존 `check` 잡(ubuntu, Node 22)에 **데이터 검증 스텝**(`node scripts/validate-assets.mjs`, 런타임 로더 재사용) 추가. 잡 이름은 유지 — 브랜치 보호 required-check를 깨지 않기 위함.
+- ✅ `release.yml`: 위 릴리스 잡을 구현(게이트 재실행 → 태그-버전 일치 → `npm publish --provenance --access public` → npx initialize 스모크 → GitHub Release). 첫 실행 전 준비: npm **Trusted Publisher**(OIDC) 또는 `NPM_TOKEN` 시크릿 등록.
+- ⏳ **크로스플랫폼 매트릭스(Node 22/24 × ubuntu·windows, NFR-05)**: required-check 이름이 바뀌어(`check` → `check (os, node)`) 브랜치 보호 설정 갱신이 함께 필요하므로 **후속**으로 분리. 별도 잡으로 추가하고 관리자가 required 목록을 갱신하는 시점에 활성화한다.
+- ⏳ npm 이름(`easyread-mcp`) 선점 확인은 첫 publish 전 체크리스트(§5) 항목으로 유지.
+
 ## 5. 릴리스 절차 (사람 체크리스트)
 
 1. [ ] QA 게이트 4종(04 §7) 통과 확인 — 릴리스 PR에 Inspector 점검 기록 첨부
@@ -93,6 +100,8 @@
 { "mcpServers": { "easyread": { "command": "npx", "args": ["-y", "easyread-mcp"] } } }
 ```
 
+**구현 현황 (2026-08-14, T-12)**: `docs/install/claude-desktop.md`·`docs/install/claude-code.md`를 쉬운 문장(짧은 문장·단계 번호)으로 작성했고, README에 설치·사용 섹션과 위 설정 블록을 추가했다. 그림·스크린샷은 첫 릴리스 후 보완(백로그).
+
 ## 7. 운영·모니터링
 
 - **이슈 트리아지**: GitHub Issues 템플릿 2종 — `오탐/미탐 신고`(예문·기대·실제, 04 §8 골든셋 편입 절차와 연결), `설치 문제`. S1(사실 왜곡) 라벨은 핫픽스 트랙.
@@ -105,3 +114,4 @@
 | 날짜 | 변경 | 작성 |
 |---|---|---|
 | 2026-08-09 | 최초 작성 | DevOps (devops 스킬) |
+| 2026-08-14 | T-12 구현 반영 — `release.yml`(publish 파이프라인)·`ci.yml` 데이터 검증 스텝·`scripts/validate-assets.mjs`·`LICENSE`(MIT+데이터 출처 고지)·`docs/install/*`·README 설치 섹션. 크로스플랫폼 매트릭스는 브랜치 보호 의존으로 후속, MCPB는 계획대로 M3 이후. | DevOps (devops 스킬) |

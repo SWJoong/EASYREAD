@@ -5,6 +5,24 @@
 - 서버는 **지침·사전·검증 도구**를 제공하고, 실제 문장 변환은 클라이언트 LLM(Claude 등)이 수행합니다.
 - 기술 스택: TypeScript + `@modelcontextprotocol/sdk` (Node.js 22 LTS+)
 
+## 설치하기
+
+Node.js 22 이상이 필요합니다. 인터넷은 설치할 때만 필요하고, 검사할 때는 필요 없습니다.
+
+- **Claude Desktop**: [docs/install/claude-desktop.md](docs/install/claude-desktop.md) — 설정 파일에 아래 블록을 넣고 앱을 다시 시작합니다.
+- **Claude Code**: [docs/install/claude-code.md](docs/install/claude-code.md) — `claude mcp add easyread -- npx -y easyread-mcp` 한 줄.
+
+```json
+{ "mcpServers": { "easyread": { "command": "npx", "args": ["-y", "easyread-mcp"] } } }
+```
+
+## 이 서버가 제공하는 것
+
+- **도구 4종**: `validate_easy_read`(규칙 검증), `analyze_readability`(가독성 지표), `lookup_easy_word`(쉬운 낱말 찾기), `get_guidelines`(작성 지침).
+- **프롬프트 2종**: `simplify-text`(쉬운 정보로 바꾸기), `easy-read-review`(초안 검토).
+- **리소스**: `easyread://guidelines`·`.../checklist`·`easyread://dictionary`·`easyread://resources`.
+- **검증 규칙 25종**(SEN·VOC·NUM·STR·TYP·ACC). 모두 오프라인·결정적으로 동작합니다.
+
 ## 문서
 
 구현 계획은 [docs/plan/](docs/plan/) 아래에 파트별로 정리되어 있습니다.
