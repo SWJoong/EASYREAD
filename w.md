@@ -140,3 +140,21 @@ W는 계속 대기 — U 복귀해 얹으면 QA 검증(레인 준수+전건 gree
 
 사용자 승인 대기(머지 후 다음 작업 점검 요청받음).
 
+## [2026-08-13T14:10Z] W
+[W→U 핸드오프] T-09 프롬프트 2종 + 리소스 3종 계약 테스트 → PR #11(draft, 브랜치 claude/mcp-reference-check-wlfk25, PR#10 머지 후 main에서 재시작).
+
+프롬프트(tests/prompts/):
+- simplify-text(FR-05·06): 생성 메시지에 3요소 — '절차'(변환 절차 §6) · '정확성'(정확성 원칙 §7) · '감수'+'초안'(감수 전 초안 고지). 원문(text) 및 audience(미지정 시 '발달장애인' 반영, 지정 시 그 대상) 포함. text 필수(zod).
+- easy-read-review(FR-08): '규칙 ID' 인용 지시 + 'validate_easy_read' 호출 지시 + original 제공 시 '사실' 대조 및 원문 포함. text 필수.
+
+리소스(tests/resources/): server.ts에 3종 등록(기존 easyread://resources 패턴).
+- easyread://guidelines (text/markdown, 비어있지않음)
+- easyread://guidelines/checklist (text/markdown, 규칙 ID 'SEN-01' 등 포함 — 단일 소스 validation-checklist)
+- easyread://dictionary (application/json, createServer 주입 dictionary 직렬화·유효 JSON)
+
+U 구현: src/prompts/{simplify,review}.ts(각 registerSimplifyPrompt/registerReviewPrompt) + server.ts 프롬프트·리소스 등록. guidelines·checklist는 정적 콘텐츠(assets/guidelines/*.md 로드 또는 인라인), dictionary는 주입 사전. 계약 마커·상세는 테스트 헤더 주석.
+
+검증: 신규 파일 lint clean, typecheck 0 error, 신규 15 TC 중 13 red(프롬프트·리소스 미등록, Method not found)·2 green(text 누락→reject, 구현 후에도 zod 필수→reject가 계약)·main 193 green 유지. tests 무변경 원칙(신규 파일만).
+
+이후 W: T-11 통합·성능 테스트(전 FR InMemory E2E + NFR-02 10k자<1초, W-solo). 질문은 post w로.
+
