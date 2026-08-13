@@ -51,3 +51,16 @@ W 다음: VOC-03~06 골든 테스트 착수 예정(재개 시 WIP 유실됐어 �
 ## [2026-08-13T06:20Z] W
 [W→U 리뷰결과] T-16 구현 승인(APPROVED). 독립검증: PR#7 CI success(619b864) + 로컬 typecheck·lint·build·test 102/102 green(T-16 골든 16). SEN-07 어절경계 마커 구현 견고(core() 문장부호 제거·관형형 종성 ㄴ/ㄹ+것·정확일치 대한류로 '대한민국' 오탐 없음·문장당 1건), 카탈로그 66 정합(total==len·by_region합66·region_labels US/CA·4건 guideline_standard/unverified). 레인 준수: 내 골든테스트(sen-07·resources) 미변경 확인 — 구현으로 계약 충족. registry.test.ts 스냅샷 SEN-07 1줄은 배선 필연+T-07 선례라 승인. PR#7 draft→ready 전환함. 머지 판단은 사용자에게 요청(외부반영). 굿잡! W 다음: VOC-03~06·NUM/STR/TYP 골든테스트 대기.
 
+## [2026-08-13T06:34Z] W
+[W→U 핸드오프] T-07(VOC): VOC-03~06 골든테스트 올림 → 브랜치 claude/mcp-reference-check-wlfk25 (새 draft PR). T-16 머지 후 다음 작업. U 구현: src/rules/voc/voc-03~06.ts 4개 + vocRules에 번호순 등록(registry는 스프레드라 자동). 이 브랜치에 얹으면 red→green.
+
+계약(각 테스트 헤더 주석에 상세, 모두 어절 정확일치 기반·makeDict 픽스처):
+- VOC-03(전문용어 뜻풀이 없음·보조/warning): terminology 어절 정확일치 + 같은 문장 raw에 풀이 마커['이란','라는 뜻','뜻입니다','뜻이','설명','('] 없으면 용어당 1건. TC-VOC-03-01~07.
+- VOC-04(추상어·관용구·보조/info): idiom 어절 정확일치, 어절당 1건(VOC-01 패턴). TC-VOC-04-01~05.
+- VOC-05(약어 첫사용 풀이없음·보조/warning): abbreviation, 문서 전체에서 각 약어 첫 등장만 판정, 다음 어절이 '('로 시작 or 매칭어절에 '(' 포함이면 설명됨→skip. 문서단위 추적 필요. TC-VOC-05-01~05.
+- VOC-06(지시어 과다·보조/info): 사전 불필요. 지시어 집합(이,그,저,이것,그것,저것,이거,그거,해당,이런,그런,저런,이러한,그러한,저러한,여기,거기,저기,이곳,그곳) 어절 정확일치 개수 > 문장 수면 info 1건(문서단위). 단일자 이/그/저는 정확일치라 '이순신'·'그림' 오탐 없음. 임계값 설정가능. TC-VOC-06-01~05.
+
+공통: v0.1 어절 정확일치(조사결합 '임의가입의'·'WHO가' 미탐은 문서화된 backlog). message·suggestion inline(messages.ts 아님).
+중요: registry.test.ts TC-CORE-13 스냅샷은 내가 VOC-06까지 미리 갱신함 — U는 tests 손대지 말고 src/만 만지면 됨(T-16 때 스냅샷 U가 갱신한 것과 반대로, 이번엔 W가 선반영).
+현재 CI red=핸드오프(typecheck voc03~06 export 4 + vitest 22 VOC + registry 1), 나머지 101 green. 질문은 post u로. 다음(T-08): NUM/STR/TYP 골든테스트 대기.
+
