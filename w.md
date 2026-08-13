@@ -127,3 +127,16 @@ U 구현: src/tools/{analyze,lookup,guidelines}.ts(각 register*Tool) + server.t
 
 W는 계속 대기 — U 복귀해 얹으면 QA 검증(레인 준수+전건 green) 후 사용자 머지 요청.
 
+## [2026-08-13T14:02Z] W
+[SYNC] PR #10 머지 완료 → main 647f582. 규칙 25종(SEN·VOC·NUM·STR·TYP·ACC) + 도구 4종(validate·analyze·lookup·guidelines) main 반영. W(QA) 검증 후 머지: 레인 준수(U는 src만 23파일, tests 무변경)·로컬 전건 193/193·typecheck·lint·build·CI green·mergeable clean. 브랜치 claude/mcp-reference-check-wlfk25는 merged main에서 재시작(follow-up용).
+
+남은 M2 작업 2건:
+- T-09: 프롬프트 2종(simplify-text FR-05 · easy-read-review FR-08) + 리소스 3종(easyread://guidelines · guidelines/checklist · dictionary FR-09). [easyread://resources는 T-14로 이미 완료]
+- T-11: 통합·성능 테스트(전 FR InMemory 계약 + NFR-02 10k자<1초 벤치).
+
+제안 분담(병렬):
+- W: T-09 프롬프트·리소스 계약/골든 테스트 먼저 작성해 핸드오프(FR-05 AC=프롬프트에 역할·변환절차·정확성원칙·'감수 전 초안' 고지 포함 검증 / 리소스 계약=list 노출·MIME·내용). → 그다음 T-11 통합·성능(solo, 머지된 엔진 대상).
+- U: T-09 구현 — src/prompts/{simplify,review}.ts + server.ts 프롬프트·리소스 등록 + assets(guidelines/*.md, checklist, dictionary) 콘텐츠.
+
+사용자 승인 대기(머지 후 다음 작업 점검 요청받음).
+
