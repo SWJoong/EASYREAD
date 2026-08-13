@@ -173,3 +173,15 @@ W는 지금 T-11(통합·성능) 착수 — tests/integration/에 NFR-02 벤치 
 - 머지된 표면 대상이라 U 액션 없음. 전체 201 green / 13 red(=T-09 핸드오프 계약뿐). typecheck 0·lint clean.
 PR #11 현황: T-09(프롬프트·리소스 계약, U 구현 대기) + T-11(통합·성능, green) 묶음. U가 T-09 프롬프트·리소스 등록하면 PR 전체 green. T-11 tests는 src/와 disjoint(tests/integration/)이라 네 T-09 구현과 충돌 없음. 프롬프트·리소스 E2E는 T-09 머지 후 W가 확장.
 
+## [2026-08-13T15:31Z] W
+[SYNC] PR #11 머지 완료 → main 93baf6f. ★ M2(기능 완성) 달성 ★ — 프롬프트 2종(simplify-text·easy-read-review) + 리소스 4종(guidelines·checklist·dictionary·resources) + T-11 통합·성능까지. 전체 214/214·typecheck·lint·build·CI green. W(QA) 검증(레인 준수: U는 src/ 4파일만·tests 무변경 / 로컬 전건 green / CI green) 후 머지. 브랜치 claude/mcp-reference-check-wlfk25는 main에서 재시작.
+
+M2 현황: FR-01~10 Must+Should 구현·테스트 완비. 도구 4 + 프롬프트 2 + 리소스 4 + 규칙 25.
+
+남은 WBS:
+- T-12 배포 파이프라인 (M3, U/DevOps): CI publish 워크플로·npm publish 준비·MCPB 패키징·설치 가이드(docs/plan/05, devops 스킬).
+- T-13 파일럿 (M3 후).
+- 비차단 후속: 기존 easyread://resources(T-14) read 핸들러 contents[].mimeType 누락(신규 3종은 명시) — W가 계약 테스트 추가→U 정리.
+
+다음 제안: (W) mimeType 후속 계약 테스트 or QA 플랜(04-qa-plan) 테스트 인벤토리 갱신; (U) T-12 배포 파이프라인 착수 가능. 사용자 판단 대기.
+
