@@ -44,7 +44,11 @@ npm run inspector    # MCP Inspector 실행
 ## 현재 작업 현황
 
 ### 완료
-- M1 마일스톤 (T-01~T-06), 76개 테스트 통과
+- **M1 (걷는 뼈대)** — T-01~T-05: 문장·어절 모듈, 규칙 엔진 코어, SEN 규칙군, `validate_easy_read`
+- **M2 (기능 완성)** — T-06~T-11·T-14·T-16: 전 규칙군(SEN·VOC·NUM·STR·TYP·ACC 25종) · 도구 4종 · 프롬프트 2종 · 리소스 4종 · 통합·성능. **227개 테스트 통과**
+- **T-12 (배포 파이프라인, 코드 완료)** — `release.yml`(v* 태그 publish) · `ci.yml` 데이터 검증 · `validate-assets.mjs` · `LICENSE` · 설치 가이드 · 이슈·PR 템플릿 · npx 설치 스모크
 
-### 다음
-- T-07: VOC 규칙군 구현
+### 다음 (M3 — 공개 배포)
+- **첫 릴리스 `v0.1.0`** — 관리자 선행(코드밖) 대기: npm Trusted Publisher(OIDC) 또는 `NPM_TOKEN` 시크릿 + `easyread-mcp` 이름 선점 확인 → 태그 푸시 시 `release.yml` 자동 publish
+- **크로스플랫폼 CI 매트릭스**(NFR-05, Node 22/24 × ubuntu·windows) — required-check 이름 변경 → 브랜치 보호 갱신(관리자) 후 활성화
+- 파일럿(T-13)·MCPB 패키징은 첫 릴리스 이후
