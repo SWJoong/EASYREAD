@@ -20,7 +20,7 @@
 | 성능 | NFR-02 (10,000자 validate 1초) | 시간 단정 테스트 | 매 커밋(CI, 1초 AC 단정 — CI 실측 ~65ms로 여유 큼) |
 | 수동 | Inspector 점검, Claude Desktop 시나리오 S1~S3 | MCP Inspector, Claude Desktop | 마일스톤 종료 시·릴리스 전 |
 
-### 2.1 구현 현황 (M2 완성 · 2026-08-13, 214 TC 전건 green)
+### 2.1 구현 현황 (M2 완성·M3 준비 · 2026-08-14, 230 TC 전건 green)
 
 계획 단계의 "대표 케이스"(§3·§4·§5)가 전 규칙·전 도구·프롬프트·리소스로 확장 구현되었다. 실제 테스트 현황:
 
@@ -34,8 +34,10 @@
 | 통합 E2E | `tests/integration/e2e.test.ts` | `TC-INT-*` | 조립 서버로 전 FR 교차 검증 |
 | 성능 (NFR-02) | `tests/integration/nfr-perf.test.ts` | `TC-PERF-*` | 10,000자 검증 < 1초 |
 | 자료 카탈로그 | `tests/data/resources.test.ts` | `TC-DATA-14-*` | 66건 필수필드·URL·유일성 |
+| 릴리스 준비성 | `tests/release/{package,smoke}.test.ts` | `TC-REL-*`·`TC-SMOKE-*` | package.json 배포 계약(provenance `repository` 포함)·빌드 dist stdio 설치 스모크 |
+| 프라이버시 (NFR-03) | `tests/privacy/nfr-03.test.ts` | `TC-PRIV-*` | 입력 본문 stderr 무로깅(빌드 dist stdio) |
 
-품질 게이트(§7) 충족: 전건 통과 · `자동` 규칙 3종 케이스 보유 · NFR-02 통과. 진행 중 후속: `TC-RES-05`(기존 `easyread://resources` read 응답 `contents.mimeType` 누락) — 계약 테스트로 고정, U 구현 정리 대기.
+품질 게이트(§7) 충족: 전건 통과 · `자동` 규칙 3종 케이스 보유 · NFR-02 통과 · NFR-03 무로깅 실증. (`TC-RES-05` mimeType 정합·`TC-REL-08` provenance `repository` 필드는 반영 완료.)
 
 ## 3. 규칙별 골든 테스트
 
@@ -159,3 +161,4 @@
 | 2026-08-09 | 최초 작성 | QA (qa 스킬) |
 | 2026-08-13 | M2 완성 반영 — §2.1 구현 현황(214 TC) 추가, 성능 임계 정정(1초 AC·실측 ~65ms), §4 TC ID 실구현 정합, `TC-RES-05`(easyread://resources mimeType) 후속 등록 | QA (W / qa 스킬) |
 | 2026-08-14 | M3 준비 — §6.1 릴리스 전 수동 점검 기록(복사용 체크리스트, §7 게이트 4의 첨부 산출물) 추가, §6-A 리소스 수 정정(3→4, 스모크 TC-SMOKE-04와 정합), `npm run inspector` 명령 반영. 설치 스모크(TC-SMOKE-01~05, 227 TC) 자동 게이트 편입 | QA (W / qa 스킬) |
+| 2026-08-14 | 릴리스 준비성 계약 강화 — `TC-REL-08`(provenance용 `repository.url`·bugs·homepage·author 회귀 가드, /goal 점검서 발견한 P0 블로커 재발 방지) + NFR-03 무로깅 실증(`TC-PRIV-01~02`, 빌드 dist stdio에서 입력 본문 stderr 무로깅) 추가. §2.1 인벤토리 230 TC 갱신 | QA (W / qa 스킬) |
