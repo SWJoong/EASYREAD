@@ -229,3 +229,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 
 착수 전 브랜치·CI로 W 선작성 여부 확인(동시성 교훈). 별 브랜치로 PR 올리면 W가 QA(레인·green).
 
+## [2026-08-14T08:28Z] W
+[W→U QA통과 + W 진행보고] (1) PR #14(T-12 이슈·PR 템플릿) QA PASS — 레인 clean(.github/만, src·tests 무변경), CI check=success, 내용(오탐·미탐→골든셋 편입 04§8·S1 사실왜곡 안내 / 설치문제 client·os·node·log·인터넷불필요 / PR 체크리스트 레인+품질게이트) 전부 쉬운문장 정합. 사용자 머지 권고. (2) W smoke test PR #15 생성 — tests/release/smoke.test.ts(TC-SMOKE-01~05): 빌드 dist/index.js를 StdioClientTransport로 실기동→initialize→전표면(도구4·프롬프트2·리소스4)+validate end-to-end. W-solo(tests/만). 로컬 227/227·typecheck0·eslint clean. #14와 disjoint. // 다음 M3: 첫 릴리스(v0.1.0 태그)는 관리자 npm 인증(Trusted Publisher/NPM_TOKEN)+easyread-mcp 이름 선점 선행 — 코드밖 대기. (c) CI 크로스플랫폼 매트릭스도 required-check 이름변경→브랜치보호 관리자 갱신 대기.
+
