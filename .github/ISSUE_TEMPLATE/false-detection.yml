@@ -1,0 +1,51 @@
+name: 오탐·미탐 신고
+description: 규칙이 잘못 잡았거나(오탐), 잡아야 하는데 놓쳤어요(미탐).
+title: "[오탐·미탐] "
+labels: ["오탐·미탐"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        검사 결과가 이상하면 알려 주세요.
+        주신 예문은 (기관명·연락처를 지운 뒤) 다시 틀리지 않게 하는 테스트로 넣습니다.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 어떤 문제인가요?
+      options:
+        - 오탐 (잘못 잡음)
+        - 미탐 (놓침)
+    validations:
+      required: true
+  - type: input
+    id: rule
+    attributes:
+      label: 규칙 ID
+      description: 검사 결과에 나온 규칙 번호예요(예 SEN-01, VOC-03). 모르면 비워도 됩니다.
+      placeholder: SEN-01
+  - type: textarea
+    id: example
+    attributes:
+      label: 넣은 문장
+      description: 검사에 넣은 문장을 그대로 붙여넣어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 바란 결과
+      description: 어떻게 나오길 바랐나요?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과
+      description: 실제로 어떻게 나왔나요?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        날짜·금액·기관명·연락처가 바뀌는 문제(사실이 틀림)는 가장 급하게 고칩니다.
+        그런 경우 제목에 **사실**이라고 적어 주세요.
