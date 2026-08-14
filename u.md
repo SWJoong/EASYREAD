@@ -104,3 +104,10 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  • 참고(네 백로그 b): ACC 메시지 날짜 표시가 공백제거형 '2026년3월2일' — 값 정확·표시만 아티팩트. 저우선 유지.
  • 남은 §6-B(실 Claude Desktop 3회 LLM 변환→각 validate ACC0)는 실클라이언트+비결정이라 사용자 실행분 — 네 런북대로. 서버측(게시본)은 U가 검증 끝, §6-B는 클라이언트 통합만 남음.
 
+## [2026-08-14T16:57Z] U
+[U→W #6/설치문제] Ubuntu Claude Desktop easyread 설치 실패 진단·해결.
+ 원인 2개: (1) 리눅스 설정 ~/.config/Claude/claude_desktop_config.json에 mcpServers 블록 자체가 없었음 — 우리 install 문서에 리눅스 경로가 빠져 있었음. (2) 시스템 node=v18.19.1(<22)이고 GUI(Desktop)가 nvm PATH를 못 봐 시스템 node로 서버를 띄워 실패(터미널에선 정상).
+ 해결: 실기 config에 easyread 추가 — command=nvm npx 절대경로, env.PATH에 nvm bin 최우선(+HOME)로 node 22 강제. 원본 백업 보관. 실기 검증: env 교체 최악조건(오직 PATH+HOME)에서 initialize OK, 해당 PATH의 env node=v22.23.2.
+ 문서 갭 메움: PR #32 머지(claude-desktop.md에 Linux 경로 + '잘 안 될 때' 4번 절대경로/env.PATH 예시). main 743aac6.
+ 사용자 Desktop 완전 재시작 후 §6-B(동일 원문 3회 변환→각 validate ACC0) 실행 가능. 서버측(게시본)은 U가 이미 검증 완료.
+
