@@ -41,3 +41,18 @@ W 액션: (a) PR #4 리뷰·머지(동작변경 없음), (b) PR #5 골든·계�
 ## [2026-08-14T09:17Z] U
 [U→W 진행보고] (c) 크로스플랫폼 CI 매트릭스 선작성 완료 → PR #17(feat/t12-ci-matrix, main 055d7f9 기준). 사용자 '①선택적 선작업' 지시(네 09:09Z 핸드오프) 착수. // 설계: 별도 워크플로 .github/workflows/cross-platform.yml 신규 — ci.yml 무변경이라 필수 체크 'check'(ubuntu·Node22) 이름 그대로 보존, additive 공존. Node 22/24 × ubuntu·windows 4셀(스텝은 check와 동일: ci·lint·typecheck·build·test·데이터검증, fail-fast:false). // CI: 5체크 전부 green — 'check' + cross-platform 4셀. ★windows-latest(22·24) 포함 전셀 pass = 227 테스트·빌드·데이터검증이 windows에서도 통과(크로스플랫폼 결함 0). 새 체크 4종은 비필수(non-blocking). // 활성화(브랜치보호 required 목록에 4체크 추가·필요시 check 대체)는 관리자 시점 — 이 PR은 설정 무변경. docs/plan/05 §4 현황 갱신(⏳→🟡) 동반. 레인: .github/·docs/plan만, src·tests 무변경. // 백로그(get_guidelines 인라인→번들 asset 로드)는 레인 순수 유지 위해 미포함 — 원하면 별도 src PR로. // W액션: PR #17 QA(레인·green) 후 사용자 머지. 관리자 선행(첫 릴리스 npm 인증+easyread-mcp 이름 선점)은 코드밖 대기 유지.
 
+## [2026-08-14T11:00Z] U
+[U→W 점검 결과 분담 요청] 사용자 /goal로 릴리스 준비성 점검(①실사용 테스트 ②참고자료 저작권 ③배포 준비 +기타) 완료 → 15개 Task로 정리(U 세션 TaskCreate). 레인 분담 아래.
+
+★W 담당 Task(요청 — W 쪽에서 확정·진행):
+ (W-a) 릴리스 전 수동 게이트 리허설 실행·기록: 04-qa §6 A(Inspector)·B(Claude Desktop S1~S3, '동일원문 3회 변환→각 validate 원문대조 ACC error 0건'). PR#16 체크리스트 사용. +messages.ts 등 도구 문자열 쉬운문장 도그푸딩.
+ (W-b) resources.json 66건 description 원본성 QA — 출처 초록 전재 아닌 자체요약인지 스팟검수(verified 59건 우선), 전재의심 결함등록→U 재작성.
+ (W-c) 파일럿 실사용 테스트 프로토콜 설계 — 페르소나(김주무관·박간사)·시나리오 태스크스크립트·지표(설치5분·태스크성공·ACC0·보조규칙 오탐<20%)·피드백양식(false-detection 템플릿→골든셋 04§8)·당사자 감수 연계. (성공지표 '파일럿1곳 실안내문1건'의 실행판)
+ (W-d) NFR-03 프라이버시 무로깅 실증 테스트 — 입력 본문이 stderr/응답에 안 남음 단정 + console.error 사용처 코드리뷰.
+
+관리자/사용자 선행(코드밖): npm 이름선점+게시인증(OIDC/NPM_TOKEN) / cross-platform 4체크 required 승격(PR#17 머지후) / EU Easy-to-Read 로고 미사용·정부자료 공공누리 최종확인(법적) / 파일럿 협력기관 접촉(R-04).
+
+U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·homepage·author) — ★현재 repository 필드 없음→ release.yml의 npm publish --provenance 실패 위험(블로커). / SECURITY.md(+ReDoS·입력상한 점검요약) / CHANGELOG.md / resources.json 항목별 라이선스·공공누리 필드 / 번들데이터 저작권 감사+루트 easy_read_resources.json(구버전 초안·미배포) 정리 / 비개발자 설치·첫사용 따라하기 가이드(W-c와 짝).
+
+핵심 발견 공유: 저작권 스탠스는 sources.md §5(자체 재구성·전재금지)로 문서화·양호, 사전/카탈로그에 source·url 보존 — 남은 건 (1)공공누리 유형 항목별 데이터화 미완 (2)최종 법적확인(사람) (3)description 원본성 QA(W-b). 배포 최우선 블로커는 provenance용 repository 필드. 지금 U가 P0부터 착수.
+
