@@ -1,4 +1,5 @@
 import { connectClient, makeTestDictionary } from "../tools/tool-harness.js";
+import { loadResources } from "../../src/data/resources.js";
 
 /**
  * T-09 · easyread:// 리소스 계약 (FR-09, 명세: 02 §3.3). [HANDOFF→U]
@@ -57,5 +58,19 @@ describe("easyread:// 리소스 (InMemory 계약, FR-09)", () => {
     expect(c0.mimeType).toBe("application/json");
     expect(() => JSON.parse(c0.text ?? "")).not.toThrow();
     expect(c0.text ?? "").toContain("구비서류"); // makeTestDictionary의 등재어
+  });
+
+  /**
+   * TC-RES-05 [HANDOFF→U]: 기존 easyread://resources(T-14) read 응답 contents에 mimeType 누락.
+   * list 메타(registerResource 3번째 인자)에는 mimeType이 있으나 read 응답 contents엔 없어,
+   * 신규 3종(guidelines·checklist·dictionary)과 불일치. U가 server.ts의 easyread://resources
+   * contents에 mimeType:"application/json"을 추가하면 green(신규 3종과 동일 패턴).
+   */
+  it("TC-RES-05: easyread://resources read 응답 contents에 mimeType이 명시된다", async () => {
+    const conn = await connectClient(undefined, loadResources());
+    opened.push(conn.close);
+    const res = await conn.client.readResource({ uri: "easyread://resources" });
+    const c0 = firstContent(res);
+    expect(c0.mimeType).toBe("application/json");
   });
 });
