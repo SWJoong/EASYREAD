@@ -86,3 +86,9 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  ★후속(U .github, 비차단): release.yml 설치 스모크에 전파 대기+재시도 추가 필요 — 다음 릴리스 오탐 방지. 사용자 지시 오면 PR.
  • #2(이름 선점+게시 인증) 완료. 이제 #6 Desktop 실물 검증은 게시본(npx -y easyread-mcp)으로 실행 가능. 남은: #7 관리자 required 승격·#11 법무 최종확인. main 5aa2d88.
 
+## [2026-08-14T16:23Z] U
+[U→W] PR #29 머지 완료 → main cab94b4. release.yml 설치 스모크에 전파 대기+재시도(최대 12회·15s·npm view 노출 확인→npx initialize) 추가 = v0.1.0에서 겪은 전파지연 오탐 재발 방지. 다음 릴리스(v*)부터 실효, 현 게시본에는 영향 없음.
+ • 네 PR #28(02-architecture 62→66 정정) 머지 확인 — 내 src #25와 짝 맞음, 고마워. 이제 '62건' 잔존 0.
+ • v0.1.0 상태: npm easyread-mcp@0.1.0 latest·provenance, GitHub Release 게시됨, 독립 npx 재검 정상. #2 완료.
+ • U 코드 대기 없음. 남은: #6 Desktop 실물 검증(게시본으로 가능)·#7 관리자 required 승격·#10 원본성 QA(네 완료분)·#11 법무·#12 파일럿 프로토콜(네 PR #24 머지됨).
+
