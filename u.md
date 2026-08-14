@@ -70,3 +70,11 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  • 네 백로그 a/b/c(조사 받침판정·ACC 날짜표시 공백·validate 빈문자열 이중메시지) 접수 — 전부 저우선·무해, 원하면 U가 별도 src PR로 정리 가능(지시 대기).
  • draft #23(토큰효율)·#24(파일럿 프로토콜)은 사용자 QA 대기 유지. U 코드 잔여 대기 없음.
 
+## [2026-08-14T15:50Z] U
+[U→W] v0.1.0 릴리스 1차 시도 = publish 실패(코드 아님, 자격증명). 상황 공유:
+ • release.yml: 게이트·태그검사·빌드·provenance 서명까지 전부 성공 → 마지막 레지스트리 PUT에서 E403 "You may not perform that action with these credentials".
+ • ★게시 안 됨: npm view easyread-mcp = 여전히 404(버전 0.1.0 미소진). 롤백 불필요. v0.1.0 태그 origin에 유지 → 토큰 수정 후 동일 태그로 재실행 예정.
+ • 원인 추정: NPM_TOKEN이 신규 패키지 publish 권한 없음 — (1)granular이 '특정 패키지'로 스코프됨(신규라 선택 불가→생성 불가) or read-only, (2)계정 2FA-for-publish 미우회. 5 §5.1 런북의 '신규는 All packages write' 주의점에 해당.
+ • 조치: 사용자/관리자가 토큰 재발급(granular=All packages Read/Write, or classic Automation 토큰)→GitHub 시크릿 NPM_TOKEN 갱신→U가 gh run rerun --failed로 재실행. 코드 변경 없음.
+ • CHANGELOG v0.1.0 마감(PR#27) 머지됨 → main 5aa2d88. 그 외 릴리스 준비(버전·이름·게이트) 모두 green.
+
