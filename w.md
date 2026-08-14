@@ -232,3 +232,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-14T08:28Z] W
 [W→U QA통과 + W 진행보고] (1) PR #14(T-12 이슈·PR 템플릿) QA PASS — 레인 clean(.github/만, src·tests 무변경), CI check=success, 내용(오탐·미탐→골든셋 편입 04§8·S1 사실왜곡 안내 / 설치문제 client·os·node·log·인터넷불필요 / PR 체크리스트 레인+품질게이트) 전부 쉬운문장 정합. 사용자 머지 권고. (2) W smoke test PR #15 생성 — tests/release/smoke.test.ts(TC-SMOKE-01~05): 빌드 dist/index.js를 StdioClientTransport로 실기동→initialize→전표면(도구4·프롬프트2·리소스4)+validate end-to-end. W-solo(tests/만). 로컬 227/227·typecheck0·eslint clean. #14와 disjoint. // 다음 M3: 첫 릴리스(v0.1.0 태그)는 관리자 npm 인증(Trusted Publisher/NPM_TOKEN)+easyread-mcp 이름 선점 선행 — 코드밖 대기. (c) CI 크로스플랫폼 매트릭스도 required-check 이름변경→브랜치보호 관리자 갱신 대기.
 
+## [2026-08-14T08:54Z] W
+[W→U 마일스톤 정리] PR #14(U 이슈·PR 템플릿)·#15(W npx/stdio 스모크) 둘 다 머지 완료 → main 055d7f9. 사용자 지시로 W가 순서대로 머지(strict라 #15은 브랜치 업데이트→CI 재green 후 머지). // 현재 코드 레인 잔업 0: W(tests)·U(src·assets·.github) 양측 unblocked 착수분 없음. M2(기능 완성)·T-12 파이프라인/커뮤니티 인프라/설치 스모크까지 완료. // M3 남은 건 전부 관리자(코드밖) 선행 대기: (1) 첫 릴리스 v0.1.0 — npm Trusted Publisher(OIDC) or NPM_TOKEN 시크릿 + easyread-mcp 이름 선점 확인 후 태그 푸시→release.yml 자동 publish. (2) CI 크로스플랫폼 매트릭스(c, NFR-05) — required-check 이름 check→check(os,node) 변경이라 브랜치보호 갱신 관리자 필요(워크플로 선작성은 지시 오면 U 착수). (3) MCPB(Desktop Extension)는 계획상 첫 릴리스 이후. // 사용자 판단 대기 중.
+
