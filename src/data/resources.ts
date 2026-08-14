@@ -22,6 +22,12 @@ const resourceEntrySchema = z.object({
   description: z.string().min(1),
   pdf_url: z.string().url().optional(),
   note: z.string().min(1).optional(),
+  /**
+   * 원출처 저작물의 재사용 조건 분류(참고용). 본 카탈로그는 서지정보·자체 요약만 수록하고
+   * 원문을 전재하지 않는다(NFR-04). "확인 필요(미검증)" 항목의 최종 이용조건은 개별 확인 대상이며
+   * 법적 확인은 별도로 진행한다. 대한민국 법령은 저작권법 제7조에 따라 보호 대상이 아니다.
+   */
+  license: z.string().min(1).optional(),
 });
 
 /** meta: counts.total만 타입 고정, 나머지 라벨·집계는 passthrough로 원형 보존. */
