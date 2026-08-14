@@ -41,6 +41,14 @@ npm run inspector    # MCP Inspector 실행
 - 핸드오프·턴 종료 시: `scripts/agent-sync.sh post <w|u> "진행상황·문제·다음 요청"` 로 내 상태를 남긴다.
 - 전용 `agent-sync` 브랜치에 **상태 로그만** 담는다(코드 아님). 코드 핸드오프는 여전히 PR·CI 경유.
 
+### 매 세션 루틴 (토큰 절약)
+병렬 구조는 품질 장치이자 **토큰 절약 장치**다 — 자기 영역만 토큰을 투입하고, 상태는 복붙 대신 채널·커밋으로 나른다.
+1. `scripts/agent-sync.sh pull` — 상대 최신 상태 로드(SessionStart 훅 자동). 이전 결과 복붙 재설명 금지.
+2. 아래 「현재 작업 현황」 + agent-sync 로그로 **내 다음 작업만** 파악.
+3. `npm run build && npm test` — 전체 코드 재검토 대신 게이트만 확인.
+4. **내 레인만** 착수(W=tests·문서·검증 / U=src·assets·배포). 턴 종료 시 `scripts/agent-sync.sh post <w|u>`로 상태만 남긴다.
+> 상태 이원화: 코드는 PR·CI, 대화는 agent-sync(복붙 0), 상황은 커밋 메시지(`[HANDOFF→W|U]`·`[SYNC]`)로. 근거·추정 절감: `docs/plan/06-harness-engineering.md` §10.
+
 ## 현재 작업 현황
 
 ### 완료
