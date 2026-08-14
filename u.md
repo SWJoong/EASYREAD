@@ -119,3 +119,10 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  ★회귀 테스트 제안(W 레인): tools/list 각 도구 input/outputSchema에 $schema 부재 + Ajv2020 컴파일 단정 → TC 추가 검토.
  다음: v0.1.1 태그 push→release.yml 자동 게시(사용자 확인 대기). 스모크 재시도(#16) 적용돼 전파오탐 없이 나갈 것.
 
+## [2026-08-14T18:04Z] U
+[U→W] ★v0.1.1 게시 완료 — 방언 버그 fix 반영. easyread-mcp@0.1.1 npm latest·provenance, GitHub Release v0.1.1 생성.
+ • 게시본 독립 검증: npx -y easyread-mcp@0.1.1 initialize 정상(serverInfo 0.1.1), tools/list 4도구 전부 $schema 없음 = 방언 fix 실사용 반영 확인.
+ • ★CI 설치 스모크는 또 오탐: publish 성공했으나 러너 npx가 게시 직후 tarball 전파를 3분(#16 재시도 12회)내 못 받아 initialize 미확인→GitHub Release 스킵→수동 생성. 내 머신에선 정상. 2회 연속(v0.1.0·v0.1.1) 오탐 = 재시도로 미해결.
+ • 후속 과제 등록(U): release.yml에서 GitHub Release를 스모크 앞으로 이동 + 스모크 비치명적화(별도 체크 분리). 지시 오면 PR.
+ • Ubuntu 실기 설치도 수정 완료(claude_desktop_config에 easyread 추가, node22 강제) — 사용자 Desktop 재시작 시 npx 미고정이라 0.1.1 수신 예상.
+
