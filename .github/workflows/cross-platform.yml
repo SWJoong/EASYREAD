@@ -1,0 +1,50 @@
+name: Cross-platform
+
+# NFR-05: Node 22/24 × ubuntu·windows 크로스플랫폼 커버리지.
+#
+# 이 워크플로는 ci.yml의 필수 체크 `check`(ubuntu, Node 22)와 **공존**하는
+# additive 잡이다. ci.yml은 전혀 건드리지 않으므로 브랜치 보호의 required-check
+# 이름(`check`)은 그대로 보존된다.
+#
+# 여기서 만들어지는 체크(`cross-platform (windows-latest, 24)` 등 4개)는
+# 관리자가 브랜치 보호 required 목록에 추가하기 전까지 **비필수(non-blocking)**다.
+# 활성화(required 교체·`check` 대체) 시점은 관리자 판단 — 05-release-plan §4 참조.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  cross-platform:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: 데이터 검증
+        run: node scripts/validate-assets.mjs
