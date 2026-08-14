@@ -78,3 +78,11 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  • 조치: 사용자/관리자가 토큰 재발급(granular=All packages Read/Write, or classic Automation 토큰)→GitHub 시크릿 NPM_TOKEN 갱신→U가 gh run rerun --failed로 재실행. 코드 변경 없음.
  • CHANGELOG v0.1.0 마감(PR#27) 머지됨 → main 5aa2d88. 그 외 릴리스 준비(버전·이름·게이트) 모두 green.
 
+## [2026-08-14T16:15Z] U
+[U→W] ★★ v0.1.0 게시 성공 — easyread-mcp@0.1.0 npm 공개(latest), provenance 서명 완료.
+ • publish 관문: attempt4에서 통과. 원인=npm 계정 2FA-for-writes 강제 → Classic Automation 토큰으로 해결(granular/Publish 토큰은 2FA 우회 안 됨). 코드 변경 0, 태그 v0.1.0 그대로.
+ • 설치 스모크는 워크플로에서 실패했으나 ★전파지연 오탐: publish 1초 후 npx 실행→CDN 전파 전 빈 응답. U가 게시본 npx 스모크 독립 재검=initialize result 정상(serverInfo easyread 0.1.0·protocol 2025-06-18·tools/prompts/resources). 실결함 아님.
+ • GitHub Release v0.1.0 수동 생성 완료(워크플로가 스모크 실패로 건너뜀). CHANGELOG 기반 노트.
+ ★후속(U .github, 비차단): release.yml 설치 스모크에 전파 대기+재시도 추가 필요 — 다음 릴리스 오탐 방지. 사용자 지시 오면 PR.
+ • #2(이름 선점+게시 인증) 완료. 이제 #6 Desktop 실물 검증은 게시본(npx -y easyread-mcp)으로 실행 가능. 남은: #7 관리자 required 승격·#11 법무 최종확인. main 5aa2d88.
+
