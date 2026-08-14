@@ -72,9 +72,40 @@
 - ✅ `ci.yml`: 기존 `check` 잡(ubuntu, Node 22)에 **데이터 검증 스텝**(`node scripts/validate-assets.mjs`, 런타임 로더 재사용) 추가. 잡 이름은 유지 — 브랜치 보호 required-check를 깨지 않기 위함.
 - ✅ `release.yml`: 위 릴리스 잡을 구현(게이트 재실행 → 태그-버전 일치 → `npm publish --provenance --access public` → npx initialize 스모크 → GitHub Release). 첫 실행 전 준비: npm **Trusted Publisher**(OIDC) 또는 `NPM_TOKEN` 시크릿 등록.
 - 🟡 **크로스플랫폼 매트릭스(Node 22/24 × ubuntu·windows, NFR-05)**: 별도 워크플로 `cross-platform.yml`로 **선작성 완료**(ci.yml 무변경 — 필수 체크 `check`는 그대로 보존, additive 공존). 새 체크(`cross-platform (windows-latest, 24)` 등 4개)는 비필수 상태로 실행된다. **활성화(관리자 시점)**: 브랜치 보호 required 목록에 이 4개 체크를 추가하고 필요 시 기존 `check`를 대체한다.
-- ⏳ npm 이름(`easyread-mcp`) 선점 확인은 첫 publish 전 체크리스트(§5) 항목으로 유지.
+- ⏳ npm 이름(`easyread-mcp`) 선점 확인·게시 인증 등록은 첫 publish 전 관리자 최초 1회 셋업(§5.1) 항목으로 유지.
 
 ## 5. 릴리스 절차 (사람 체크리스트)
+
+### 5.1 최초 1회 셋업 — 게시 인증·이름 선점 (관리자, 코드 밖)
+
+첫 `v0.1.0` 태그 전에 **계정 소유자(관리자)**가 한 번 수행한다. npm 계정 자격증명을 다루는 단계라 **코드·에이전트가 대신할 수 없다** — 자격증명(비밀번호·토큰)은 관리자만 취급한다. 이 절차의 실행이 곧 Task #2다.
+
+**(1) npm 이름 선점 확인 — `easyread-mcp`**
+
+- `npm view easyread-mcp` → `404 Not Found`면 이름이 비어 있음(사용 가능). 패키지 정보가 나오면 이미 선점된 것 → 스코프 이름 `@<org>/easyread-mcp`로 전환하고 `package.json` name·`docs/install/*`·README를 함께 갱신한다.
+- 이름은 **첫 publish가 성공하는 순간 확정**된다(태그 push → `release.yml` → `npm publish`). 별도의 수동 선점 절차는 필요 없다. 굳이 미리 자리를 맡으려면 로컬 인증 상태에서 1회 `npm publish`도 가능하나 불필요하다.
+
+**(2) 게시 인증 — 아래 A 또는 B 중 하나**
+
+`release.yml`은 이미 `permissions: id-token: write`(provenance 서명용)와 `registry-url`을 갖췄고, publish 스텝은 `NODE_AUTH_TOKEN=${{ secrets.NPM_TOKEN }}`를 소비한다.
+
+- **A. `NPM_TOKEN` 시크릿 — 첫 릴리스 권장(코드 변경 0)**
+  1. [npmjs.com](https://www.npmjs.com) 로그인(관리자 계정, 없으면 생성) → 우상단 아바타 → **Access Tokens** → **Generate New Token** → **Granular Access Token**.
+  2. 권한: **Packages and scopes = Read and write**, 만료일 지정(예: 90일), (선택)IP 허용범위. 신규 패키지라 아직 `easyread-mcp`를 특정할 수 없으면 계정 전체 write로 발급 → 첫 publish 후 패키지 한정으로 좁혀 재발급.
+  3. 표시된 토큰 문자열 복사(**한 번만 보임**).
+  4. GitHub 리포 → **Settings → Secrets and variables → Actions → New repository secret** → Name `NPM_TOKEN`, Secret에 붙여넣기.
+  5. 이후 `v0.1.0` 태그 push → `release.yml`이 이 토큰으로 인증하고 `--provenance`로 서명까지 수행한다(서명은 토큰과 무관하게 `id-token`으로 동작).
+  - 트레이드오프: 장기 토큰이 저장되므로 **만료·회전 관리가 필요**하다. 안정화 후 B로 이전 권장.
+
+- **B. Trusted Publisher(OIDC) — 토큰 없는 하드닝(v0.1.0 이후 권장)**
+  1. npmjs.com 패키지 페이지(첫 publish로 생성됨) → **Settings → Trusted Publisher** → GitHub Actions → Organization/Repository = `SWJoong/EASYREAD`, Workflow = `release.yml`, (선택)Environment.
+  2. **코드 선행 필요(U 레인)**: OIDC 신뢰 게시는 최신 npm(**11.5.1+**)을 요구하나 Node 22 기본 npm은 10.x다. `release.yml`의 publish 앞에 `npm i -g npm@latest` 스텝을 추가해야 한다(별도 PR).
+  3. 설정 후에는 `NPM_TOKEN`·`NODE_AUTH_TOKEN` 없이 publish 가능하다(해당 env 라인 제거).
+  - 저장 토큰 0 → 유출 위험 0. 가장 안전한 최종형.
+
+> **요약**: **v0.1.0은 A(`NPM_TOKEN`)로 최단** — 관리자가 시크릿 1개만 추가하면 코드 변경 없이 provenance 게시가 된다. 안정화 후 **B(OIDC)로 이전**해 저장 토큰을 없앤다.
+
+### 5.2 매 릴리스 체크리스트
 
 1. [ ] QA 게이트 4종(04 §7) 통과 확인 — 릴리스 PR에 Inspector 점검 기록 첨부
 2. [ ] 버전 결정(§3 표 기준) — 임계값·스키마 변경 여부 diff로 재확인
