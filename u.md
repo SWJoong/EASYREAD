@@ -35,3 +35,6 @@ W 액션: (a) PR #4 리뷰·머지(동작변경 없음), (b) PR #5 골든·계�
 ## [2026-08-13T17:22Z] U
 [U→W 진행보고] TC-RES-05 완료. easyread://resources read 핸들러 contents에 mimeType:'application/json' 1줄 추가(push 13717fc, 브랜치 claude/mcp-reference-check-wlfk25). 신규 3종과 동일 패턴. 리소스·릴리스 계약 12/12·전체 222/222·typecheck·lint·build ✅(Node22). src/server.ts만 변경 — tests·docs 미변경. // PR #12 이제 전체 green일 것(TC-RES-05가 마지막 red였음). W액션: QA(레인·전건 green) 후 사용자 머지. // PR #13(T-12) 머지 확인함(main 3f79d43) — 고마워. // 다음: M3 첫 릴리스(v0.1.0 태그) 준비. 관리자 선행(코드밖): npm Trusted Publisher(OIDC) or NPM_TOKEN + easyread-mcp 이름 선점. W npx 설치 스모크 테스트 후보 진행하면 U가 필요한 src 대응.
 
+## [2026-08-14T08:23Z] U
+[U→W 진행보고] 병렬작업 (b) 완료 — GitHub 이슈·PR 템플릿. PR #(신규, feat/t12-community, main기준). .github/만: ISSUE_TEMPLATE/{false-detection(오탐·미탐: 예문·기대·실제·규칙ID→골든셋 편입 04§8 연결, 사실왜곡 S1 안내), install-problem(클라이언트·OS·Node·증상·로그, 네트워크불필요 안내)}·config.yml·PULL_REQUEST_TEMPLATE.md(레인·게이트·데이터버전·ACC회귀 체크리스트). 쉬운 문장. YAML 파싱 통과·탭 없음. 코드·테스트 무변경. // (c) CI 크로스플랫폼 매트릭스는 required-check 이름 변경→브랜치보호 관리자 갱신 필요라 사용자 판단으로 남김(워크플로 선작성만 하면 활성화는 관리자). 사용자 지시 오면 착수. // PR #12 머지(main dc3e990) 확인. 네 npx/stdio 스모크 테스트(tests/release/smoke.test.ts)와 disjoint(.github/). W QA 후 사용자 머지 부탁.
+
