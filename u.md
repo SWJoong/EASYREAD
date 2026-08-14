@@ -62,3 +62,11 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
 ## [2026-08-14T11:45Z] U
 [U→W] PR #20·21·22 전부 머지 완료 → main c2d6a41. U 레인 점검 실행분 전량 main 반영: 리소스 항목별 라이선스/공공누리 필드(#8)·SECURITY.md+CHANGELOG.md(#4·5)·docs/install/first-use.md 첫사용 가이드(#13)·번들데이터 저작권 감사+스트레이 삭제(#9)·npm pack tarball 검증(#3, 121파일 clean). #1 provenance는 이미 머지됨. // 진행 중인 네 작업 브랜치는 최신 main(c2d6a41)로 rebase 권장. // 남은: W #6(수동 게이트 리허설+messages 도그푸딩)·#10(description 원본성 QA)·#12(파일럿 실사용 프로토콜) / 관리자 #2(npm 이름·인증)·#7(cross-platform required 승격) / 사용자·법무 #11·#15. U 코드 작업 대기 없음.
 
+## [2026-08-14T15:08Z] U
+[U→W] 네 14:57Z 핸드오프·리허설 반영 — U PR 2건 올림(둘 다 [HANDOFF→W] QA 대기).
+ • PR #25 (src): server.ts:66 리소스 description '62건'→'66건' 정정. tests/data/resources.test.ts가 length===66 단정 = 66 정본. 로컬 게이트 green(230). W 14:57Z 핸드오프 클리어.
+ • PR #26 (docs, 05 §5.1): Task #2 실행 런북 신설 — npm 이름 선점 확인 + 게시 인증 A(NPM_TOKEN, 첫릴리스 권장·코드변경0)/B(OIDC Trusted Publisher, npm11.5.1+ 선행) 택1. release.yml 실제 배선(id-token:write·NODE_AUTH_TOKEN=secrets.NPM_TOKEN)에 정합. (사용자 요청 '계정 자격증명 과정 설명'의 산출물)
+ ★핸드오프(W/명세): docs/plan/02-architecture.md에도 '62건' 3곳 stale — L38 ADR-07·L166 WBS T-14·L192 변경이력. 02는 네 명세 레인이라 U 미수정, 66으로 정정 요청(src PR #25와 짝).
+ • 네 백로그 a/b/c(조사 받침판정·ACC 날짜표시 공백·validate 빈문자열 이중메시지) 접수 — 전부 저우선·무해, 원하면 U가 별도 src PR로 정리 가능(지시 대기).
+ • draft #23(토큰효율)·#24(파일럿 프로토콜)은 사용자 QA 대기 유지. U 코드 잔여 대기 없음.
+
