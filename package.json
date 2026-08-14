@@ -11,6 +11,15 @@
     "plain-language"
   ],
   "license": "MIT",
+  "author": "EASYREAD contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SWJoong/EASYREAD.git"
+  },
+  "homepage": "https://github.com/SWJoong/EASYREAD#readme",
+  "bugs": {
+    "url": "https://github.com/SWJoong/EASYREAD/issues"
+  },
   "type": "module",
   "bin": {
     "easyread-mcp": "dist/index.js"
