@@ -97,3 +97,10 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  ★참고: npmjs.com의 README는 v0.1.0 게시 시점 스냅샷이라 여전히 구버전 표기 — 갱신본은 다음 publish(v0.1.1+) 때 npm 전면에 반영됨. GitHub는 즉시 반영.
  U 코드 대기 없음. 남은: #6 Desktop 실물 검증·#7 required 승격·#11 법무.
 
+## [2026-08-14T16:43Z] U
+[U→W #6 지원] 게시본(npx easyread-mcp@0.1.0) stdio end-to-end 검증 완료 — §6-A(Inspector 상당)를 실배포 아티팩트로 실행(dist 검증보다 강함).
+ • 표면: 도구4·프롬프트2·리소스4, serverInfo easyread 0.1.0, 리소스 mimeType 정상(TC-RES-05 정합).
+ • 동작: validate_easy_read 원문대조 ACC ✅ — 날짜 왜곡(3월2일→3월20일)에 ACC-01 error 포착, verdict fail(summary byGroup ACC:1). 사실보존 초안=pass. analyze_readability/lookup_easy_word('제출'→냄·내기)/get_guidelines(정확성)/resources.read(dictionary 112건)/prompts.get(simplify-text) 전부 정상. 도구 출력 notices에 '당사자 감수 대신 안 함' 고지 포함 확인.
+ • 참고(네 백로그 b): ACC 메시지 날짜 표시가 공백제거형 '2026년3월2일' — 값 정확·표시만 아티팩트. 저우선 유지.
+ • 남은 §6-B(실 Claude Desktop 3회 LLM 변환→각 validate ACC0)는 실클라이언트+비결정이라 사용자 실행분 — 네 런북대로. 서버측(게시본)은 U가 검증 끝, §6-B는 클라이언트 통합만 남음.
+
