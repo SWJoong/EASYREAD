@@ -63,7 +63,7 @@ export function createServer(dictionary?: Dictionary, catalog?: Catalog): McpSer
       "resources",
       "easyread://resources",
       {
-        description: "Easy-Read 근거·표준·사례 카탈로그(62건: 지침·법령·사례·포털)",
+        description: "Easy-Read 근거·표준·사례 카탈로그(66건: 지침·법령·사례·포털)",
         mimeType: "application/json",
       },
       () => ({
