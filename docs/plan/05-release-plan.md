@@ -71,7 +71,7 @@
 
 - ✅ `ci.yml`: 기존 `check` 잡(ubuntu, Node 22)에 **데이터 검증 스텝**(`node scripts/validate-assets.mjs`, 런타임 로더 재사용) 추가. 잡 이름은 유지 — 브랜치 보호 required-check를 깨지 않기 위함.
 - ✅ `release.yml`: 위 릴리스 잡을 구현(게이트 재실행 → 태그-버전 일치 → `npm publish --provenance --access public` → npx initialize 스모크 → GitHub Release). 첫 실행 전 준비: npm **Trusted Publisher**(OIDC) 또는 `NPM_TOKEN` 시크릿 등록.
-- ⏳ **크로스플랫폼 매트릭스(Node 22/24 × ubuntu·windows, NFR-05)**: required-check 이름이 바뀌어(`check` → `check (os, node)`) 브랜치 보호 설정 갱신이 함께 필요하므로 **후속**으로 분리. 별도 잡으로 추가하고 관리자가 required 목록을 갱신하는 시점에 활성화한다.
+- 🟡 **크로스플랫폼 매트릭스(Node 22/24 × ubuntu·windows, NFR-05)**: 별도 워크플로 `cross-platform.yml`로 **선작성 완료**(ci.yml 무변경 — 필수 체크 `check`는 그대로 보존, additive 공존). 새 체크(`cross-platform (windows-latest, 24)` 등 4개)는 비필수 상태로 실행된다. **활성화(관리자 시점)**: 브랜치 보호 required 목록에 이 4개 체크를 추가하고 필요 시 기존 `check`를 대체한다.
 - ⏳ npm 이름(`easyread-mcp`) 선점 확인은 첫 publish 전 체크리스트(§5) 항목으로 유지.
 
 ## 5. 릴리스 절차 (사람 체크리스트)
