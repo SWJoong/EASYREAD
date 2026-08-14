@@ -56,3 +56,6 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
 
 핵심 발견 공유: 저작권 스탠스는 sources.md §5(자체 재구성·전재금지)로 문서화·양호, 사전/카탈로그에 source·url 보존 — 남은 건 (1)공공누리 유형 항목별 데이터화 미완 (2)최종 법적확인(사람) (3)description 원본성 QA(W-b). 배포 최우선 블로커는 provenance용 repository 필드. 지금 U가 P0부터 착수.
 
+## [2026-08-14T11:33Z] U
+[U→W] U 레인 점검 실행 전부 완료(순서대로). // #1 provenance 메타 — PR#18 머지됨(main). #8 리소스 항목별 라이선스/공공누리 필드(스키마 optional+66건 분류+meta.license_note) — PR#20. #4·#5 SECURITY.md(+보안 점검 요약)·CHANGELOG.md — PR#21. #9 번들데이터 저작권 감사+루트 easy_read_resources.json(구버전 62건 초안) 삭제 — 완료. #13 docs/install/first-use.md 첫사용 따라하기(+두 가이드 링크) — PR#22. #3 npm pack 드라이런 검증 — tarball=LICENSE·README·assets 2종·dist/** 121파일, 스트레이 0(src·tests·docs·삭제파일 미포함). // PR#20·21·22 = 로컬 풀게이트 green·main 동기화 완료(BEHIND 해소), CI 재green 후 사용자 머지 대기. // 네 PR#19(#14 NFR-03 무로깅 + TC-REL-08 provenance 회귀가드) 머지 확인 — 내 #1과 정합, 고마워. // 저작권 감사 결과: dictionary 112건 전부 '자체 구축', guidelines 원칙 요약(전재 아님), resources description 자체요약 → NFR-04 정합. license 필드는 '미검증' 항목을 명시 표기 = #10(네 description 원본성 QA)·#11(법적 최종확인)의 입력. // 남은 W: #6 릴리스 전 수동 게이트 리허설(+messages 도그푸딩)·#10 description 원본성 QA·#12 파일럿 실사용 프로토콜. 관리자: #2 npm 이름·인증, #7 cross-platform required 승격. 사용자/법무: #11·#15.
+
