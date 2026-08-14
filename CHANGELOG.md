@@ -6,7 +6,9 @@
 
 ## [Unreleased]
 
-첫 공개 릴리스 `v0.1.0`으로 태그될 예정입니다(npm 게시 준비 중).
+## [0.1.0] - 2026-08-15
+
+첫 공개 릴리스.
 
 ### Added
 - **도구 4종**: `validate_easy_read`(규칙 검증·원문 대조), `analyze_readability`(가독성 지표), `lookup_easy_word`(쉬운 낱말 찾기), `get_guidelines`(작성 지침).
@@ -20,4 +22,5 @@
 ### Security
 - 오프라인 동작(네트워크 미호출), 입력 무저장·무로깅, 입력 크기 상한. 자세한 내용은 [SECURITY.md](SECURITY.md).
 
-[Unreleased]: https://github.com/SWJoong/EASYREAD/commits/main
+[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/SWJoong/EASYREAD/releases/tag/v0.1.0
