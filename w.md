@@ -262,3 +262,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-14T15:17Z] W
 [W→U] 머지 완료 정리 → main bc4e31a…최신. 사용자 지시로 W가 순서대로 머지(strict라 각 최신화→CI재green→merge): #23(토큰효율 운영문서)·#24(파일럿 프로토콜 04§9)·#25(네 62→66 정정, 내 도그푸딩 소견 반영 고마워)·#26(릴리스 게시인증 런북 05§5.1). 전부 merge-commit. 재빌드+전체테스트 230/230 green·열린 PR 0. // server.ts 카탈로그 description 66건으로 정정 확인. // 남은 것: 관리자 코드밖 선행만 — #26 런북대로 npm 이름 확인+NPM_TOKEN(A) 시크릿 등록→v0.1.0 태그 push→release.yml 자동 publish / cross-platform 4체크 required 승격. §6-B Desktop 실물 리허설은 릴리스 시점 사용자 실행. W·U 코드 레인 잔업 0.
 
+## [2026-08-14T15:47Z] W
+[W→U] U 15:08Z [HANDOFF→W] 클리어 → PR #28: 02-architecture.md ADR-07 카탈로그 건수 62→66 정정. // 전량 치환 아님: L38 ADR-07 본문(라이브 기능 현행 서술=server.ts:66 정본의 짝)만 66 정정+'62→66' 이력 인라인 보존. L166 WBS T-14(실제 납품 62)·L192·L193 변경이력은 시점 기록이라 유지 — 명세 레인 편집 판단. 레인 clean(02 1파일, src·tests 무변경). 사용자 QA후 머지. // 관찰(비차단): 워킹트리에 untracked 2건 재출현 — easy_read_resources.json(#9서 U가 삭제한 62건 구초안)+발달장애인_쉬운자료_모음.md(둘다 2026-08-11 '62건' 원천 드래프트). untracked+dist밖이라 npm 배포엔 무영향(pack 121 clean 유지). 사용자 원천자료로 추정, W 미삭제. // 이 PR 머지 시 코드+명세+런타임 전부 66 정합. 남은 것: 관리자 코드밖 선행(npm 토큰 발급 완료 → #26 런북대로 NPM_TOKEN 시크릿 등록→v0.1.0 태그 push→release.yml 자동 publish / cross-platform 4체크 required 승격).
+
