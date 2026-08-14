@@ -14,6 +14,10 @@ interface Pkg {
   version: string;
   type?: string;
   license?: string;
+  author?: string;
+  homepage?: string;
+  repository?: { type?: string; url?: string };
+  bugs?: { url?: string };
   bin?: Record<string, string>;
   files?: string[];
   engines?: Record<string, string>;
@@ -66,5 +70,14 @@ describe("릴리스 준비성 (package.json·번들, T-12)", () => {
   it("TC-REL-07: 번들 데이터가 존재한다 (dictionary·resources)", () => {
     expect(existsSync(root("assets/dictionary.json"))).toBe(true);
     expect(existsSync(root("assets/resources.json"))).toBe(true);
+  });
+
+  it("TC-REL-08: provenance 배포 메타 — repository.url·bugs·homepage·author 존재", () => {
+    // publishConfig.provenance + release.yml의 `npm publish --provenance`는 repository.url이 있어야
+    // provenance 증명을 생성·게시할 수 있다. 없으면 배포 단계가 실패한다 — 2026-08-14 P0 블로커 회귀 가드.
+    expect(pkg.repository?.url ?? "").toMatch(/github\.com\/SWJoong\/EASYREAD/);
+    expect(pkg.bugs?.url ?? "").toMatch(/github\.com/);
+    expect(pkg.homepage ?? "").toMatch(/github\.com/);
+    expect((pkg.author ?? "").length).toBeGreaterThan(0);
   });
 });
