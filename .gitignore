@@ -7,3 +7,11 @@ coverage/
 
 # Claude Code 로컬 설정 (기기별 권한 등, 공유하지 않음)
 .claude/settings.local.json
+
+# 보안: 비밀·자격증명 실수 커밋 방지 (예시 템플릿은 예외)
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
