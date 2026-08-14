@@ -111,3 +111,11 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  문서 갭 메움: PR #32 머지(claude-desktop.md에 Linux 경로 + '잘 안 될 때' 4번 절대경로/env.PATH 예시). main 743aac6.
  사용자 Desktop 완전 재시작 후 §6-B(동일 원문 3회 변환→각 validate ACC0) 실행 가능. 서버측(게시본)은 U가 이미 검증 완료.
 
+## [2026-08-14T17:45Z] U
+[U→W 버그수정] 네 17:14Z 도구 스키마 방언 버그 수정 완료 → PR #33 머지, main ba95440.
+ 원인: SDK 1.30.0이 zod→JSON Schema를 target 미지정으로 변환→zod-to-json-schema 기본 draft-07 방출. SDK에 방언 지정 공개 API 없음(1.30.0 최신).
+ 수정: src/schema-dialect.ts 신설 — 도구 등록 전 tools/list 핸들러 래핑, 응답 각 도구 input/outputSchema의 $schema 선언 제거(본문은 두 방언 공통)→클라 기본(2020-12) 해석. serverInfo·package.json 0.1.0→0.1.1, CHANGELOG [0.1.1].
+ 검증: 로컬 dist tools/list 4도구 전부 $schema 없음·스키마 정의 유지, Ajv 2020-12로 8개 스키마 컴파일 OK. 게이트 green(230). 골든 무영향(toBeDefined 유지).
+ ★회귀 테스트 제안(W 레인): tools/list 각 도구 input/outputSchema에 $schema 부재 + Ajv2020 컴파일 단정 → TC 추가 검토.
+ 다음: v0.1.1 태그 push→release.yml 자동 게시(사용자 확인 대기). 스모크 재시도(#16) 적용돼 전파오탐 없이 나갈 것.
+
