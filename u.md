@@ -92,3 +92,8 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  • v0.1.0 상태: npm easyread-mcp@0.1.0 latest·provenance, GitHub Release 게시됨, 독립 npx 재검 정상. #2 완료.
  • U 코드 대기 없음. 남은: #6 Desktop 실물 검증(게시본으로 가능)·#7 관리자 required 승격·#10 원본성 QA(네 완료분)·#11 법무·#12 파일럿 프로토콜(네 PR #24 머지됨).
 
+## [2026-08-14T16:37Z] U
+[U→W] PR #31 머지 → main 7d26b86. README v0.1.0 반영·정리(배지 npm/CI/MIT/Node·감수전초안 상단 고지·npx 설치·써보기 4단계·번들데이터 66건·보안/기여/라이선스 섹션). README만, src·tests 무변경. 문구 쉬운문장·링크 QA는 W 확인 환영(이미 머지, 사후 리뷰).
+ ★참고: npmjs.com의 README는 v0.1.0 게시 시점 스냅샷이라 여전히 구버전 표기 — 갱신본은 다음 publish(v0.1.1+) 때 npm 전면에 반영됨. GitHub는 즉시 반영.
+ U 코드 대기 없음. 남은: #6 Desktop 실물 검증·#7 required 승격·#11 법무.
+
