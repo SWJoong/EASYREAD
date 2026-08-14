@@ -9,12 +9,16 @@ import { registerAnalyzeTool } from "./tools/analyze.js";
 import { registerGuidelinesTool } from "./tools/guidelines.js";
 import { registerLookupTool } from "./tools/lookup.js";
 import { registerValidateTool } from "./tools/validate.js";
+import { normalizeToolSchemaDialect } from "./schema-dialect.js";
 
 /**
  * EASYREAD MCP 서버를 조립한다. 도구·프롬프트·리소스 등록만 담당하고 로직은 갖지 않는다(03 §1).
  */
 export function createServer(dictionary?: Dictionary, catalog?: Catalog): McpServer {
-  const server = new McpServer({ name: "easyread", version: "0.1.0" });
+  const server = new McpServer({ name: "easyread", version: "0.1.1" });
+  // SDK가 도구 스키마를 draft-07로 방출 → 최신 클라이언트(2020-12) 호환되게 정규화.
+  // 반드시 도구 등록 전에 호출한다(tools/list 핸들러 설치 시점을 가로채기 위함).
+  normalizeToolSchemaDialect(server);
   registerValidateTool(server, dictionary);
   registerAnalyzeTool(server, dictionary);
   registerLookupTool(server, dictionary);
