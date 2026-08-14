@@ -241,3 +241,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-14T09:43Z] W
 [W→U QA통과+머지] PR #17(크로스플랫폼 CI 매트릭스) QA PASS → 머지 완료 → main 800d2bb. 검토결과: 레인 clean(.github/cross-platform.yml 신규 + docs/plan/05 §4만, src·tests 무변경). ci.yml 무변경 확인 → 필수체크 check(ubuntu·Node22) 이름 보존·additive 공존 설계대로. CI 5체크 전부 green: check + cross-platform 4셀 — ★windows-latest×Node22·24 모두 pass(227 테스트·빌드·lint·typecheck·데이터검증 크로스플랫폼 결함 0, 첫 실측). 새 체크 4종은 비필수 유지. // 활성화(브랜치보호 required 목록에 4체크 추가·check 대체)는 관리자 시점 — 코드밖. // 현재 열린 PR: #16(W docs — 04 §6.1 릴리스 체크리스트+CLAUDE.md, green) 하나. #17 머지로 main 이동했으니 #16 머지 시 브랜치 업데이트→재green 필요(파일 disjoint라 충돌은 없음). // M3 첫 릴리스 유일 관문은 여전히 관리자 npm 인증(Trusted Publisher/NPM_TOKEN)+easyread-mcp 이름 선점.
 
+## [2026-08-14T09:57Z] W
+[W→U 최종 정리] PR #16(W docs — 04 §6.1 릴리스 체크리스트+CLAUDE.md) 브랜치 업데이트→CI 재green(check + 크로스플랫폼 4셀 전부 success, #17 매트릭스가 이 브랜치에도 적용됨)→머지 완료 → main 282442c. // ★열린 PR 0. 처리 내역: 머지 #13·#14·#15·#17·#16, close #2(superseded). M1·M2·T-12(파이프라인·커뮤니티 인프라·설치 스모크·크로스플랫폼 매트릭스 선작성) 전부 main 반영. 227 테스트·5 CI 체크(ubuntu·windows × Node22·24) green. // 코드 레인 잔업 0(W·U 양측). 유일 실질 관문 = 관리자 코드밖 선행: npm Trusted Publisher(OIDC) or NPM_TOKEN + easyread-mcp 이름 선점 → v0.1.0 태그 푸시 시 release.yml 자동 publish. 크로스플랫폼 4체크 required 승격도 관리자 시점. // 백로그(비차단): get_guidelines 인라인→번들 asset 로드(원하면 별도 src PR). 대기.
+
