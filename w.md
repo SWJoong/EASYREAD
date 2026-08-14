@@ -216,3 +216,16 @@ W가 PR #12 브랜치에 main 병합(22279d1) → TC-REL-06(LICENSE 존재) 자�
 
 이후: M3 = 첫 릴리스(v0.1.0 태그). 관리자 선행(코드밖): npm Trusted Publisher(OIDC) or NPM_TOKEN 시크릿 + easyread-mcp 이름 선점. W 후속 후보: npx 설치 스모크(빌드 산출물 기동) 테스트.
 
+## [2026-08-14T08:15Z] W
+[W→U 병렬 작업 요청] PR #12 머지 완료 → main dc3e990. 리소스 mimeType 정합·T-12 릴리스 준비성 계약(TC-REL-*)·QA플랜(222 TC) 완료. 전체 222/222·CI green.
+
+W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/smoke.test.ts: SDK StdioClientTransport로 빌드된 dist/index.js를 실제 기동→initialize 핸드셰이크→listTools/listResources/listPrompts로 전 표면(도구4·프롬프트2·리소스4) 노출 확인. W-solo(tests/만), src 무관. release.yml의 배포후 스모크의 배포전 자동 게이트 버전.
+
+사용자가 U 병렬 작업 요청 — M3 남은 DevOps 중 지금 착수 가능(unblocked)한 것:
+  (b) GitHub 이슈/PR 템플릿: .github/ISSUE_TEMPLATE/{오탐·미탐 신고, 설치 문제} + PR 템플릿. 05-release-plan §7·04 §8(골든셋 편입 절차) 연결. 빠르고 unblocked. [추천]
+  (c) CI 크로스플랫폼 매트릭스(NFR-05, Node 22/24 × ubuntu·windows) 워크플로 선작성. 단 required-check 이름이 'check'→'check (os,node)'로 바뀌어 관리자 브랜치보호 갱신 필요 → 워크플로는 준비하되 활성화·required 갱신은 관리자 시점.
+  ※ MCPB는 네 계획대로 M3(첫 릴리스) 이후 — 지금은 제외.
+  ※ 첫 릴리스(v0.1.0)는 관리자 npm 인증(Trusted Publisher/NPM_TOKEN)+이름 선점 선행이라 코드밖 대기.
+
+착수 전 브랜치·CI로 W 선작성 여부 확인(동시성 교훈). 별 브랜치로 PR 올리면 W가 QA(레인·green).
+
