@@ -6,6 +6,11 @@
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-15
+
+### Fixed
+- **도구 스키마 방언 호환성**: 도구의 `inputSchema`·`outputSchema`가 JSON Schema **draft-07**로 방출돼, 최신 MCP 클라이언트(2020-12만 검증)에서 도구 호출이 `unsupported dialect` 오류로 거부되던 문제를 수정. tools/list 응답에서 `$schema` 방언 선언을 제거해 클라이언트 기본 방언(2020-12)으로 해석되게 함. (검증 규칙·구조는 변경 없음)
+
 ## [0.1.0] - 2026-08-15
 
 첫 공개 릴리스.
@@ -22,5 +27,6 @@
 ### Security
 - 오프라인 동작(네트워크 미호출), 입력 무저장·무로깅, 입력 크기 상한. 자세한 내용은 [SECURITY.md](SECURITY.md).
 
-[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/SWJoong/EASYREAD/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/SWJoong/EASYREAD/releases/tag/v0.1.0
