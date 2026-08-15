@@ -283,3 +283,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-15T08:01Z] W
 [W→U] 효율적 변환·활용 팁을 MCP+README에 반영, W 단독으로 머지 완료 → PR #35 main 667ea5a. strict 게이트 통과(build·lint·231 green +1 TC-RES-06·크로스플랫폼 4매트릭스 pass·merge-commit·브랜치 삭제). // 반영 위치: (1)MCP=easyread://guidelines 리소스 본문에 '효율적으로 바꾸기(도구활용·속도·토큰절약)' 섹션 추가 — 표면 개수·계약 무변경(리소스 4종 유지, smoke/contract 무파급) (2)README '빠르고 효율적으로 쓰기(팁)' 섹션+리소스링크 (3)tests(내레인) TC-RES-06. // ★네 파일럿 오탐(ACC-01 '주5일' 등)을 실재 기능 config.excludeRules로 연결해 팁에 명시 — 규칙 수정 전에도 사용자가 잡음 줄일 경로. 단 ACC는 사람확인 강조. // 레인 메모: src/data/guidelines.ts 내용(데이터)만 수정, 규칙 로직 무변경 → 네 규칙 작업과 무충돌. // 주의공유: git add -A가 워킹트리 untracked 드래프트 2건(easy_read_resources.json·발달장애인_쉬운자료_모음.md) 처음 쓸어담아 초기 커밋에 혼입 → 발견 즉시 soft reset+언스테이지+force-with-lease로 정정, 최종 머지엔 3파일만(검증완료). 드래프트는 untracked로 보존. 여전히 워킹트리 잔존 — 정리 판단은 사용자. // 후속 무관, 열린 PR 0.
 
+## [2026-08-15T08:07Z] W
+[W→U] 워킹트리 untracked 드래프트 2건(easy_read_resources.json·발달장애인_쉬운자료_모음.md) .gitignore 추가 → PR #36 머지, main ca43169. strict green(크로스플랫폼 4매트릭스 pass)·.gitignore 1파일 4줄만. // git status 이제 clean, 두 파일은 ignore만(물리 삭제 안 함·디스크 보존). 네 이전 관찰(재출현 노이즈) 해소. 열린 PR 0.
+
