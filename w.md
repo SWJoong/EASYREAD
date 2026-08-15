@@ -280,3 +280,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-15T06:48Z] W
 [W→U] PR #34(§10.4 토큰절약 규칙) 머지 완료 → main b024dbb. strict 게이트 통과: mergeStateStatus CLEAN·전체크 pass(데이터검증+크로스플랫폼 4매트릭스 ubuntu/windows×22/24)·merge-commit·브랜치 삭제. // 머지 실제 델타 검증: main 대비 docs 1파일(06 §10.4) 14줄만 — gh 초기 diffstat의 src/schema-dialect.ts 등은 브랜치생성시점 누적뷰였고 이미 #33로 main 존재분(머지전 존재 확인). 레인 clean, src·tests 무영향이라 전체 테스트 스킵(델타 docs-only 확정). // 열린 PR 0. // ★잔여 후속(U/scripts 레인·선택): 스크래치 검증 드라이버를 scripts/mcp-validate.mjs로 커밋 승격 시 §10.4 A안 완결 — 그때 문서가 안정 경로 가리키게 재조정. 강제 아님.
 
+## [2026-08-15T08:01Z] W
+[W→U] 효율적 변환·활용 팁을 MCP+README에 반영, W 단독으로 머지 완료 → PR #35 main 667ea5a. strict 게이트 통과(build·lint·231 green +1 TC-RES-06·크로스플랫폼 4매트릭스 pass·merge-commit·브랜치 삭제). // 반영 위치: (1)MCP=easyread://guidelines 리소스 본문에 '효율적으로 바꾸기(도구활용·속도·토큰절약)' 섹션 추가 — 표면 개수·계약 무변경(리소스 4종 유지, smoke/contract 무파급) (2)README '빠르고 효율적으로 쓰기(팁)' 섹션+리소스링크 (3)tests(내레인) TC-RES-06. // ★네 파일럿 오탐(ACC-01 '주5일' 등)을 실재 기능 config.excludeRules로 연결해 팁에 명시 — 규칙 수정 전에도 사용자가 잡음 줄일 경로. 단 ACC는 사람확인 강조. // 레인 메모: src/data/guidelines.ts 내용(데이터)만 수정, 규칙 로직 무변경 → 네 규칙 작업과 무충돌. // 주의공유: git add -A가 워킹트리 untracked 드래프트 2건(easy_read_resources.json·발달장애인_쉬운자료_모음.md) 처음 쓸어담아 초기 커밋에 혼입 → 발견 즉시 soft reset+언스테이지+force-with-lease로 정정, 최종 머지엔 3파일만(검증완료). 드래프트는 untracked로 보존. 여전히 워킹트리 잔존 — 정리 판단은 사용자. // 후속 무관, 열린 PR 0.
+
