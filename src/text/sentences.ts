@@ -111,7 +111,10 @@ export function splitSentenceSpans(text: string, offset = 0): Span[] {
       ) {
         j++;
       }
-      push(j + 1);
+      // 종결부호는 뒤가 공백/끝일 때만 경계로 삼는다 — 도메인·이메일 내부 '.'
+      // (예: jobcenter.or.kr)은 어절을 쪼개지 않는다. 닫는 기호 뒤 경계는 maybeCloseBoundary가 처리.
+      const after = text[j + 1];
+      if (after === undefined || isSpace(after)) push(j + 1);
       i = j;
       continue;
     }

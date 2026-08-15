@@ -5,6 +5,15 @@ import type { Rule, RuleFinding } from "../types.js";
 // 어절당 최대 1건, (a) 우선. 단일 로마자('A형')는 제외.
 const LATIN_2PLUS = /[A-Za-z]{2,}/;
 
+// 이메일·URL·도메인·측정단위는 '바꿀 외국어'가 아니다 → 외국어 판정에서 제외(오탐 방지).
+function isTechnicalToken(t: string): boolean {
+  if (t.includes("@")) return true; // 이메일(job@jobcenter.or.kr)
+  if (/https?:\/\//i.test(t) || /^www\./i.test(t)) return true; // URL
+  if (/[A-Za-z]\.[A-Za-z]{2,}/.test(t)) return true; // 도메인(jobcenter.or.kr)
+  if (/^\d[\d.,]*[A-Za-z]+$/.test(t)) return true; // 측정단위(20kg, 3.5m)
+  return false;
+}
+
 export const voc02: Rule = {
   id: "VOC-02",
   group: "VOC",
@@ -13,6 +22,7 @@ export const voc02: Rule = {
     const findings: RuleFinding[] = [];
     for (const s of ctx.sentences) {
       for (const w of s.words) {
+        if (isTechnicalToken(w.text)) continue; // 이메일·URL·도메인·단위는 제외
         // (a) 사전 loanword 정확 일치 — 우선
         const entry = ctx.dictionary.lookup(w.text);
         if (entry?.category === "loanword") {
