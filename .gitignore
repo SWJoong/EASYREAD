@@ -15,3 +15,7 @@ coverage/
 .npmrc
 *.pem
 *.key
+
+# 로컬 원천 자료 드래프트 (개인 작업본 — 저장소·배포에 포함하지 않음)
+easy_read_resources.json
+발달장애인_쉬운자료_모음.md
