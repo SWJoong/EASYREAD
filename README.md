@@ -47,11 +47,12 @@ claude mcp add easyread -- npx -y easyread-mcp
 
 - **필요한 부분만 넣기** — 긴 원문·웹페이지 전체 대신 제목·자격·근무조건·기한·연락처만 골라 토막으로 바꿉니다(검사 한도 5만 자).
 - **먼저 `analyze_readability`** — 가장 긴 문장·어려운 낱말을 찾아 그 부분부터 고칩니다.
+- **어려운 낱말만 골라 찾기** — 위에서 찾은 낱말만 `lookup_easy_word`로 확인합니다. 아무 낱말이나 반복 조회하지 않습니다.
 - **검사는 초안 단위로** — 문장마다 말고, 초안 한 편이 되면 `validate_easy_read`를 한 번 부릅니다. `original`(원문)을 함께 주면 사실 보존까지 한 번에 봅니다.
 - **오탐은 끄기** — 보조 검사가 잘못 잡으면 `config.excludeRules`(예: `["SEN-02"]`)로 규칙을 끕니다. 단, 정확성(ACC)은 사람이 꼭 확인합니다.
 - **프롬프트 재사용** — `simplify-text`를 그대로 쓰면 지시를 매번 새로 쓰지 않아도 됩니다. 결과는 바뀐 글만 내보내면 토큰이 줍니다.
 
-더 자세한 팁은 `easyread://guidelines` 리소스의 **"효율적으로 바꾸기"** 항목에 있습니다.
+위 팁은 Claude 안에서 `easyread://guidelines` 리소스로도 볼 수 있습니다 — `easyread://`는 웹 주소가 아니라 클라이언트(Claude Desktop·Code)에서 여는 MCP 리소스입니다. 본문을 바로 보려면 소스 [`src/data/guidelines.ts`](src/data/guidelines.ts)의 `GUIDELINES_MARKDOWN`을 참고하세요.
 
 ## 제공 기능
 
