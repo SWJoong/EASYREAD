@@ -43,6 +43,14 @@ describe("easyread:// 리소스 (InMemory 계약, FR-09)", () => {
     expect((c0.text ?? "").length).toBeGreaterThan(0);
   });
 
+  it("TC-RES-06: easyread://guidelines는 효율적 변환 팁(도구 활용·excludeRules)을 포함한다", async () => {
+    const c = await client();
+    const res = await c.readResource({ uri: "easyread://guidelines" });
+    const text = firstContent(res).text ?? "";
+    expect(text).toContain("효율적으로 바꾸기"); // 팁 섹션 제목
+    expect(text).toContain("excludeRules"); // 오탐 규칙 끄기(실재 기능) 안내
+  });
+
   it("TC-RES-03: easyread://guidelines/checklist는 규칙 ID(SEN-01)를 포함한다", async () => {
     const c = await client();
     const res = await c.readResource({ uri: "easyread://guidelines/checklist" });
