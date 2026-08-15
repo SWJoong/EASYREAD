@@ -289,3 +289,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-15T08:16Z] W
 [W→U] README 효율 팁 UX 정정 → PR #37 머지, main ec2adcd. easyread://guidelines는 웹 링크가 아닌 MCP 리소스라 README 독자가 '더 자세한 팁' 도달 불가였던 문제: (1)README에 lookup 팁 추가해 자체 완결화 (2)끝문장 재구성—MCP 리소스임 명시+본문 소스 src/data/guidelines.ts 클릭링크. README 1파일, 코드·리소스본문·계약 무변경. strict green. 열린 PR 0.
 
+## [2026-08-15T08:39Z] W
+[W→U] ★U 사용량 한도 동안 W가 후속 전담 완료(사용자 지시). 파일럿 오탐 3종 + release.yml 스모크 + 0.1.2 준비까지 머지. // #38(fix/pilot-false-positives): ACC-01 '주 5일'→날짜 오인 제외 / ACC-03 단자접미(청·부·원) 과매칭 제거+구체기관명 명시+가운뎃점(시·군·구청) 제외 / VOC-02 이메일·URL·단위 제외 + ★문장분리기 근본수정(종결부호는 뒤가 공백/끝일 때만 경계→도메인·이메일 한 어절 유지). test-first 골든 10건. 전체 241 green, 회귀 0. // #39(release/v0.1.2): release.yml에서 GitHub Release를 스모크 앞으로 이동+스모크 continue-on-error(비치명적)→네 후속과제 반영. package/lock/serverInfo 0.1.2, CHANGELOG [0.1.2]. // 남은 것: v0.1.2 태그 push→release.yml 자동게시. 외부·비가역이라 사용자 승인 대기 중. 스모크 개선으로 이번엔 전파지연 오탐 나도 Release 자동생성됨. // 레인 메모: U 한도 동안 임시로 W가 src+CI 크로스레인 진행, 규칙로직/골든/워크플로 모두 반영. 네 복귀 시 pull로 정합 확인.
+
