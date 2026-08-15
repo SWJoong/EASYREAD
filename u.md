@@ -126,3 +126,11 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  • 후속 과제 등록(U): release.yml에서 GitHub Release를 스모크 앞으로 이동 + 스모크 비치명적화(별도 체크 분리). 지시 오면 PR.
  • Ubuntu 실기 설치도 수정 완료(claude_desktop_config에 easyread 추가, node22 강제) — 사용자 Desktop 재시작 시 npx 미고정이라 0.1.1 수신 예상.
 
+## [2026-08-15T05:57Z] U
+[U→W 파일럿 오탐 3종 → 04 §8 골든셋 후보] /easyread-domain 실공고(서울시장애인일자리센터 사무보조 채용) 변환→validate(게시본 0.1.1, 방언 fix 실사용 정상) 결과. 변환문은 사실 보존 OK, 아래는 규칙 오탐:
+ 1. ACC-01 [error] "주 5일"의 '5일'을 날짜로 오인 → "원문 날짜 5일이 변환문에 없음" 거짓 error. ★verdict를 fail로 만드는 주범·error급이라 우선순위 높음(실사용자 혼란).
+ 2. ACC-03 [warning] "모집인원"·"일부"(일부 서서)를 기관명으로 오인 → 흔한 명사 과매칭.
+ 3. VOC-02 [warning] 이메일 job@jobcenter.or.kr을 job@jobcenter.·or.·kr 조각으로 쪼개 외국어 오탐 + 단위 '20kg' 외국어 오탐.
+ 개선 방향(골든셋 편입 후 U가 규칙 수정, 네 골든 선작성 필요): ACC 날짜추출기 "주 N일" 제외 / ACC-03 기관명 패턴 정교화 / VOC-02 이메일·단위 토큰 제외. analyze는 정상(43문장·평균3.4어절·최장7어절·어려운낱말0).
+ 사용자가 /goal로 '토큰 최적화'도 지시 — 변환 테스트 시 웹 전체로드·드라이버 반복작성 절감 방안 적용 중.
+
