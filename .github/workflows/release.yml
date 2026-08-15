@@ -1,6 +1,6 @@
 name: Release
 
-# vX.Y.Z 태그 push 시 실행 — 게이트 재실행 → 태그·버전 일치 검사 → npm publish → 설치 스모크 → GitHub Release.
+# vX.Y.Z 태그 push 시 실행 — 게이트 재실행 → 태그·버전 일치 검사 → npm publish → GitHub Release → (비치명적) 설치 스모크.
 # 05-release-plan.md §4 릴리스 잡. 첫 실행 전 준비: npm 신뢰 게시(Trusted Publisher) 또는 NPM_TOKEN 시크릿 등록.
 on:
   push:
@@ -53,10 +53,18 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      # 배포된 패키지를 npx로 받아 initialize 응답 확인(stdio 스모크)
-      # npm 레지스트리·CDN 전파 지연을 고려해 대기·재시도(최대 ~3분).
+      # publish 성공 즉시 GitHub Release 생성 — 아래 설치 스모크는 레지스트리 전파 지연 오탐이
+      # 잦아 비치명적으로 두고, Release를 스모크보다 앞에 배치해 게시가 막히지 않게 한다.
+      - name: GitHub Release 생성
+        run: gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # 배포된 패키지를 npx로 받아 initialize 응답 확인(stdio 스모크) — 비치명적(continue-on-error).
+      # 레지스트리·CDN 전파 지연을 고려해 대기·재시도(최대 ~3분). 확인 실패해도 릴리스는 유지된다.
       # 1) 해당 버전이 레지스트리에 노출되는지 확인 → 2) npx로 받아 initialize 응답 확인.
       - name: 설치 스모크
+        continue-on-error: true
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           REQ='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"smoke","version":"0"}}}'
@@ -75,10 +83,5 @@ jobs:
             echo "[$i/$ATTEMPTS] initialize 응답 미확인 — ${SLEEP}s 후 재시도"
             sleep "$SLEEP"
           done
-          echo "::error::최대 재시도(${ATTEMPTS}회) 후에도 initialize 응답을 확인하지 못했습니다."
+          echo "::warning::최대 재시도(${ATTEMPTS}회) 후에도 initialize 응답을 확인하지 못했습니다(전파 지연 가능). 게시본·GitHub Release는 유지됩니다."
           exit 1
-
-      - name: GitHub Release 생성
-        run: gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
-        env:
-          GH_TOKEN: ${{ github.token }}

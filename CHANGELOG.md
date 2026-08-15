@@ -6,6 +6,20 @@
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-08-15
+
+### Fixed
+- **파일럿 규칙 오탐 3종**: 실공고 변환 파일럿에서 나온 규칙 오탐을 수정(골든 테스트 10건 추가).
+  - **ACC-01**: "주 5일"(근무 빈도)의 '5일'을 날짜로 오인해 거짓 `error`를 내던 문제. 바로 앞이 '주'인 'N일'은 날짜에서 제외(독립 'N일'은 계속 탐지).
+  - **ACC-03**: 흔한 명사(모집인원·일부 등)를 기관명으로 오인하던 과매칭. 단자 접미('청'·'부'·'원')를 제거하고 구체 기관명(경찰청·국세청·소방청·병원·법원)을 명시. 가운뎃점 압축표기(시·군·구청)는 후보에서 제외.
+  - **VOC-02**: 이메일·도메인을 마침표에서 쪼개(`job@jobcenter.`·`or.`·`kr`) 외국어로 오탐하던 문제. 문장 분리기가 종결부호를 **뒤가 공백/끝일 때만** 경계로 삼도록 하고(근본 원인), 이메일·URL·측정단위(20kg) 토큰을 판정에서 제외.
+
+### Added
+- **효율적 변환·활용 팁**: `easyread://guidelines` 리소스와 README에 토큰 절약·도구 활용·변환 속도 팁 추가.
+
+### Changed
+- **릴리스 워크플로**: npm publish 성공 시 GitHub Release를 설치 스모크보다 먼저 생성하고, 설치 스모크를 비치명적(`continue-on-error`)으로 변경 — 레지스트리 전파 지연에 따른 스모크 오탐이 릴리스 게시를 막지 않도록 함.
+
 ## [0.1.1] - 2026-08-15
 
 ### Fixed
@@ -27,6 +41,7 @@
 ### Security
 - 오프라인 동작(네트워크 미호출), 입력 무저장·무로깅, 입력 크기 상한. 자세한 내용은 [SECURITY.md](SECURITY.md).
 
-[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/SWJoong/EASYREAD/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/SWJoong/EASYREAD/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/SWJoong/EASYREAD/releases/tag/v0.1.0
