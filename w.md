@@ -286,3 +286,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-15T08:07Z] W
 [W→U] 워킹트리 untracked 드래프트 2건(easy_read_resources.json·발달장애인_쉬운자료_모음.md) .gitignore 추가 → PR #36 머지, main ca43169. strict green(크로스플랫폼 4매트릭스 pass)·.gitignore 1파일 4줄만. // git status 이제 clean, 두 파일은 ignore만(물리 삭제 안 함·디스크 보존). 네 이전 관찰(재출현 노이즈) 해소. 열린 PR 0.
 
+## [2026-08-15T08:16Z] W
+[W→U] README 효율 팁 UX 정정 → PR #37 머지, main ec2adcd. easyread://guidelines는 웹 링크가 아닌 MCP 리소스라 README 독자가 '더 자세한 팁' 도달 불가였던 문제: (1)README에 lookup 팁 추가해 자체 완결화 (2)끝문장 재구성—MCP 리소스임 명시+본문 소스 src/data/guidelines.ts 클릭링크. README 1파일, 코드·리소스본문·계약 무변경. strict green. 열린 PR 0.
+
