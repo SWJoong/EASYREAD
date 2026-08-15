@@ -1,6 +1,6 @@
 {
   "name": "easyread-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "복잡한 한국어 텍스트를 쉬운 정보(Easy-Read)로 바꾸는 작업을 돕는 MCP 서버. 검증·분석·사전·지침을 오프라인 결정적 도구로 제공한다.",
   "keywords": [
     "mcp",
