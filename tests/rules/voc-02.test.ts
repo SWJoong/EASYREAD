@@ -49,4 +49,21 @@ describe("VOC-02 불필요한 외래어/외국어", () => {
   it("TC-VOC-02-05: loanword가 아닌 카테고리(difficult)는 VOC-02가 잡지 않는다", () => {
     expect(run("상기 내용입니다.")).toHaveLength(0);
   });
+
+  it("TC-VOC-02-06: 이메일 주소는 외국어로 오탐하지 않는다", () => {
+    // 문장 분리기가 도메인 '.'에서 쪼개 job@jobcenter.·or.·kr 3조각을 외국어로 잡던 문제(파일럿 오탐).
+    expect(run("job@jobcenter.or.kr 로 신청하세요.")).toHaveLength(0);
+  });
+
+  it("TC-VOC-02-07: 측정 단위(20kg)는 외국어로 오탐하지 않는다", () => {
+    expect(run("무게는 20kg 입니다.")).toHaveLength(0);
+  });
+
+  it("TC-VOC-02-08: 도메인/URL은 외국어로 오탐하지 않는다", () => {
+    expect(run("www.jobcenter.or.kr 에서 확인하세요.")).toHaveLength(0);
+  });
+
+  it("TC-VOC-02-09: 실제 외국어(MOU)는 계속 warning(과소탐지 방지)", () => {
+    expect(run("MOU를 맺습니다.")).toHaveLength(1);
+  });
 });

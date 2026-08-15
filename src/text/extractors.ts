@@ -14,9 +14,12 @@ const AMOUNT_RE =
 const CONTACT_RE = new RegExp("\\d{2,4}-\\d{3,4}-\\d{4}|https?://\\S+|www\\.\\S+", "g");
 
 // 기관명 후보 접미(휴리스틱). 조사를 떼고 이 접미로 끝나는 어절을 기관명 후보로 본다.
+// 단자 접미('청'·'부'·'원')는 흔한 명사(신청·일부·인원…)를 과매칭해 제외하고,
+// 자주 쓰는 구체 기관명을 명시 접미로 둔다(정밀도 우선 — ACC-03은 보조 warning).
 const INSTITUTION_SUFFIXES = [
   "공단", "공사", "위원회", "구청", "시청", "도청", "교육청",
-  "연구원", "진흥원", "재단", "협회", "조합", "센터", "청", "부", "원",
+  "경찰청", "국세청", "소방청", "연구원", "진흥원", "병원", "법원",
+  "재단", "협회", "조합", "센터",
 ];
 const TRAILING_JOSA = /(?:은|는|이|가|을|를|에서|에게|에|의|과|와|도|으로|로|까지|부터)$/;
 
@@ -25,7 +28,17 @@ function stripSpaces(s: string): string {
 }
 
 export function extractDates(text: string): string[] {
-  return [...text.matchAll(DATE_RE)].map((m) => stripSpaces(m[0]));
+  const out: string[] = [];
+  for (const m of text.matchAll(DATE_RE)) {
+    const token = m[0];
+    // '주 5일'·'주5일'(근무 빈도)의 'N일'은 날짜가 아니다 → 바로 앞이 '주'면 제외.
+    if (/^\s*\d+\s*일$/.test(token)) {
+      const before = text.slice(0, m.index).replace(/\s+$/, "");
+      if (before.endsWith("주")) continue;
+    }
+    out.push(stripSpaces(token));
+  }
+  return out;
 }
 
 export function extractAmounts(text: string): string[] {
@@ -39,6 +52,8 @@ export function extractContacts(text: string): string[] {
 export function extractProperNouns(text: string): string[] {
   const names: string[] = [];
   for (const token of text.split(/\s+/)) {
+    // 가운뎃점 압축표기(시·군·구청)는 풀어쓴 형태(시청·군청·구청)와 문자열 매칭이 안 돼 오탐 → 제외.
+    if (token.includes("·")) continue;
     const word = token.replace(TRAILING_JOSA, "");
     if (word.length >= 2 && INSTITUTION_SUFFIXES.some((suffix) => word.endsWith(suffix))) {
       names.push(word);

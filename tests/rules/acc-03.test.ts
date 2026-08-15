@@ -27,4 +27,20 @@ describe("ACC-03 기관명 누락", () => {
   it("TC-ACC-03-03: 원문이 없으면 비활성(requiresOriginal)", () => {
     expect(evaluate({ raw: "공단에 문의하세요." }, [acc03]).violations).toHaveLength(0);
   });
+
+  it("TC-ACC-03-04: 흔한 명사(모집인원·일부)를 기관명으로 오인하지 않는다", () => {
+    // '원'·'부'로 끝나는 일반 명사 과매칭 방지(파일럿 오탐).
+    expect(run("사람을 뽑습니다.", "모집인원은 일부입니다.")).toHaveLength(0);
+  });
+
+  it("TC-ACC-03-05: 가운뎃점 압축표기('시·군·구청')는 기관명 후보에서 제외", () => {
+    // 풀어쓴 '시청·군청·구청'이 있어도 압축표기 원형이 없다고 오탐하던 문제(파일럿 오탐).
+    expect(run("시청·군청·구청에 갑니다.", "시·군·구청에 문의하세요.")).toHaveLength(0);
+  });
+
+  it("TC-ACC-03-06: 실제 기관명(경찰청)이 빠지면 여전히 warning(과소탐지 방지)", () => {
+    const v = run("기관에 문의하세요.", "경찰청에 문의하세요.");
+    expect(v).toHaveLength(1);
+    expect(v[0]?.ruleId).toBe("ACC-03");
+  });
 });

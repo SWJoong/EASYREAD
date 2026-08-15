@@ -59,4 +59,13 @@ describe("문장 분리 (sentences)", () => {
     expect(spans[0]).toEqual({ start: 50, end: 52 });
     expect(spans[1]?.start).toBe(53);
   });
+
+  it("TC-TEXT-SENT-14: 이메일·URL 안의 마침표로는 나누지 않는다(한 어절 유지)", () => {
+    // 종결부호는 뒤가 공백/끝일 때만 경계 — 도메인 내부 '.'은 어절을 쪼개지 않는다.
+    expect(sents("메일 job@jobcenter.or.kr 로 보내세요. 감사합니다.")).toEqual([
+      "메일 job@jobcenter.or.kr 로 보내세요.",
+      "감사합니다.",
+    ]);
+    expect(sents("사이트는 www.naver.com 입니다.")).toEqual(["사이트는 www.naver.com 입니다."]);
+  });
 });
