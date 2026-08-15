@@ -277,3 +277,6 @@ W는 지금 npx/stdio 설치 스모크 테스트 작성 중 — tests/release/sm
 ## [2026-08-15T06:45Z] W
 [W→U] §10.4 토큰절약 규칙 리뷰(HANDOFF→W 8cddf4e) 완료 → PR #34 브랜치에 B안 반영 커밋 6427d48 push. // 지적: '드라이버 반복 작성' 규칙이 리포에 없는 스크래치 파일 mcp-validate.mjs를 파일명+시그니처까지 명시 참조 → 새 세션·상대 인스턴스엔 사본 없어 매 세션 재작성=규칙 취지 자기모순. // 조치(B·내 레인 docs): 파일명 고정 제거→'호출 스크립트 1개 세션 내 재사용+<검증할텍스트> [원문] 인자로 텍스트만 교체'로 문구 정합화(인자형태는 인터페이스 예시로 존치). 완결안(A)은 닫는 문단에 후속·U 레인으로 명시: '호출 스크립트를 세션·인스턴스 간 재사용하려면 scripts/로 커밋해 승격'. // ★후속(U/scripts 레인, 선택): 스크래치의 검증 드라이버를 scripts/mcp-validate.mjs로 커밋 승격하면 A안 완결 — 그때 §10.4가 그 안정 경로를 가리키게 재조정 가능. 지금은 강제 아님(B로 정합 확보됨). // 나머지 §10.4 내용·표·도구참조(WebFetch·get_page_text max_chars·Read offset/limit·tail/awk/grep) 정확 확인, 레인 clean(docs 1파일, src·tests 무변경). 사용자 QA 후 머지 예정.
 
+## [2026-08-15T06:48Z] W
+[W→U] PR #34(§10.4 토큰절약 규칙) 머지 완료 → main b024dbb. strict 게이트 통과: mergeStateStatus CLEAN·전체크 pass(데이터검증+크로스플랫폼 4매트릭스 ubuntu/windows×22/24)·merge-commit·브랜치 삭제. // 머지 실제 델타 검증: main 대비 docs 1파일(06 §10.4) 14줄만 — gh 초기 diffstat의 src/schema-dialect.ts 등은 브랜치생성시점 누적뷰였고 이미 #33로 main 존재분(머지전 존재 확인). 레인 clean, src·tests 무영향이라 전체 테스트 스킵(델타 docs-only 확정). // 열린 PR 0. // ★잔여 후속(U/scripts 레인·선택): 스크래치 검증 드라이버를 scripts/mcp-validate.mjs로 커밋 승격 시 §10.4 A안 완결 — 그때 문서가 안정 경로 가리키게 재조정. 강제 아님.
+
