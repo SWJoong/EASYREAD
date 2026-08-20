@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "updatedAt": "2026-08-11",
+  "version": "0.2.0",
+  "updatedAt": "2026-08-21",
   "entries": [
     { "word": "구비서류", "category": "difficult", "alternatives": ["필요한 서류", "준비할 서류"], "example": "필요한 서류를 가져오세요.", "source": "자체 구축(국립국어원 다듬은 말·행정용어 순화 참고)" },
     { "word": "부득이한", "category": "difficult", "alternatives": ["어쩔 수 없는"], "example": "어쩔 수 없는 이유로 못 왔습니다.", "source": "자체 구축(국립국어원 다듬은 말·행정용어 순화 참고)" },
@@ -113,6 +113,31 @@
     { "word": "복지부", "category": "abbreviation", "alternatives": ["보건복지부"], "source": "자체 구축" },
     { "word": "인강", "category": "abbreviation", "alternatives": ["인터넷 강의"], "source": "자체 구축" },
     { "word": "초중고", "category": "abbreviation", "alternatives": ["초등학교·중학교·고등학교"], "source": "자체 구축" },
-    { "word": "국공립", "category": "abbreviation", "alternatives": ["국립·공립"], "source": "자체 구축" }
+    { "word": "국공립", "category": "abbreviation", "alternatives": ["국립·공립"], "source": "자체 구축" },
+    { "word": "로그인", "category": "loanword", "alternatives": ["들어가기", "접속"], "example": "여기를 눌러 들어가세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "로그아웃", "category": "loanword", "alternatives": ["나가기"], "example": "다 쓰면 나가기를 누르세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "클릭", "category": "loanword", "alternatives": ["누르기"], "example": "그림을 누르세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "버튼", "category": "loanword", "alternatives": ["단추"], "example": "파란 단추를 누르세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "메뉴", "category": "loanword", "alternatives": ["차림표", "기능 목록"], "example": "위쪽 목록에서 고르세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "앱", "category": "loanword", "alternatives": ["프로그램"], "example": "이 프로그램을 여세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "팝업", "category": "loanword", "alternatives": ["뜬 창", "새로 열린 창"], "example": "새로 열린 창을 닫으세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "배너", "category": "loanword", "alternatives": ["띠 광고", "알림 띠"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "스크롤", "category": "loanword", "alternatives": ["화면 내리기", "화면 밀기"], "example": "손가락으로 화면을 내리세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "아이콘", "category": "loanword", "alternatives": ["그림 단추", "그림"], "example": "그림 단추를 누르세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "로딩", "category": "loanword", "alternatives": ["불러오는 중", "기다리는 중"], "example": "잠깐 기다리세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "이메일", "category": "loanword", "alternatives": ["전자우편", "누리편지"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "아이디", "category": "loanword", "alternatives": ["사용자 이름", "로그인 이름"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "홈", "category": "loanword", "alternatives": ["첫 화면", "시작 화면"], "example": "첫 화면으로 돌아가세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "카테고리", "category": "loanword", "alternatives": ["분류", "갈래"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "업데이트", "category": "loanword", "alternatives": ["새로 바꾸기", "최신으로 바꾸기"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "인증", "category": "difficult", "alternatives": ["본인 확인"], "example": "본인 확인을 해 주세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "계정", "category": "difficult", "alternatives": ["내 정보", "사용자 정보"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "회원가입", "category": "difficult", "alternatives": ["가입", "가입하기"], "example": "먼저 가입을 하세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "첨부", "category": "difficult", "alternatives": ["붙임", "붙인 파일"], "example": "파일을 붙이세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "접속", "category": "difficult", "alternatives": ["들어가기", "연결"], "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "검색", "category": "difficult", "alternatives": ["찾기"], "example": "여기서 찾으세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "암호", "category": "difficult", "alternatives": ["비밀번호"], "example": "비밀번호를 넣으세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "오류", "category": "difficult", "alternatives": ["잘못됨", "문제"], "example": "문제가 생겼습니다.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" },
+    { "word": "새로고침", "category": "terminology", "alternatives": ["다시 불러오기"], "explanation": "화면의 내용을 최신 상태로 다시 불러오는 것.", "example": "화면을 다시 불러오세요.", "source": "자체 구축(국립국어원 다듬은 말·정보통신 용어 순화 참고)" }
   ]
 }
