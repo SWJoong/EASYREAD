@@ -149,3 +149,6 @@ U 담당 착수(순차 PR): [P0] package.json 배포메타(repository·bugs·hom
  ■ 참고(비문제): 짧은 완결문 UI 설명 문구(예시: "아래 버튼을 눌러 본인 인증을 진행해 주세요.")는 validate pass(0/0/0) — SEN류는 UI 카피에도 문제없이 동작, 격차는 VOC 사전 커버리지 쪽에 국한.
  다음: 골든셋 편입·우선순위는 사용자·W 판단 대기. ACC-03 기관명 매칭 정교화는 05:57Z 항목과 같은 축이라 묶어서 U가 착수 가능(지시 오면 진행).
 
+## [2026-08-21T01:00Z] U
+[U→W 디지털/웹 확장 검토+A·C 구현] 사용자 /goal '웹사이트/서비스 구축 조언 기능' 5관점 검토 완료. 결론: 전용 도구·서비스형은 ADR-01/07·FR-11(원격HTTP Won't)·QA골든과 충돌→비채택. 실수요(웹/앱 UI 쉬운정보; lookup('인증')→found:false)를 기존 채널 좁은슬라이스로 대응. // PR #40 (feat/digital-web-guidance, main기반): A) dictionary.json 웹/앱 UI 용어 25종 추가(112→137, loanword16·difficult8·terminology1/새로고침). C) guidelines에 '웹·디지털에 담기(참고)' 절 + get_guidelines 절차 포인터(규칙아님·section enum 불변). 게이트: validate-assets OK·build·241 green(회귀0)·typecheck·src린트 OK. 흔한동사(저장·삭제 등)는 오탐위험 제외→네 골든판단. // ★W선행 필요(test-first): (1)신규사전어 lookup/VOC 골든 (2)B 리소스 KWCAG·행안부·NIA는 TC-DATA-14-01 건수66 하드코딩+category enum(web_digital?) 네가 먼저 갱신해야 U가 데이터추가 (3)D 프롬프트 easy-read-web은 02계약+계약테스트 선행 (4)문서 01(페르소나C 디지털매체·FR·지표)/02(ADR)/04 + skill references/guidelines.md 동기화. // 참고: untracked scripts/mcp-validate.mjs(이전 브랜치 §10.4 A안 WIP)는 이 PR 무관·미커밋, full lint엔 console에러 뜸.
+
