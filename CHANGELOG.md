@@ -6,6 +6,12 @@
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-11-09
+
+### Added
+- **웹·앱 UI 용어 25종**: 쉬운 낱말 사전에 웹/앱 화면에서 자주 쓰는 용어(인증 등)를 추가(112→137종). `lookup_easy_word`가 이 용어들의 쉬운 대체어를 안내한다.
+- **웹·디지털 지침 안내**: `easyread://guidelines`에 「웹·디지털에 담기(참고)」 절을 추가하고, `get_guidelines`에 해당 절차 안내를 연결(검증 규칙·섹션 목록은 변경 없음).
+
 ## [0.1.2] - 2026-08-15
 
 ### Fixed
@@ -41,7 +47,8 @@
 ### Security
 - 오프라인 동작(네트워크 미호출), 입력 무저장·무로깅, 입력 크기 상한. 자세한 내용은 [SECURITY.md](SECURITY.md).
 
-[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/SWJoong/EASYREAD/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/SWJoong/EASYREAD/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/SWJoong/EASYREAD/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/SWJoong/EASYREAD/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/SWJoong/EASYREAD/releases/tag/v0.1.0
